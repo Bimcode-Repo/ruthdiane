@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Andada Pro', ui-serif, Georgia, serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Couleur principale (beige/doré) */
+    --color-primary-50: #F5EFE6;
+    --color-primary-100: #EDE2D3;
+    --color-primary-200: #DCC9AD;
+    --color-primary-300: #CBB087;
+    --color-primary-400: #C4A882;
+    --color-primary-500: #B89865;
+    --color-primary-600: #9D7F4F;
+    --color-primary-700: #77603D;
+    --color-primary-800: #51412A;
+    --color-primary-900: #2B2216;
+    --color-primary: #C4A882;
+
+    /* Couleur de fond (brun foncé) */
+    --color-background: #3D3935;
+    --color-background-light: #4A4541;
+    --color-background-dark: #2E2B28;
+    --color-background-darker: #34302D;
+
+    /* Couleur claire (beige très clair) */
+    --color-light-50: #FFFFFF;
+    --color-light-100: #FAF6F0;
+    --color-light-200: #F5EDE0;
+    --color-light-300: #F0E4D0;
+    --color-light-400: #EBDBC0;
+    --color-light: #FAF6F0;
+}
+
+/* Animation pour le slider de partenaires */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 20s linear infinite;
+}
