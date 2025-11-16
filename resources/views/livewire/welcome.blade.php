@@ -79,22 +79,22 @@
                 <!-- Trait horizontal sur le border au niveau de Home (centré comme un +) -->
                 <div class="absolute left-[-16.5px] md:left-[-40.5px] top-1/2 -translate-y-1/2 w-[15px] h-px bg-light"></div>
                 <a href="/" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
-                    Home
+                    {{ __('messages.home') }}
                 </a>
             </li>
             <li>
                 <a href="/projects" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
-                    Projects
+                    {{ __('messages.projects') }}
                 </a>
             </li>
             <li>
                 <a href="/about" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
-                    About
+                    {{ __('messages.about') }}
                 </a>
             </li>
             <li>
                 <a href="/contact" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
-                    Contact
+                    {{ __('messages.contact') }}
                 </a>
             </li>
         </ul>
@@ -113,7 +113,7 @@
     <!-- Section de navigation en bas -->
     <div class="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
         <!-- Texte "scroll" -->
-        <p class="text-light text-[16px] md:text-[20px] tracking-wider mb-[15px] md:mb-[20px]">Scroll</p>
+        <p class="text-light text-[16px] md:text-[20px] tracking-wider mb-[15px] md:mb-[20px]">{{ __('messages.scroll') }}</p>
 
         <!-- Barre verticale -->
         <div class="w-px h-[35px] md:h-[47px] bg-light mb-[30px] md:mb-[45px]"></div>
@@ -147,7 +147,7 @@
 <!-- Section texte avec fond primary -->
 <div class="h-[50vh] bg-primary flex items-center justify-center px-8 md:px-16">
     <p class="text-background text-[28px] md:text-[40px] text-center max-w-4xl" style="font-family: 'Joan', serif;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa a, mattis laoreet tortor. Nunc volutpat nisi sit amet gravida fermentum.
+        {{ __('messages.lorem_medium') }}
     </p>
 </div>
 
@@ -158,14 +158,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <!-- Left: Title -->
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold">Notre style</h2>
+                <h2 class="text-[40px] md:text-[60px] text-light font-bold">{{ __('messages.our_style') }}</h2>
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
             <!-- Right: Description -->
             <div>
                 <p class="text-light text-[18px] md:text-[25px] leading-relaxed" style="font-family: 'Joan', serif;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa a, mattis laoreet tortor. Nunc volutpat nisi sit amet gravida fermentum.
+                    {{ __('messages.lorem_medium') }}
                 </p>
             </div>
         </div>
@@ -240,16 +240,16 @@
         <div class="flex flex-col md:flex-row justify-between items-center mt-12 md:mt-16 gap-8 md:gap-6">
             <!-- Left: Social -->
             <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-                <p class="text-light text-[16px] md:text-[25px] text-center md:text-left">Voir tout nos styles sur</p>
+                <p class="text-light text-[16px] md:text-[25px] text-center md:text-left">{{ __('messages.see_all_styles') }}</p>
                 <a href="#" class="flex items-center gap-2 md:gap-3 group" aria-label="Instagram">
                     <img src="{{ asset('assets/icons/instagram_primary.svg') }}" alt="Instagram" class="w-5 h-5 md:w-7 md:h-7 group-hover:opacity-80 transition-opacity">
-                    <span class="text-primary text-[16px] md:text-[25px] group-hover:opacity-80 transition-opacity">Instagram</span>
+                    <span class="text-primary text-[16px] md:text-[25px] group-hover:opacity-80 transition-opacity">{{ __('messages.instagram') }}</span>
                 </a>
             </div>
 
             <!-- Right: CTA -->
             <a href="#" class="flex items-center gap-2 md:gap-4 text-primary hover:opacity-80 transition-opacity group">
-                <span class="text-[16px] md:text-[25px]">Découvrir plus</span>
+                <span class="text-[16px] md:text-[25px]">{{ __('messages.discover_more') }}</span>
                 <svg class="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -261,15 +261,15 @@
 <!-- Section Partenaires -->
 <div class="bg-[#C4A882] h-[200px] overflow-hidden relative flex items-center">
     <div class="flex gap-12 md:gap-20 animate-scroll">
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">Logo Partenaire</div>
-        <div class="text-[#3D3935] text-[30px] font-bold whitespace-nowrap">Logo Partenaire</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">Logo Partenaire</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">Logo Partenaire</div>
+        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+        <div class="text-[#3D3935] text-[30px] font-bold whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
         <!-- Duplication pour boucle infinie -->
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">Logo Partenaire</div>
-        <div class="text-[#3D3935] text-[30px] font-bold whitespace-nowrap">Logo Partenaire</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">Logo Partenaire</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">Logo Partenaire</div>
+        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+        <div class="text-[#3D3935] text-[30px] font-bold whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
     </div>
 </div>
 
@@ -281,13 +281,13 @@
             <!-- Left: Title -->
             <div class="flex flex-col md:flex-row md:items-baseline gap-3 md:gap-6">
                 <div class="w-[40px] md:w-16 h-[1px] bg-white self-center md:self-auto"></div>
-                <h1 class="text-[40px] md:text-[60px] text-white font-bold leading-none">Nos services</h1>
+                <h1 class="text-[40px] md:text-[60px] text-white font-bold leading-none">{{ __('messages.our_services') }}</h1>
             </div>
 
             <!-- Right: CTA -->
             <div class="flex items-end md:pb-2">
                 <a href="#" class="flex items-center gap-3 text-[#C4A882] hover:opacity-80 transition-opacity group">
-                    <span class="text-[18px] md:text-[25px] leading-none">Contactez-nous</span>
+                    <span class="text-[18px] md:text-[25px] leading-none">{{ __('messages.contact_us') }}</span>
                     <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
@@ -306,16 +306,16 @@
 
             <!-- Content -->
             <div class="flex flex-col justify-center py-[20px] px-[20px] md:py-[25px] md:px-[40px] md:h-[400px] flex-1">
-                <h2 class="text-[28px] md:text-4xl text-white font-semibold mb-[30px] md:mb-[60px]">Lorem ipsum dolor</h2>
+                <h2 class="text-[28px] md:text-4xl text-white font-semibold mb-[30px] md:mb-[60px]">{{ __('messages.lorem_short') }}</h2>
                 <p class="text-white text-[18px] md:text-[22px] leading-relaxed mb-[30px] md:mb-[60px]" style="font-family: 'Joan', serif;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa a, mattis laoreet tortor. Nunc volutpat nisi sit amet gravida.
+                    {{ __('messages.lorem_long') }}
                 </p>
                 <div class="flex flex-col md:flex-row gap-3 md:gap-4">
                     <button class="bg-[#C4A882] text-[#3D3935] px-6 py-2.5 md:px-8 md:py-3 hover:opacity-90 transition-opacity text-sm md:text-base">
-                        Lorem ipsum dolor
+                        {{ __('messages.lorem_button') }}
                     </button>
                     <button class="bg-[#C4A882] text-[#3D3935] px-6 py-2.5 md:px-8 md:py-3 hover:opacity-90 transition-opacity text-sm md:text-base">
-                        Lorem ipsum dolor
+                        {{ __('messages.lorem_button') }}
                     </button>
                 </div>
             </div>
@@ -325,16 +325,16 @@
         <div class="flex flex-col lg:flex-row gap-0 mb-8 md:mb-12 bg-background-darker">
             <!-- Content -->
             <div class="flex flex-col justify-center py-[20px] px-[20px] md:py-[25px] md:px-[40px] md:h-[400px] flex-1 order-2 lg:order-1">
-                <h2 class="text-[28px] md:text-4xl text-white font-semibold mb-[30px] md:mb-[60px]">Lorem ipsum dolor</h2>
+                <h2 class="text-[28px] md:text-4xl text-white font-semibold mb-[30px] md:mb-[60px]">{{ __('messages.lorem_short') }}</h2>
                 <p class="text-white text-[18px] md:text-[22px] leading-relaxed mb-[30px] md:mb-[60px]" style="font-family: 'Joan', serif;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa a, mattis laoreet tortor. Nunc volutpat nisi sit amet gravida.
+                    {{ __('messages.lorem_long') }}
                 </p>
                 <div class="flex flex-col md:flex-row gap-3 md:gap-4">
                     <button class="bg-[#C4A882] text-[#3D3935] px-6 py-2.5 md:px-8 md:py-3 hover:opacity-90 transition-opacity text-sm md:text-base">
-                        Lorem ipsum dolor
+                        {{ __('messages.lorem_button') }}
                     </button>
                     <button class="bg-[#C4A882] text-[#3D3935] px-6 py-2.5 md:px-8 md:py-3 hover:opacity-90 transition-opacity text-sm md:text-base">
-                        Lorem ipsum dolor
+                        {{ __('messages.lorem_button') }}
                     </button>
                 </div>
             </div>
@@ -352,17 +352,17 @@
             <div class="bg-[#C4A882] py-8 md:py-16 px-6 md:px-8 flex flex-col lg:flex-row justify-between items-center gap-6 md:gap-8">
                 <!-- Left: Title and Subtitle -->
                 <div>
-                    <h2 class="text-3xl md:text-5xl text-[#3D3935] font-light mb-2">Lorem Ipsum Dolor</h2>
-                    <p class="text-[#3D3935] text-base md:text-lg">Lorem ipsum dolor</p>
+                    <h2 class="text-3xl md:text-5xl text-[#3D3935] font-light mb-2">{{ __('messages.lorem_banner_title') }}</h2>
+                    <p class="text-[#3D3935] text-base md:text-lg">{{ __('messages.lorem_short') }}</p>
                 </div>
 
                 <!-- Right: Buttons -->
                 <div class="flex flex-col md:flex-row gap-3 md:gap-4 w-full lg:w-auto">
                     <button class="border-2 border-[#3D3935] text-[#3D3935] px-8 md:px-10 h-[70px] hover:bg-[#3D3935] hover:text-[#C4A882] transition-all text-sm md:text-base">
-                        Lorem ipsum dolor
+                        {{ __('messages.lorem_button') }}
                     </button>
                     <button class="bg-[#3D3935] text-white px-8 md:px-10 h-[70px] hover:opacity-90 transition-opacity text-sm md:text-base">
-                        Lorem ipsum dolor
+                        {{ __('messages.lorem_button') }}
                     </button>
                 </div>
             </div>
@@ -385,13 +385,13 @@
             <!-- Title -->
             <div class="mb-6 md:mb-8 lg:mb-10">
                 <h1 class="text-[32px] md:text-[40px] lg:text-[50px] text-[#3D3935] font-semibold leading-tight">
-                    PROUDLY FEMALE OWNED
+                    {{ __('messages.female_owned_title') }}
                 </h1>
             </div>
 
             <!-- Description -->
             <p class="text-[20px] md:text-[24px] lg:text-[30px] text-[#3D3935] leading-relaxed">
-                Fondé et dirigé par Ruth Safdie, notre studio incarne l'excellence entrepreneuriale au féminin. Nous créons des intérieurs d'exception avec passion, expertise et une sensibilité artistique unique.
+                {{ __('messages.female_owned_text') }}
             </p>
         </div>
     </div>
@@ -404,14 +404,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <!-- Left: Title -->
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold">À propos</h2>
+                <h2 class="text-[40px] md:text-[60px] text-light font-bold">{{ __('messages.about_title') }}</h2>
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
             <!-- Right: Description -->
             <div>
                 <p class="text-light text-[18px] md:text-[25px] leading-relaxed" style="font-family: 'Joan', serif;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa a, mattis laoreet tortor. Nunc volutpat nisi sit amet gravida fermentum.
+                    {{ __('messages.lorem_medium') }}
                 </p>
             </div>
         </div>
@@ -425,7 +425,7 @@
             <!-- Text Overlay -->
             <div class="absolute inset-0 flex items-center justify-center px-6 md:px-16">
                 <p class="text-light text-[20px] md:text-[40px] text-center max-w-5xl leading-snug md:leading-relaxed" style="font-family: 'Joan', serif;">
-                    Notre approche curatoriale intègre des pièces d'art soigneusement sélectionnées pour créer des intérieurs qui reflètent votre identité avec raffinement et authenticité.
+                    {{ __('messages.curatorial_text') }}
                 </p>
             </div>
         </div>
@@ -437,7 +437,7 @@
     <!-- Blog Header -->
     <div class="max-w-8xl mx-auto px-6 md:px-12">
         <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-16">
-            <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light">Blog</h1>
+            <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light">{{ __('messages.blog') }}</h1>
             <div class="w-[40px] md:w-16 h-[1px] bg-white md:order-first"></div>
         </div>
     </div>
@@ -480,9 +480,9 @@
 
                 <!-- Content -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8 transition-opacity duration-300" :class="isCardPartial(0) ? 'opacity-50' : 'opacity-100'">
-                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">Lorem ipsum dolor</h2>
+                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">{{ __('messages.blog_card_title') }}</h2>
                     <p class="text-white text-[14px] md:text-[18px] leading-relaxed" style="font-family: 'Joan', serif;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis et neque eu cursus.
+                        {{ __('messages.blog_card_text') }}
                     </p>
                 </div>
             </div>
@@ -496,9 +496,9 @@
 
                 <!-- Content -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8 transition-opacity duration-300" :class="isCardPartial(1) ? 'opacity-50' : 'opacity-100'">
-                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">Lorem ipsum dolor</h2>
+                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">{{ __('messages.blog_card_title') }}</h2>
                     <p class="text-white text-[14px] md:text-[18px] leading-relaxed" style="font-family: 'Joan', serif;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis et neque eu cursus.
+                        {{ __('messages.blog_card_text') }}
                     </p>
                 </div>
             </div>
@@ -512,9 +512,9 @@
 
                 <!-- Content -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8 transition-opacity duration-300" :class="isCardPartial(2) ? 'opacity-50' : 'opacity-100'">
-                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">Lorem ipsum dolor</h2>
+                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">{{ __('messages.blog_card_title') }}</h2>
                     <p class="text-white text-[14px] md:text-[18px] leading-relaxed" style="font-family: 'Joan', serif;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis et neque eu cursus.
+                        {{ __('messages.blog_card_text') }}
                     </p>
                 </div>
             </div>

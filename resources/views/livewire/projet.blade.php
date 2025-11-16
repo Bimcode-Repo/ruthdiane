@@ -25,13 +25,13 @@
     <!-- Header avec bordure blanche en bas -->
     <div class="absolute top-0 left-0 right-0 h-[80px] md:h-[115px] border-b border-light z-20 flex items-center justify-between px-4 md:px-16">
         <!-- Logo et texte en haut à gauche -->
-        <div class="flex items-center gap-2 md:gap-4">
+        <a href="/" class="flex items-center gap-2 md:gap-4 hover:opacity-80 transition-opacity">
             <img src="{{ asset('medias/images/logo/logo.svg') }}" alt="Ruth Safdie Interiors" class="w-[12px] h-[26px] md:w-[15px] md:h-[33px]">
             <div class="text-left">
                 <h3 class="text-light text-[14px] md:text-[20px] font-semibold leading-none" style="font-family: 'Andada Pro', serif;">Ruth Safdie Interiors</h3>
                 <p class="text-light text-[8px] md:text-[10px] leading-none" style="font-family: 'Joan', serif;">Unlock The Art Of Refined Interiors</p>
             </div>
-        </div>
+        </a>
 
         <!-- Sélecteur de langue en haut à droite -->
         <nav class="flex gap-3 md:gap-6">
@@ -72,11 +72,11 @@
         <!-- Mobile Menu -->
         <div x-show="open" @click.away="open = false" x-transition class="absolute top-12 left-0">
             <nav class="flex flex-col gap-4 text-light text-[16px]" style="font-family: 'Andada Pro', serif;">
-                <a href="/" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">Home</a>
-                <a href="/projects" class="text-primary whitespace-nowrap">Projects</a>
-                <a href="/notre-style" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">Notre style</a>
-                <a href="/about" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">About</a>
-                <a href="/contact" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">Contact</a>
+                <a href="/" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.home') }}</a>
+                <a href="/projects" class="text-primary whitespace-nowrap">{{ __('messages.projects') }}</a>
+                <a href="/notre-style" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.our_style') }}</a>
+                <a href="/about" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.about') }}</a>
+                <a href="/contact" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.contact') }}</a>
             </nav>
         </div>
     </div>
@@ -84,14 +84,14 @@
     <!-- Navigation en haut à gauche sous le header (Desktop Only) -->
     <div class="absolute top-[130px] left-16 z-20 hidden md:block">
         <nav class="flex items-center gap-[60px] text-light text-[22px]" style="font-family: 'Andada Pro', serif;">
-            <a href="/" class="hover:text-primary transition-colors duration-300">Home</a>
+            <a href="/" class="hover:text-primary transition-colors duration-300">{{ __('messages.home') }}</a>
             <a href="/projects" class="relative hover:text-primary transition-colors duration-300">
                 <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-[2.5px] w-px h-[25px] bg-light"></div>
-                Projects
+                {{ __('messages.projects') }}
             </a>
-            <a href="/notre-style" class="hover:text-primary transition-colors duration-300">Notre style</a>
-            <a href="/about" class="hover:text-primary transition-colors duration-300">About</a>
-            <a href="/contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            <a href="/notre-style" class="hover:text-primary transition-colors duration-300">{{ __('messages.our_style') }}</a>
+            <a href="/about" class="hover:text-primary transition-colors duration-300">{{ __('messages.about') }}</a>
+            <a href="/contact" class="hover:text-primary transition-colors duration-300">{{ __('messages.contact') }}</a>
         </nav>
     </div>
 
@@ -110,13 +110,13 @@
 
     <!-- Titre centré -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 px-4">
-        <h1 class="text-light text-[40px] md:text-[60px] font-bold text-center" style="font-family: 'Andada Pro', serif;">Lorem</h1>
+        <h1 class="text-light text-[40px] md:text-[60px] font-bold text-center" style="font-family: 'Andada Pro', serif;">{{ __('messages.project_name') }}</h1>
     </div>
 
     <!-- Section de navigation en bas -->
     <div class="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
         <!-- Texte "scroll" -->
-        <p class="text-light text-[16px] md:text-[20px] tracking-wider mb-[15px] md:mb-[20px]">Scroll</p>
+        <p class="text-light text-[16px] md:text-[20px] tracking-wider mb-[15px] md:mb-[20px]">{{ __('messages.scroll') }}</p>
 
         <!-- Barre verticale -->
         <div class="w-px h-[35px] md:h-[47px] bg-light"></div>
@@ -130,14 +130,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <!-- Left: Title -->
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold">Lorem Ipsum</h2>
+                <h2 class="text-[40px] md:text-[60px] text-light font-bold">{{ __('messages.lorem_title') }}</h2>
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
             <!-- Right: Description -->
             <div>
                 <p class="text-light text-[18px] md:text-[25px] leading-relaxed" style="font-family: 'Joan', serif;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa.
+                    {{ __('messages.lorem_long') }}
                 </p>
             </div>
         </div>
@@ -205,14 +205,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <!-- Left: Title -->
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold">Lorem Ipsum</h2>
+                <h2 class="text-[40px] md:text-[60px] text-light font-bold">{{ __('messages.lorem_title') }}</h2>
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
             <!-- Right: Description -->
             <div>
                 <p class="text-light text-[18px] md:text-[25px] leading-relaxed" style="font-family: 'Joan', serif;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem libero, commodo quis massa.
+                    {{ __('messages.lorem_long') }}
                 </p>
             </div>
         </div>
@@ -278,7 +278,7 @@
     <!-- Blog Header -->
     <div class="max-w-8xl mx-auto px-6 md:px-12">
         <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-16">
-            <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light">Blog</h1>
+            <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light">{{ __('messages.blog') }}</h1>
             <div class="w-[40px] md:w-16 h-[1px] bg-white md:order-first"></div>
         </div>
     </div>
@@ -320,9 +320,9 @@
 
                 <!-- Content -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8 transition-opacity duration-300" :class="isCardPartial(0) ? 'opacity-50' : 'opacity-100'">
-                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">Lorem ipsum dolor</h2>
+                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">{{ __('messages.blog_card_title') }}</h2>
                     <p class="text-white text-[14px] md:text-[18px] leading-relaxed" style="font-family: 'Joan', serif;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis et neque eu cursus.
+                        {{ __('messages.blog_card_text') }}
                     </p>
                 </div>
             </div>
@@ -336,9 +336,9 @@
 
                 <!-- Content -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8 transition-opacity duration-300" :class="isCardPartial(1) ? 'opacity-50' : 'opacity-100'">
-                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">Lorem ipsum dolor</h2>
+                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">{{ __('messages.blog_card_title') }}</h2>
                     <p class="text-white text-[14px] md:text-[18px] leading-relaxed" style="font-family: 'Joan', serif;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis et neque eu cursus.
+                        {{ __('messages.blog_card_text') }}
                     </p>
                 </div>
             </div>
@@ -352,9 +352,9 @@
 
                 <!-- Content -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8 transition-opacity duration-300" :class="isCardPartial(2) ? 'opacity-50' : 'opacity-100'">
-                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">Lorem ipsum dolor</h2>
+                    <h2 class="text-white text-[16px] md:text-[20px] mb-[10px] md:mb-[15px]" style="font-family: 'Andada Pro', serif; font-weight: 600;">{{ __('messages.blog_card_title') }}</h2>
                     <p class="text-white text-[14px] md:text-[18px] leading-relaxed" style="font-family: 'Joan', serif;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis et neque eu cursus.
+                        {{ __('messages.blog_card_text') }}
                     </p>
                 </div>
             </div>

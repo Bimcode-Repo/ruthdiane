@@ -22,13 +22,13 @@
         <div class="max-w-8xl mx-auto px-6 md:px-12">
             <div class="flex flex-col md:flex-row justify-between items-center md:items-center gap-8 md:gap-12">
                 <!-- Left Section: Logo + Titles -->
-                <div class="flex items-center gap-4">
+                <a href="/" class="flex items-center gap-4 hover:opacity-80 transition-opacity">
                     <img src="{{ asset('medias/images/logo/logo.svg') }}" alt="Ruth Safdie Interiors" class="w-[15px] h-[33px]">
                     <div class="text-left">
                         <h3 class="text-light text-[20px] font-semibold leading-none" style="font-family: 'Andada Pro', serif;">Ruth Safdie Interiors</h3>
                         <p class="text-light text-[10px] leading-none" style="font-family: 'Joan', serif;">Unlock The Art Of Refined Interiors</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Right Section: Social Icons + Mentions légales -->
                 <div class="flex items-center gap-6">
@@ -47,7 +47,7 @@
 
                     <!-- Mentions légales -->
                     <a href="#" class="text-light hover:text-primary transition-colors duration-300 text-[14px] underline" style="font-family: 'Andada Pro', serif; font-weight: 600;">
-                        Mentions légales
+                        {{ __('messages.legal_mentions') }}
                     </a>
                 </div>
             </div>
