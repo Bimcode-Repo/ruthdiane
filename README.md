@@ -14,6 +14,9 @@ Site web professionnel pour Ruth Safdie Interiors - Cabinet d'architecture d'int
 
 - ✅ Site multi-pages responsive (Home, Projects, Notre Style, About, Contact)
 - ✅ Système de traduction multilingue (FR/EN/ES/IT)
+- ✅ **Authentification complète** (Inscription, Connexion, Mot de passe oublié, Vérification email)
+- ✅ **Dashboard protégé** pour utilisateurs authentifiés
+- ✅ **Gestion du profil** utilisateur
 - ✅ Formulaire de contact avec envoi d'email
 - ✅ Validation des formulaires
 - ✅ Messages de succès/erreur
@@ -183,12 +186,25 @@ ruthdiane/
 
 ## Routes disponibles
 
+### Routes publiques
 - `/` - Page d'accueil
 - `/projects` - Liste des projets
 - `/our-style` - Notre style
 - `/about` - À propos
 - `/contact` - Formulaire de contact
 - `/projet/{slug}` - Page projet individuel
+
+### Routes d'authentification
+- `/register` - Inscription
+- `/login` - Connexion
+- `/forgot-password` - Mot de passe oublié
+- `/reset-password/{token}` - Réinitialisation du mot de passe
+- `/verify-email` - Vérification de l'email
+- `/confirm-password` - Confirmation du mot de passe
+
+### Routes protégées (authentification requise)
+- `/dashboard` - Tableau de bord (nécessite email vérifié)
+- `/profile` - Profil utilisateur
 
 ## Langues disponibles
 
@@ -214,6 +230,41 @@ Le formulaire de contact envoie un email à l'adresse configurée dans `MAIL_CON
 - Message de succès : "Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais."
 - Message d'erreur : "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
 
+## Authentification
+
+Le projet utilise **Laravel Breeze** avec Livewire pour l'authentification.
+
+### Créer un compte administrateur
+
+```bash
+php artisan tinker
+```
+
+Puis dans le shell Tinker :
+```php
+$user = new App\Models\User();
+$user->name = 'Admin';
+$user->email = 'admin@ruthsafdie.com';
+$user->password = bcrypt('votre-mot-de-passe');
+$user->email_verified_at = now();
+$user->save();
+```
+
+### Fonctionnalités d'authentification
+
+- **Inscription** : Création de compte avec nom, email et mot de passe
+- **Connexion** : Authentification par email/mot de passe
+- **Mot de passe oublié** : Réinitialisation par email
+- **Vérification email** : Confirmation de l'adresse email
+- **Gestion du profil** : Modification des informations, changement de mot de passe, suppression du compte
+- **Déconnexion** : Fermeture de session sécurisée
+
+### Middleware
+
+Les routes protégées utilisent les middleware :
+- `auth` - Vérifie que l'utilisateur est connecté
+- `verified` - Vérifie que l'email est confirmé
+
 ## Commandes utiles
 
 ```bash
@@ -225,7 +276,7 @@ php artisan view:clear
 # Voir les logs
 tail -f storage/logs/laravel.log
 
-# Voir les emails en développement
+# Voir les emails en développement (connexion, réinitialisation, etc.)
 tail -f storage/logs/laravel.log | grep "Message-ID"
 
 # Lancer les tests (si configurés)
@@ -235,6 +286,9 @@ php artisan test
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
+
+# Voir toutes les routes
+php artisan route:list
 ```
 
 ## Maintenance
