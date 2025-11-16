@@ -1,59 +1,290 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ruth Safdie Interiors
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Site web professionnel pour Ruth Safdie Interiors - Cabinet d'architecture d'intérieur.
 
-## About Laravel
+## Technologies utilisées
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Laravel 11** - Framework PHP
+- **Livewire 3** - Framework pour composants dynamiques
+- **Tailwind CSS** - Framework CSS
+- **Alpine.js** - Framework JavaScript léger
+- **SQLite** - Base de données
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fonctionnalités
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- ✅ Site multi-pages responsive (Home, Projects, Notre Style, About, Contact)
+- ✅ Système de traduction multilingue (FR/EN/ES/IT)
+- ✅ Formulaire de contact avec envoi d'email
+- ✅ Validation des formulaires
+- ✅ Messages de succès/erreur
+- ✅ Navigation dynamique avec indicateur de page active
+- ✅ Carrousels d'images interactifs
+- ✅ Design moderne et élégant
 
-## Learning Laravel
+## Prérequis
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Avant de commencer, assurez-vous d'avoir installé :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **PHP >= 8.2**
+- **Composer**
+- **Node.js >= 18** et **npm**
+- **SQLite** (généralement préinstallé sur Mac/Linux)
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Cloner le projet
 
-### Premium Partners
+```bash
+git clone https://github.com/Bimcode-Repo/ruthdiane.git
+cd ruthdiane
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 2. Installer les dépendances PHP
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Installer les dépendances JavaScript
 
-## Code of Conduct
+```bash
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Configurer l'environnement
 
-## Security Vulnerabilities
+Copier le fichier `.env.example` vers `.env` :
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
 
-## License
+### 5. Générer la clé d'application
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+```
+
+### 6. Créer la base de données
+
+```bash
+touch database/database.sqlite
+```
+
+### 7. Exécuter les migrations
+
+```bash
+php artisan migrate
+```
+
+### 8. Créer le lien symbolique pour le storage
+
+```bash
+php artisan storage:link
+```
+
+### 9. Configuration de l'email (optionnel)
+
+Dans le fichier `.env`, configurez vos paramètres email :
+
+**Pour le développement (logs uniquement) :**
+```env
+MAIL_MAILER=log
+MAIL_CONTACT="votre-email@example.com"
+```
+
+**Pour la production (SMTP) :**
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=votre-email@gmail.com
+MAIL_PASSWORD=votre-mot-de-passe-app
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="noreply@ruthsafdie.com"
+MAIL_FROM_NAME="Ruth Safdie Interiors"
+MAIL_CONTACT="contact@ruthsafdie.com"
+```
+
+> **Note :** Pour Gmail, vous devez créer un "Mot de passe d'application" dans les paramètres de sécurité Google.
+
+## Lancement du projet
+
+### En développement
+
+Vous devez lancer **deux** commandes dans des terminaux séparés :
+
+**Terminal 1 - Serveur Laravel :**
+```bash
+php artisan serve
+```
+
+**Terminal 2 - Compilation des assets :**
+```bash
+npm run dev
+```
+
+Le site sera accessible sur : **http://localhost:8000**
+
+### En production
+
+**Compiler les assets :**
+```bash
+npm run build
+```
+
+**Configurer le serveur web** (Nginx/Apache) pour pointer vers le dossier `public/`
+
+## Structure du projet
+
+```
+ruthdiane/
+├── app/
+│   ├── Livewire/           # Composants Livewire
+│   │   ├── Welcome.php     # Page d'accueil
+│   │   ├── Projects.php    # Page projets
+│   │   ├── NotreStyle.php  # Page notre style
+│   │   ├── About.php       # Page à propos
+│   │   ├── Contact.php     # Page contact
+│   │   └── Projet.php      # Page projet individuel
+│   └── Mail/
+│       └── ContactFormMail.php  # Email de contact
+│
+├── lang/                    # Fichiers de traduction
+│   ├── fr/messages.php     # Traductions françaises
+│   ├── en/messages.php     # Traductions anglaises
+│   ├── es/messages.php     # Traductions espagnoles
+│   └── it/messages.php     # Traductions italiennes
+│
+├── resources/
+│   ├── css/
+│   │   └── app.css         # Styles Tailwind
+│   ├── js/
+│   │   └── app.js          # JavaScript principal
+│   └── views/
+│       ├── components/
+│       │   └── layouts/
+│       │       └── app.blade.php  # Layout principal
+│       ├── livewire/       # Vues Livewire
+│       └── emails/
+│           └── contact.blade.php  # Template email
+│
+├── public/
+│   ├── assets/
+│   │   └── icons/          # Icônes personnalisées
+│   └── medias/
+│       └── images/         # Images du site
+│
+├── routes/
+│   └── web.php             # Routes de l'application
+│
+└── tailwind.config.js      # Configuration Tailwind
+```
+
+## Routes disponibles
+
+- `/` - Page d'accueil
+- `/projects` - Liste des projets
+- `/notre-style` - Notre style
+- `/about` - À propos
+- `/contact` - Formulaire de contact
+- `/projet/{slug}` - Page projet individuel
+
+## Langues disponibles
+
+Le site supporte 4 langues :
+- 🇫🇷 Français (FR) - Langue par défaut
+- 🇬🇧 Anglais (EN)
+- 🇪🇸 Espagnol (ES)
+- 🇮🇹 Italien (IT)
+
+La langue est persistée en session et peut être changée via les boutons en haut à droite de chaque page.
+
+## Formulaire de contact
+
+Le formulaire de contact envoie un email à l'adresse configurée dans `MAIL_CONTACT`.
+
+**Champs requis :**
+- Nom et prénom (min: 2 caractères)
+- Email (format email valide)
+- Téléphone (min: 5 caractères)
+- Message (min: 10 caractères, max: 2000 caractères)
+
+**Messages :**
+- Message de succès : "Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais."
+- Message d'erreur : "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
+
+## Commandes utiles
+
+```bash
+# Vider le cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Voir les logs
+tail -f storage/logs/laravel.log
+
+# Voir les emails en développement
+tail -f storage/logs/laravel.log | grep "Message-ID"
+
+# Lancer les tests (si configurés)
+php artisan test
+
+# Optimiser pour la production
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## Maintenance
+
+### Ajouter une nouvelle traduction
+
+1. Ouvrir les fichiers dans `lang/*/messages.php`
+2. Ajouter la clé de traduction dans chaque langue
+3. Utiliser dans les vues : `{{ __('messages.votre_cle') }}`
+
+### Modifier les couleurs du thème
+
+Les couleurs sont définies dans `tailwind.config.js` :
+
+```js
+colors: {
+  'primary': '#C4A882',
+  'background': '#3D3935',
+  'background-darker': '#2D2A27',
+  'light': '#FFFCF5',
+}
+```
+
+## Problèmes courants
+
+**Erreur "Class 'App\Mail\ContactFormMail' not found"**
+```bash
+composer dump-autoload
+```
+
+**Les assets ne se chargent pas**
+```bash
+npm run build
+php artisan storage:link
+```
+
+**Les emails ne partent pas**
+- Vérifier la configuration MAIL_* dans `.env`
+- Vérifier les logs : `storage/logs/laravel.log`
+- En développement, utiliser `MAIL_MAILER=log`
+
+**Erreur de permissions**
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+## Support
+
+Pour toute question ou problème, contactez l'équipe de développement.
+
+## Licence
+
+Projet propriétaire - Tous droits réservés © Ruth Safdie Interiors
