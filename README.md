@@ -185,7 +185,7 @@ ruthdiane/
 
 - `/` - Page d'accueil
 - `/projects` - Liste des projets
-- `/notre-style` - Notre style
+- `/our-style` - Notre style
 - `/about` - À propos
 - `/contact` - Formulaire de contact
 - `/projet/{slug}` - Page projet individuel

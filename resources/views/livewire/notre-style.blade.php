@@ -74,7 +74,7 @@
             <nav class="flex flex-col gap-4 text-light text-[16px]" style="font-family: 'Andada Pro', serif;">
                 <a href="/" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.home') }}</a>
                 <a href="/projects" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.projects') }}</a>
-                <a href="/notre-style" class="text-primary whitespace-nowrap">{{ __('messages.our_style') }}</a>
+                <a href="/our-style" class="text-primary whitespace-nowrap">{{ __('messages.our_style') }}</a>
                 <a href="/about" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.about') }}</a>
                 <a href="/contact" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.contact') }}</a>
             </nav>
@@ -86,7 +86,7 @@
         <nav class="flex items-center gap-[60px] text-light text-[22px]" style="font-family: 'Andada Pro', serif;">
             <a href="/" class="hover:text-primary transition-colors duration-300">{{ __('messages.home') }}</a>
             <a href="/projects" class="hover:text-primary transition-colors duration-300">{{ __('messages.projects') }}</a>
-            <a href="/notre-style" class="relative hover:text-primary transition-colors duration-300">
+            <a href="/our-style" class="relative hover:text-primary transition-colors duration-300">
                 <!-- Trait vertical centré sur la bordure du header au niveau de Notre style -->
                 <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-[2.5px] w-px h-[25px] bg-light"></div>
                 {{ __('messages.our_style') }}

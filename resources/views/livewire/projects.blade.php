@@ -74,7 +74,7 @@
             <nav class="flex flex-col gap-4 text-light text-[16px]" style="font-family: 'Andada Pro', serif;">
                 <a href="/" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.home') }}</a>
                 <a href="/projects" class="text-primary whitespace-nowrap">{{ __('messages.projects') }}</a>
-                <a href="/notre-style" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.our_style') }}</a>
+                <a href="/our-style" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.our_style') }}</a>
                 <a href="/about" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.about') }}</a>
                 <a href="/contact" class="hover:text-primary transition-colors duration-300 whitespace-nowrap">{{ __('messages.contact') }}</a>
             </nav>
@@ -90,7 +90,7 @@
                 <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-[2.5px] w-px h-[25px] bg-light"></div>
                 {{ __('messages.projects') }}
             </a>
-            <a href="/notre-style" class="hover:text-primary transition-colors duration-300">{{ __('messages.our_style') }}</a>
+            <a href="/our-style" class="hover:text-primary transition-colors duration-300">{{ __('messages.our_style') }}</a>
             <a href="/about" class="hover:text-primary transition-colors duration-300">{{ __('messages.about') }}</a>
             <a href="/contact" class="hover:text-primary transition-colors duration-300">{{ __('messages.contact') }}</a>
         </nav>
