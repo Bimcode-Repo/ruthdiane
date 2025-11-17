@@ -20,7 +20,11 @@ class LanguageSwitcher extends Component
         session(['locale' => $lang]);
         app()->setLocale(strtolower($lang));
 
-        return $this->redirect(request()->header('Referer') ?: '/', navigate: true);
+        $currentUrl = url()->current();
+
+        $this->dispatch('language-changed');
+
+        return redirect($currentUrl);
     }
 
     public function render()
