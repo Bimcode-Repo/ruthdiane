@@ -14,9 +14,7 @@
     @livewireStyles
 </head>
 <body>
-    <div class="max-w-8xl mx-auto">
-        {{ $slot }}
-    </div>
+    {{ $slot }}
 
     <!-- Footer -->
     <footer class="bg-background py-12 md:py-16">

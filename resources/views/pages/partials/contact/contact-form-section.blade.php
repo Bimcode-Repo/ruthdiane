@@ -2,12 +2,12 @@
     <div class="container mx-auto px-8 py-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold" font-andada>{{ __('messages.lorem_title') }}</h2>
+                <h2 class="text-[40px] md:text-[60px] text-light font-bold font-andada">{{ __('messages.lorem_title') }}</h2>
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
             <div>
-                <p class="text-light text-[18px] md:text-[25px] leading-relaxed" font-joan>
+                <p class="text-light text-[18px] md:text-[25px] leading-relaxed font-joan">
                     {{ __('messages.lorem_medium') }}
                 </p>
             </div>
@@ -101,9 +101,9 @@
                         </a>
                     </div>
 
-                    <p class="text-white text-[24px] md:text-[40px] mb-8 md:mb-[60px]" font-joan>01 23 45 67 87 10</p>
+                    <p class="text-white text-[24px] md:text-[40px] mb-8 md:mb-[60px] font-joan">01 23 45 67 87 10</p>
 
-                    <p class="text-white text-[20px] md:text-[40px]" font-joan>contact@rsi.com</p>
+                    <p class="text-white text-[20px] md:text-[40px] font-joan">contact@rsi.com</p>
                 </div>
             </div>
         </div>

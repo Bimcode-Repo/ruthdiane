@@ -2,7 +2,7 @@
     <div class="max-w-8xl mx-auto px-4 md:px-8 py-12 md:py-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold">{{ __('messages.our_style') }}</h2>
+                <h2 class="text-[40px] md:text-[60px] text-light font-bold font-andada">{{ __('messages.our_style') }}</h2>
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
@@ -22,7 +22,7 @@
                      alt="Blur Effect"
                      class="absolute inset-0 w-full h-full object-cover pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-light">Lorem ipsum dolor</p>
+                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-andada-semibold">Lorem ipsum dolor</p>
             </div>
 
             <div class="relative overflow-hidden group">
@@ -33,7 +33,7 @@
                      alt="Blur Effect"
                      class="absolute inset-0 w-full h-full object-cover pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-light">Lorem ipsum dolor</p>
+                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-andada-semibold">Lorem ipsum dolor</p>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
                      alt="Blur Effect"
                      class="absolute inset-0 w-full h-full object-cover pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-light">Lorem ipsum dolor</p>
+                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-andada-semibold">Lorem ipsum dolor</p>
             </div>
 
             <div class="relative overflow-hidden group">
@@ -57,7 +57,7 @@
                      alt="Blur Effect"
                      class="absolute inset-0 w-full h-full object-cover pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-light">Lorem ipsum dolor</p>
+                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-andada-semibold">Lorem ipsum dolor</p>
             </div>
 
             <div class="relative overflow-hidden group">
@@ -68,7 +68,7 @@
                      alt="Blur Effect"
                      class="absolute inset-0 w-full h-full object-cover pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-light">Lorem ipsum dolor</p>
+                <p class="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-light text-xl md:text-2xl font-andada-semibold">Lorem ipsum dolor</p>
             </div>
         </div>
     </div>

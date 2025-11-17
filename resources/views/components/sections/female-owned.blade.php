@@ -8,7 +8,7 @@
     <div class="bg-[#E8C5CA] flex flex-col justify-center px-6 md:px-12 lg:px-[80px] py-8 md:py-12 lg:py-[150px] flex-1">
         <div class="w-full">
             <div class="mb-6 md:mb-8 lg:mb-10">
-                <h1 class="text-[32px] md:text-[40px] lg:text-[50px] text-[#3D3935] font-semibold leading-tight">
+                <h1 class="text-[32px] md:text-[40px] lg:text-[50px] text-[#3D3935] font-semibold leading-tight font-andada">
                     {{ __('messages.female_owned_title') }}
                 </h1>
             </div>

@@ -1,7 +1,7 @@
 <div class="bg-background-darker py-12 md:py-16 lg:py-20">
     <div class="max-w-8xl mx-auto px-6 md:px-12">
         <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-16">
-            <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light">{{ __('messages.blog') }}</h1>
+            <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light font-andada">{{ __('messages.blog') }}</h1>
             <div class="w-[40px] md:w-16 h-[1px] bg-white md:order-first"></div>
         </div>
     </div>

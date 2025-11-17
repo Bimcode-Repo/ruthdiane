@@ -2,7 +2,7 @@
     <div class="container mx-auto px-8">
         <div class="flex flex-col lg:flex-row gap-[20px]">
             <div class="bg-[#C4A882] flex items-center justify-center w-full lg:w-[460px] h-[150px] md:h-[175px]">
-                <h2 class="text-4xl md:text-6xl text-[#3D3935] font-light">{{ __('messages.press') }}</h2>
+                <h2 class="text-4xl md:text-6xl text-[#3D3935] font-light font-andada">{{ __('messages.press') }}</h2>
             </div>
 
             <div class="bg-primary flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-6 md:py-0 w-full lg:w-[840px] h-auto md:h-[175px] gap-6 md:gap-0">

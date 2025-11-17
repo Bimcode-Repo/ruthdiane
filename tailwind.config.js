@@ -1,4 +1,5 @@
 import forms from '@tailwindcss/forms';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -16,7 +17,7 @@ export default {
             },
             colors: {
                 'background': '#3D3935',
-                'background-darker': '#2D2925',
+                'background-darker': '#34302D',
                 'primary': '#C4A882',
                 'light': '#FFFFFF',
             },

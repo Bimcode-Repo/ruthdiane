@@ -28,7 +28,7 @@
     <x-navigation.social />
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 px-4">
-        <h1 class="text-light text-[40px] md:text-[60px] font-bold text-center" font-andada>{{ $title }}</h1>
+        <h1 class="text-light text-[40px] md:text-[60px] font-bold text-center font-andada">{{ $title }}</h1>
     </div>
 
     <div class="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
