@@ -1,4 +1,4 @@
-<div>
+<x-layouts.app>
     <x-hero.our-style />
 
     <x-sections.project-gallery />
@@ -8,4 +8,4 @@
     @include('pages.partials.projects.about-section')
 
     <x-sections.blog-carousel />
-</div>
+</x-layouts.app>

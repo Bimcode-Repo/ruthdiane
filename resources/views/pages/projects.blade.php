@@ -1,4 +1,4 @@
-<div>
+<x-layouts.app>
     <x-hero.projects />
 
     @include('pages.partials.projects.projects-carousel')
@@ -10,4 +10,4 @@
     @include('pages.partials.projects.about-section')
 
     <x-sections.blog-carousel />
-</div>
+</x-layouts.app>

@@ -1,4 +1,4 @@
-<div>
+<x-layouts.app>
     <x-hero.about />
 
     @include('pages.partials.about.intro-banner')
@@ -14,4 +14,4 @@
     @include('pages.partials.about.main-section')
 
     <x-sections.blog-carousel />
-</div>
+</x-layouts.app>
