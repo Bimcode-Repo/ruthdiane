@@ -5,7 +5,7 @@ use App\Livewire\Projet;
 use App\Livewire\Contact;
 
 // Public routes
-Route::view('/', 'pages.home')->name('home');
+Route::view('/', 'pages.maintenance')->name('maintenance');
 Route::view('/projects', 'pages.projects')->name('projects');
 Route::view('/our-style', 'pages.our-style')->name('our-style');
 Route::get('/projet/{slug}', Projet::class)->name('projet');
