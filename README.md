@@ -329,6 +329,31 @@ plugins: [
 
 ## Problèmes courants
 
+**Le build Vite se casse lors du changement de page**
+
+Si Vite (npm run dev) crash lors de la navigation:
+
+1. Arrêter Vite (Ctrl+C)
+2. Nettoyer les processus:
+```bash
+pkill -f vite
+```
+3. Vider les caches:
+```bash
+rm -rf node_modules/.vite
+npm run build
+```
+4. Redémarrer:
+```bash
+npm run dev
+```
+
+Si le problème persiste, utiliser le mode build au lieu de dev:
+```bash
+npm run build
+php artisan serve
+```
+
 **Erreur "Class 'App\Mail\ContactFormMail' not found"**
 ```bash
 composer dump-autoload
