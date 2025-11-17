@@ -10,22 +10,22 @@
     <ul class="space-y-4 md:space-y-6">
         <li class="relative">
             <div class="absolute left-[-16.5px] md:left-[-40.5px] top-1/2 -translate-y-1/2 w-[15px] h-px bg-light"></div>
-            <a href="/" wire:navigate class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
+            <a href="/" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
                 {{ __('messages.home') }}
             </a>
         </li>
         <li>
-            <a href="/our-style" wire:navigate class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
+            <a href="/our-style" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
                 {{ __('messages.our_style') }}
             </a>
         </li>
         <li>
-            <a href="/about" wire:navigate class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
+            <a href="/about" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
                 {{ __('messages.about') }}
             </a>
         </li>
         <li>
-            <a href="/contact" wire:navigate class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
+            <a href="/contact" class="text-light text-[24px] md:text-[40px] font-bold hover:text-primary transition-colors duration-300">
                 {{ __('messages.contact') }}
             </a>
         </li>

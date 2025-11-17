@@ -32,7 +32,7 @@
                 @if($chunkSize == 2)
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 {{ $index < $totalProjects ? 'mb-4 md:mb-6' : '' }}">
                         @foreach($chunk as $project)
-                            <a href="{{ route('projet', $project->slug) }}" wire:navigate class="relative overflow-hidden group cursor-pointer">
+                            <a href="{{ route('projet', $project->slug) }}" class="relative overflow-hidden group cursor-pointer">
                                 <img src="{{ asset($project->image) }}"
                                      alt="{{ $project->title }}"
                                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
@@ -47,7 +47,7 @@
                 @else
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 {{ $index < $totalProjects ? 'mb-4 md:mb-6' : '' }}">
                         @foreach($chunk as $project)
-                            <a href="{{ route('projet', $project->slug) }}" wire:navigate class="relative overflow-hidden group cursor-pointer">
+                            <a href="{{ route('projet', $project->slug) }}" class="relative overflow-hidden group cursor-pointer">
                                 <img src="{{ asset($project->image) }}"
                                      alt="{{ $project->title }}"
                                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
