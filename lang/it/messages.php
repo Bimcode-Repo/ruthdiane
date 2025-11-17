@@ -6,7 +6,8 @@ return [
     'projects' => 'Progetti',
     'about' => 'Chi Siamo',
     'contact' => 'Contatto',
-    'our_style' => 'Il Nostro Stile',
+    'our_style' => 'Progetti',
+    'styles' => 'Stili',
 
     // Header
     'site_name' => 'Ruth Safdie Interiors',
@@ -53,6 +54,8 @@ return [
     // Projects
     'all_projects' => 'Tutti i Nostri Progetti',
     'project_name' => 'Nome del Progetto',
+    'all_styles' => 'Tutti i Nostri Stili',
+    'style_name' => 'Nome dello Stile',
 
     // Curatorial text
     'curatorial_text' => 'Il nostro approccio curatoriale integra opere d\'arte accuratamente selezionate per creare interni che riflettono la vostra identità con raffinatezza e autenticità.',

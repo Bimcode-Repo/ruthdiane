@@ -2,25 +2,24 @@
 
 namespace App\Livewire;
 
+use App\Models\Project;
 use Livewire\Component;
 
 class Projet extends Component
 {
     public $slug;
-    public $currentLanguage = 'FR';
+    public $project;
 
     public function mount($slug)
     {
         $this->slug = $slug;
-        $this->currentLanguage = session('locale', 'FR');
-        app()->setLocale(strtolower($this->currentLanguage));
-    }
+        $this->project = Project::with(['sections.images'])
+            ->where('slug', $slug)
+            ->where('is_published', true)
+            ->firstOrFail();
 
-    public function setLanguage($lang)
-    {
-        $this->currentLanguage = $lang;
-        session(['locale' => $lang]);
-        app()->setLocale(strtolower($lang));
+        $currentLanguage = session('locale', 'FR');
+        app()->setLocale(strtolower($currentLanguage));
     }
 
     public function render()

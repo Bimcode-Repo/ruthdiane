@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;500;600;700;800&family=Joan&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body>
     <div class="max-w-8xl mx-auto">
@@ -53,5 +54,7 @@
             </div>
         </div>
     </footer>
+
+    @livewireScripts
 </body>
 </html>

@@ -301,15 +301,30 @@ php artisan route:list
 
 ### Modifier les couleurs du thème
 
-Les couleurs sont définies dans `tailwind.config.js` :
+Les couleurs et configurations personnalisées sont définies dans `tailwind.config.js` :
 
 ```js
-colors: {
-  'primary': '#C4A882',
-  'background': '#3D3935',
-  'background-darker': '#2D2A27',
-  'light': '#FFFCF5',
-}
+theme: {
+  extend: {
+    fontFamily: {
+      sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+    },
+    colors: {
+      'background': '#3D3935',
+      'background-darker': '#2D2925',
+      'primary': '#C4A882',
+      'light': '#FFFFFF',
+    },
+    maxWidth: {
+      '8xl': '1920px',
+    },
+  },
+},
+
+plugins: [
+  forms,
+  require('flowbite/plugin')
+],
 ```
 
 ## Problèmes courants

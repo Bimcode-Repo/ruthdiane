@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .font-joan {
+        font-family: 'Joan', serif;
+    }
+
+    .font-andada {
+        font-family: 'Andada Pro', serif;
+    }
+
+    .font-andada-semibold {
+        font-family: 'Andada Pro', serif;
+        font-weight: 600;
+    }
+}

@@ -22,7 +22,6 @@ class ContactFormMail extends Mailable
         public string $phone,
         public string $message
     ) {
-        //
     }
 
     /**
