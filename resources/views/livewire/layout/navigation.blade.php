@@ -22,7 +22,11 @@ new class extends Component
             <div class="flex">
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('admin.dashboard') }}" wire:navigate>
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <img
+                            src="{{ asset('medias/images/logo/logo.svg') }}"
+                            alt="Ruth Diane Logo"
+                            class="w-[28px] h-[60px] md:w-[35px] md:h-[75px]"
+                        >
                     </a>
                 </div>
 

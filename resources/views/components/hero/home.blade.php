@@ -19,7 +19,5 @@
 
     <x-navigation />
 
-    <div class="absolute bottom-[20px] md:bottom-[40px] right-4 md:right-16 z-20">
-        <x-navigation.social />
-    </div>
+    <x-navigation.social />
 </div>

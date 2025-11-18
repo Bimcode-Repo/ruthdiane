@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import mkcert from 'vite-plugin-mkcert';
+import fs from 'fs';
 
 export default defineConfig({
     base: '/',
@@ -13,9 +13,12 @@ export default defineConfig({
                 'app/View/Components/**',
             ],
         }),
-        mkcert() // active le plugin mkcert qui crée un HTTPS local valide
     ],
     server: {
+        https: {
+            key: fs.readFileSync('./certs/jonathan-ruthdiane.websrc.fr+3-key.pem'),
+            cert: fs.readFileSync('./certs/jonathan-ruthdiane.websrc.fr+3.pem'),
+        },
         hmr: {
             host: 'jonathan-ruthdiane.websrc.fr',
             protocol: 'wss',
@@ -24,7 +27,7 @@ export default defineConfig({
         watch: {
             usePolling: true,
         },
-        https: true,
+        host: true,
         port: 4688,
     },
 });

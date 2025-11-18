@@ -9,11 +9,10 @@ export default {
         './resources/views/**/*.blade.php',
         './node_modules/flowbite/**/*.js',
     ],
-
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Joan', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 'background': '#3D3935',

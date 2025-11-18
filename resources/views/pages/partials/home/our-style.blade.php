@@ -1,4 +1,4 @@
-<div class="bg-background min-h-screen">
+<div class="bg-background">
     <div class="max-w-8xl mx-auto px-4 md:px-8 py-12 md:py-16">
         <x-sections.title
             :title="__('messages.our_style')"
@@ -66,15 +66,15 @@
 
         <div class="flex flex-col md:flex-row justify-between items-center mt-12 md:mt-16 gap-8 md:gap-6">
             <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-                <p class="text-light text-[16px] md:text-[25px] text-center md:text-left font-andada">{{ __('messages.see_all_styles') }}</p>
+                <p class="text-light text-[16px] text-center md:text-left font-andada">{{ __('messages.see_all_styles') }}</p>
                 <a href="#" class="flex items-center gap-2 md:gap-3 group" aria-label="Instagram">
                     <img src="{{ asset('assets/icons/instagram_primary.svg') }}" alt="Instagram" class="w-5 h-5 md:w-7 md:h-7 group-hover:opacity-80 transition-opacity">
-                    <span class="text-primary text-[16px] md:text-[25px] group-hover:opacity-80 transition-opacity font-andada">{{ __('messages.instagram') }}</span>
+                    <span class="text-primary text-[16px] group-hover:opacity-80 transition-opacity font-andada">{{ __('messages.instagram') }}</span>
                 </a>
             </div>
 
             <a href="#" class="flex items-center gap-2 md:gap-4 text-primary hover:opacity-80 transition-opacity group">
-                <span class="text-[16px] md:text-[25px] font-andada">{{ __('messages.discover_more') }}</span>
+                <span class="text-[16px] font-andada">{{ __('messages.discover_more') }}</span>
                 <svg class="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

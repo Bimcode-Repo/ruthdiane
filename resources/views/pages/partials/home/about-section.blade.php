@@ -11,7 +11,7 @@
                  class="w-full h-full object-cover">
 
             <div class="absolute inset-0 flex items-center justify-center px-6 md:px-16">
-                <p class="text-light text-[20px] md:text-[40px] text-center max-w-5xl leading-snug md:leading-relaxed font-joan">
+                <p class="text-light text-[24px] text-center max-w-5xl leading-snug md:leading-relaxed font-joan" data-aos="zoomin">
                     {{ __('messages.curatorial_text') }}
                 </p>
             </div>

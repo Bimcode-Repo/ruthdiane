@@ -10,10 +10,10 @@
 
     <div x-show="open" @click.away="open = false" x-transition class="absolute top-12 left-0">
         <nav class="flex flex-col gap-4 text-light text-[16px] font-andada">
-            <a href="/" class="{{ $active === 'home' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.home') }}</a>
-            <a href="/our-style" class="{{ $active === 'our-style' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.our_style') }}</a>
-            <a href="/about" class="{{ $active === 'about' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.about') }}</a>
-            <a href="/contact" class="{{ $active === 'contact' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.contact') }}</a>
+            <a href="{{ route('home') }}" class="{{ $active === 'home' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.home') }}</a>
+            <a href="{{ route('our-style') }}" class="{{ $active === 'our-style' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.our_style') }}</a>
+            <a href="{{ route('about') }}" class="{{ $active === 'about' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.about') }}</a>
+            <a href="{{ route('contact') }}" class="{{ $active === 'contact' ? 'text-primary' : 'hover:text-primary transition-colors duration-300' }} whitespace-nowrap">{{ __('messages.contact') }}</a>
         </nav>
     </div>
 </div>

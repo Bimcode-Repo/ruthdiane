@@ -27,9 +27,9 @@
     </button>
 
     <div class="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
-        <p class="text-light text-[16px] md:text-[20px] tracking-wider mb-[15px] md:mb-[20px]">{{ __('messages.scroll') }}</p>
+        <p class="text-light text-[16px] md:text-[20px] tracking-wider mb-[15px] md:mb-[20px]" data-aos="fade-down" data-aos-delay="2100">{{ __('messages.scroll') }}</p>
 
-        <div class="w-px h-[35px] md:h-[47px] bg-light mb-[30px] md:mb-[45px]"></div>
+        <div class="w-px h-[35px] md:h-[47px] bg-light mb-[30px] md:mb-[45px]" data-aos="fade-down" data-aos-delay="2200"></div>
 
         <div class="flex gap-3 md:gap-4">
             @for ($i = 0; $i < $totalSlides; $i++)

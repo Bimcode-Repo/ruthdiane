@@ -2,12 +2,12 @@
     <div class="max-w-8xl mx-auto px-6 md:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-8 md:mb-16">
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h1 class="text-[40px] md:text-6xl lg:text-7xl text-white font-light font-andada">{{ __('messages.all_projects') }}</h1>
+                @include('components.h.title1', ['title' => __('messages.all_projects')])
                 <div class="w-[40px] md:w-16 h-[1px] bg-white md:order-first"></div>
             </div>
 
             <div>
-                <p class="text-light text-[18px] md:text-[25px] leading-relaxed font-joan">
+                <p class="text-light text-lg leading-relaxed font-joan">
                     {{ __('messages.lorem_long') }}
                 </p>
             </div>
