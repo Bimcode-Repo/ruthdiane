@@ -1,5 +1,5 @@
 <div class="bg-background pb-16">
-    <div class="container mx-auto px-8">
+    <div class="container mx-auto px-8 pb-16">
         <div class="flex flex-col lg:flex-row gap-[20px]">
             <div class="bg-[#C4A882] flex items-center justify-center w-full lg:w-1/3 h-[150px] md:h-[175px]" data-aos="fade-right">
                 <h2 class="text-4xl md:text-6xl text-[#3D3935] font-light font-andada">{{ __('messages.press') }}</h2>

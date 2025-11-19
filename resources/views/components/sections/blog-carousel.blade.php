@@ -1,5 +1,5 @@
-<div class="bg-background-darker py-12 md:py-16 lg:py-20">
-    <div class="max-w-8xl mx-auto px-[20px] md:px-[40px]">
+<div class="bg-background-darker py-16">
+    <div class="max-w-8xl mx-auto px-[20px] md:px-[40px] py-16">
         <div class="max-w-8xl mx-auto px-6 md:px-12">
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-16" data-aos="fade-up">
                 @include('components.h.title2', ['title' => __('messages.blog')])
@@ -34,7 +34,7 @@
     }" x-init="updateArrows()">
             <div x-ref="slider" @scroll="updateArrows()" class="flex gap-4 md:gap-6 overflow-x-hidden scroll-smooth relative" data-aos="fade-up">
                 @forelse ($blogs as $index => $blog)
-                    <div class="relative group overflow-hidden w-[280px] md:w-[530px] h-[195px] md:h-[369px] flex-shrink-0">
+                    <a href="{{ route('blog.show', ['slug' => $blog->slug]) }}" class="relative group overflow-hidden w-[280px] md:w-[530px] h-[195px] md:h-[369px] flex-shrink-0">
                         <img src="{{ asset($blog->image) }}"
                              alt="{{ $blog->title }}"
                              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -46,7 +46,7 @@
                                 {{ $blog->excerpt }}
                             </p>
                         </div>
-                    </div>
+                    </a>
                 @empty
                     <div class="text-white text-center w-full py-12">
                         <p class="text-xl">Aucun blog publié pour le moment.</p>

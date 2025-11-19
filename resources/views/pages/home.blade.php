@@ -11,7 +11,7 @@
 
     <x-sections.female-owned />
 
-    @include('pages.partials.home.about-section')
+    <x-sections.about />
 
     <x-sections.blog-carousel />
 </x-layouts.app>

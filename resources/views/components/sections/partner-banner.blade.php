@@ -1,4 +1,4 @@
-<div class="bg-[#C4A882] h-[200px] overflow-hidden relative flex items-center">
+<div class="bg-[#C4A882] overflow-hidden relative flex items-center py-16">
     <div id="logo-slider" class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide flex items-center justify-center">

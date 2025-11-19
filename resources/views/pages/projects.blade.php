@@ -7,7 +7,7 @@
 
     <x-sections.partner-banner />
 
-    @include('pages.partials.projects.about-section')
+    <x-sections.about />
 
     <x-sections.blog-carousel />
 </x-layouts.app>

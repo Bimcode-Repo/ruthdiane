@@ -54,6 +54,7 @@ return [
     // Projects
     'all_projects' => 'All Our Projects',
     'project_name' => 'Project Name',
+    'blog_name' => 'Blog Name',
     'all_styles' => 'All Our Styles',
     'style_name' => 'Style Name',
 
