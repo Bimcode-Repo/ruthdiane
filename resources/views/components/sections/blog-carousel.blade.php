@@ -1,6 +1,6 @@
 <div class="bg-background-darker py-16">
     <div class="max-w-8xl mx-auto px-[20px] md:px-[40px] py-16">
-        <div class="max-w-8xl mx-auto px-6 md:px-12">
+        <div class="max-w-8xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-16" data-aos="fade-up">
                 @include('components.h.title2', ['title' => __('messages.blog')])
                 <div class="w-[40px] md:w-16 h-[1px] bg-white md:order-first"></div>

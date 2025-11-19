@@ -76,7 +76,7 @@
                 </a>
             </div>
 
-            <a href="#" class="flex items-center gap-2 md:gap-4 text-primary hover:opacity-80 transition-opacity group">
+            <a href="{{route('projects')}}" class="flex items-center gap-2 md:gap-4 text-primary hover:opacity-80 transition-opacity group">
                 <span class="text-[16px] font-andada">{{ __('messages.discover_more') }}</span>
                 <svg class="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

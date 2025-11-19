@@ -9,11 +9,15 @@ class TrackFirstVisit
 {
     public function handle(Request $request, Closure $next)
     {
-        // session()->forget('visited');
+        $visits = session('visits', 0);
+        $visits++;
 
-        if (!session()->has('visited')) {
+        if ($visits >= 2) {
             session(['visited' => true]);
         }
+
+        session(['visits' => $visits]);
+
         return $next($request);
     }
 }
