@@ -2,8 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Mail\ContactAdminMail;
+use App\Mail\ContactClientMail;
 use App\Models\ContactMessage;
 use Livewire\Component;
+use Illuminate\Support\Facades\Mail;
 
 class Contact extends Component
 {
@@ -39,15 +42,22 @@ class Contact extends Component
         $this->errorMessage = '';
 
         try {
-            ContactMessage::create([
+            $contact = ContactMessage::create([
                 'name' => $this->name,
                 'email' => $this->email,
                 'phone' => $this->phone,
                 'message' => $this->message,
             ]);
 
-            $this->successMessage = __('messages.contact_success');
+            $adminEmail = env('MAIL_ADMIN', 'jonathan@websource.fr');
 
+            // Envoi à l'admin (HTML sécurisé)
+            Mail::to($adminEmail)->send(new ContactAdminMail($contact));
+
+            // Envoi au client (HTML sécurisé)
+            Mail::to($contact->email)->send(new ContactClientMail($contact));
+
+            $this->successMessage = __('messages.contact_success');
             $this->reset(['name', 'email', 'phone', 'message']);
         } catch (\Exception $e) {
             $this->errorMessage = __('messages.contact_error');
