@@ -7,5 +7,7 @@
 
     @include('pages.partials.contact.press-section')
 
-    <x-sections.blog-carousel />
+    @if(blogEnabled())
+        <x-sections.blog-carousel />
+    @endif
 </div>

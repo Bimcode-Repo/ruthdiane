@@ -1,76 +1,134 @@
-<div>
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Gestion des Projets
-            </h2>
-            <a href="{{ route('admin.projects.create') }}" wire:navigate>
-                <x-primary-button>
-                    Créer un projet
-                </x-primary-button>
-            </a>
+<div class="space-y-6">
+    <div class="flex items-center justify-between">
+        <div>
+            <flux:heading size="xl">Projets</flux:heading>
+            <flux:subheading>Gérez vos projets d'architecture d'intérieur</flux:subheading>
         </div>
-    </x-slot>
+        <flux:button href="{{ route('admin.projects.create') }}" wire:navigate icon="plus" variant="primary">
+            Nouveau projet
+        </flux:button>
+    </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @if (session()->has('message'))
-                <div class="mb-4 p-4 bg-green-100 text-green-700 rounded">
-                    {{ session('message') }}
-                </div>
-            @endif
-
-            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ordre</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Titre (FR)</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Slug</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Statut</th>
-                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        @forelse ($projects as $project)
-                            <tr>
-                                <td class="px-6 py-4 text-sm font-semibold text-gray-900">{{ $project->order }}</td>
-                                <td class="px-6 py-4">
-                                    @if($project->image)
-                                        <img src="{{ asset($project->image) }}" alt="{{ $project->title_fr }}" class="h-12 w-20 object-cover rounded">
-                                    @endif
-                                </td>
-                                <td class="px-6 py-4">{{ $project->title_fr }}</td>
-                                <td class="px-6 py-4 text-sm text-gray-500">{{ $project->slug }}</td>
-                                <td class="px-6 py-4">
-                                    <span class="px-2 py-1 text-xs rounded {{ $project->is_published ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' }}">
-                                        {{ $project->is_published ? 'Publié' : 'Brouillon' }}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 text-right text-sm space-x-2">
-                                    <a href="{{ route('admin.projects.edit', $project->id) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
-                                        Éditer
-                                    </a>
-                                    <button wire:click="deleteProject({{ $project->id }})" onclick="return confirm('Êtes-vous sûr ?')" class="text-red-600 hover:text-red-900">
-                                        Supprimer
-                                    </button>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="6" class="px-6 py-4 text-center text-gray-500">
-                                    Aucun projet trouvé. Créez-en un !
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+    @if (session()->has('success'))
+        <div class="bg-white border border-zinc-200 rounded-lg p-6">
+            <div class="flex items-center gap-2 text-green-700">
+                <flux:icon.check-circle class="size-5" />
+                <flux:text>{{ session('success') }}</flux:text>
             </div>
+        </div>
+    @endif
 
-            <div class="mt-4">
+    <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden">
+        <table class="min-w-full divide-y divide-zinc-200">
+            <thead class="bg-zinc-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider w-24">Image</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider">Titre</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider w-20">Ordre</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider w-28">Statut</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider w-28">Sections</th>
+                    <th class="px-6 py-3 text-right text-xs font-medium text-zinc-500 uppercase tracking-wider w-48">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-zinc-200">
+                @forelse($projects as $project)
+                    <tr wire:key="project-{{ $project->id }}" class="hover:bg-zinc-50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            @if($project->image)
+                                <img src="{{ asset($project->image) }}" alt="{{ $project->title_fr }}"
+                                     class="h-12 w-20 object-cover rounded border border-zinc-200">
+                            @else
+                                <div class="h-12 w-20 bg-zinc-100 rounded border border-zinc-200 flex items-center justify-center">
+                                    <flux:icon.photo class="size-6 text-zinc-400" />
+                                </div>
+                            @endif
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="text-sm font-medium text-zinc-900">{{ $project->title_fr }}</div>
+                            @if($project->title_en && $project->title_en !== $project->title_fr)
+                                <div class="text-sm text-zinc-500">{{ $project->title_en }}</div>
+                            @endif
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <flux:badge color="zinc" size="sm">{{ $project->order }}</flux:badge>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <flux:badge color="{{ $project->is_published ? 'green' : 'zinc' }}" size="sm">
+                                {{ $project->is_published ? 'Publié' : 'Brouillon' }}
+                            </flux:badge>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-500">
+                            {{ $project->sections->count() }} section(s)
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <div class="flex items-center justify-end gap-2">
+                                <flux:button
+                                    href="{{ route('admin.projects.edit', $project->id) }}"
+                                    wire:navigate
+                                    variant="filled"
+                                    size="sm"
+                                    icon="pencil"
+                                >
+                                    Modifier
+                                </flux:button>
+                                <flux:modal.trigger name="delete-project-{{ $project->id }}">
+                                    <flux:button
+                                        variant="danger"
+                                        size="sm"
+                                        icon="trash"
+                                        square
+                                    />
+                                </flux:modal.trigger>
+                            </div>
+                        </td>
+                    </tr>
+
+                    {{-- Delete Confirmation Modal --}}
+                    <flux:modal name="delete-project-{{ $project->id }}" class="md:w-96" wire:key="modal-delete-project-{{ $project->id }}">
+                        <div class="space-y-6">
+                            <div>
+                                <flux:heading size="lg">Supprimer le projet</flux:heading>
+                                <flux:subheading class="mt-2">
+                                    Êtes-vous sûr de vouloir supprimer ce projet ? Toutes les sections et images associées seront également supprimées.
+                                </flux:subheading>
+                                <div class="mt-4 p-3 bg-zinc-50 rounded-lg">
+                                    <div class="text-sm font-medium text-zinc-900">{{ $project->name_fr }}</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 justify-end">
+                                <flux:modal.close>
+                                    <flux:button variant="ghost">Annuler</flux:button>
+                                </flux:modal.close>
+                                <flux:modal.close>
+                                    <flux:button wire:click="deleteProject({{ $project->id }})" variant="danger">
+                                        Supprimer
+                                    </flux:button>
+                                </flux:modal.close>
+                            </div>
+                        </div>
+                    </flux:modal>
+                @empty
+                    <tr>
+                        <td colspan="6" class="px-6 py-12">
+                            <div class="flex flex-col items-center justify-center">
+                                <flux:icon.photo class="size-12 text-zinc-400 mb-4" />
+                                <flux:heading size="lg" class="mb-2">Aucun projet</flux:heading>
+                                <flux:subheading class="mb-4">Commencez par créer votre premier projet</flux:subheading>
+                                <flux:button href="{{ route('admin.projects.create') }}" wire:navigate icon="plus" variant="primary">
+                                    Créer un projet
+                                </flux:button>
+                            </div>
+                        </td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+
+        @if($projects->hasPages())
+            <div class="px-6 py-4 border-t border-zinc-200 bg-white">
                 {{ $projects->links() }}
             </div>
-        </div>
+        @endif
     </div>
 </div>

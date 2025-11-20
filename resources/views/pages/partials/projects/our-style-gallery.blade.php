@@ -1,13 +1,13 @@
-<div class="bg-background min-h-screen">
-    <div class="max-w-8xl mx-auto px-4 md:px-8 py-12 md:py-16">
+<div class="bg-background">
+<div class="max-w-8xl mx-auto px-4 md:px-8 py-12 md:py-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-baseline gap-8 md:gap-12 mb-12 md:mb-16">
             <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <h2 class="text-[40px] md:text-[60px] text-light font-bold font-andada">{{ __('messages.our_style') }}</h2>
+                @include('components.h.title2', ['title' => __('messages.our_style')])
                 <div class="w-[40px] md:w-[55px] h-[1px] bg-light md:order-first"></div>
             </div>
 
             <div>
-                <p class="text-light text-[18px] md:text-[25px] leading-relaxed font-joan">
+                <p class="text-light text-lg leading-relaxed font-joan">
                     {{ __('messages.lorem_medium') }}
                 </p>
             </div>
@@ -15,7 +15,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/styles/style-1.png') }}"
+                <img src="{{ asset('medias/images-hd/salon-1.png') }}"
                      alt="Interior 1"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -26,7 +26,7 @@
             </div>
 
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/styles/style-2.png') }}"
+                <img src="{{ asset('medias/images-hd/cuisine-1.png') }}"
                      alt="Interior 2"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -39,7 +39,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/styles/style-3.png') }}"
+                <img src="{{ asset('medias/images-hd/chambre-1.png') }}"
                      alt="Interior 3"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -50,7 +50,7 @@
             </div>
 
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/styles/style-4.png') }}"
+                <img src="{{ asset('medias/images-hd/background-1.png') }}"
                      alt="Interior 4"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -61,7 +61,7 @@
             </div>
 
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/styles/style-5.png') }}"
+                <img src="{{ asset('medias/images-hd/jardin-1.png') }}"
                      alt="Interior 5"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"

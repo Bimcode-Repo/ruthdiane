@@ -1,12 +1,36 @@
-<div class="bg-[#C4A882] h-[200px] overflow-hidden relative flex items-center">
-    <div class="flex gap-12 md:gap-20 animate-scroll">
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
-        <div class="text-[#3D3935] text-[30px] font-bold opacity-70 whitespace-nowrap">{{ __('messages.partner_logo') }}</div>
+<div class="bg-[#C4A882] overflow-hidden relative flex items-center py-16">
+    <div id="logo-slider" class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+            </div>
+        </div>
     </div>
 </div>

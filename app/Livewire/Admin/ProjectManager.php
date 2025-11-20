@@ -12,14 +12,26 @@ class ProjectManager extends Component
 
     public function deleteProject($id)
     {
-        Project::destroy($id);
-        session()->flash('message', 'Projet supprimé avec succès.');
+        $project = Project::find($id);
+        if ($project) {
+            $project->sections()->each(function ($section) {
+                $section->images()->delete();
+            });
+            $project->sections()->delete();
+            $project->delete();
+            session()->flash("success", "Projet supprimé avec succès.");
+        }
     }
 
     public function render()
     {
-        return view('livewire.admin.project-manager', [
-            'projects' => Project::orderBy('order', 'asc')->orderBy('created_at', 'desc')->paginate(10)
-        ])->layout('layouts.app')->title('Gestion des Projets');
+        return view("livewire.admin.project-manager", [
+            "projects" => Project::with("sections")
+                ->orderBy("order", "asc")
+                ->orderBy("created_at", "desc")
+                ->paginate(10),
+        ])
+            ->layout("components.layouts.admin")
+            ->title("Gestion des Projets");
     }
 }

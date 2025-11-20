@@ -1,18 +1,145 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "../../vendor/livewire/flux/dist/flux.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: Joan, ui-sans-serif, system-ui, sans-serif;
+    --color-background: #3d3935;
+    --color-background-darker: #34302d;
+    --color-primary: #c4a882;
+    --color-light: #ffffff;
+    --max-width-8xl: 1440px;
+}
+
+@source "../../vendor/livewire/flux/stubs";
+@source "../../vendor/livewire/flux-pro/stubs";
+
+body {
+    background-color: #3d3935;
+    min-height: 100vh;
+}
+
+a,
+button {
+    cursor: pointer !important;
+}
+
+html {
+    background-color: #3d3935;
+}
+
+/* Animations de transition */
+.transition-fade {
+    transition:
+        opacity 0.25s ease-in-out,
+        transform 0.25s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Admin navigation (Livewire) */
+html.is-navigating .transition-fade {
+    opacity: 0;
+}
+
+/* Public site navigation (Swup) */
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+html.is-rendering .transition-fade {
+    opacity: 0;
+    transform: translateY(-15px);
+}
 
 @layer components {
     .font-joan {
-        font-family: 'Joan', serif;
+        font-family: "Joan", serif;
     }
-
     .font-andada {
-        font-family: 'Andada Pro', serif;
+        font-family: "Andada Pro", serif;
+    }
+    .font-andada-semibold {
+        font-family: "Andada Pro", serif;
+        font-weight: 600;
     }
 
-    .font-andada-semibold {
-        font-family: 'Andada Pro', serif;
-        font-weight: 600;
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeinup {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeindown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeinright {
+        from {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes fadeinleft {
+        from {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes zoomin {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .animation-fadein {
+        animation: fadein 0.6s ease forwards;
+    }
+    .animation-fadeinup {
+        animation: fadeinup 0.6s ease forwards;
+    }
+    .animation-fadeindown {
+        animation: fadeindown 0.6s ease forwards;
+    }
+    .animation-fadeinright {
+        animation: fadeinright 0.6s ease forwards;
+    }
+    .animation-fadeinleft {
+        animation: fadeinleft 0.6s ease forwards;
+    }
+    .animation-zoomin {
+        animation: zoomin 0.6s ease forwards;
     }
 }

@@ -10,7 +10,7 @@ class ContactManager extends Component
 {
     use WithPagination;
 
-    public $filter = 'all'; // all, unread, read
+    public $filter = "all"; // all, unread, read
 
     public function toggleRead($id)
     {
@@ -26,7 +26,7 @@ class ContactManager extends Component
     public function deleteMessage($id)
     {
         ContactMessage::destroy($id);
-        session()->flash('message', 'Message supprimé avec succès.');
+        session()->flash("success", "Message supprimé avec succès.");
     }
 
     public function setFilter($filter)
@@ -37,17 +37,19 @@ class ContactManager extends Component
 
     public function render()
     {
-        $query = ContactMessage::query()->orderBy('created_at', 'desc');
+        $query = ContactMessage::query()->orderBy("created_at", "desc");
 
-        if ($this->filter === 'unread') {
+        if ($this->filter === "unread") {
             $query->unread();
-        } elseif ($this->filter === 'read') {
+        } elseif ($this->filter === "read") {
             $query->read();
         }
 
-        return view('livewire.admin.contact-manager', [
-            'messages' => $query->paginate(15),
-            'unreadCount' => ContactMessage::unread()->count(),
-        ])->layout('layouts.app')->title('Messages de Contact');
+        return view("livewire.admin.contact-manager", [
+            "messages" => $query->paginate(15),
+            "unreadCount" => ContactMessage::unread()->count(),
+        ])
+            ->layout("components.layouts.admin")
+            ->title("Messages de Contact");
     }
 }

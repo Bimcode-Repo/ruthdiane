@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+-e 
+# Images HD (trop volumineuses)
+/public/medias/images-hd/
+/public/medias/images-hd.zip

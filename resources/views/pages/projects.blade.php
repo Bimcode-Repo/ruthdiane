@@ -1,13 +1,15 @@
 <x-layouts.app>
-    <x-hero.projects />
+    <x-hero.our-style />
 
-    @include('pages.partials.projects.projects-carousel')
-
-    @include('pages.partials.projects.our-style-gallery')
+    @if(!inspirationMode())
+        <x-sections.project-gallery />
+    @endif
 
     <x-sections.partner-banner />
 
-    @include('pages.partials.projects.about-section')
+    <x-sections.about />
 
-    <x-sections.blog-carousel />
+    @if(blogEnabled())
+        <x-sections.blog-carousel />
+    @endif
 </x-layouts.app>
