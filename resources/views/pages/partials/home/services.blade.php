@@ -18,16 +18,18 @@
 
         <div class="flex flex-col lg:flex-row gap-0 mb-8 md:mb-12 bg-background-darker" data-aos="fade-in">
             <div class="overflow-hidden lg:w-[818px] flex-shrink-0">
-                <img src="{{ asset('medias/images/services/service-1.png') }}"
+                <img src="{{ asset('medias/images/projects/project-4.jpg') }}"
                      alt="Service 1"
                      class="w-full h-[250px] md:h-[400px] object-cover">
             </div>
 
-            <div class="flex flex-col justify-center py-[20px] px-[20px] md:py-[25px] md:px-[40px] md:h-[400px] flex-1">
-                <h2 class="text-[28px] md:text-3xl text-white font-semibold mb-[30px] md:mb-[60px] font-andada">{{ __('messages.lorem_short') }}</h2>
-                <p class="text-white text-xl leading-relaxed mb-[30px] md:mb-[60px] font-joan">
+            <div class="flex flex-col justify-between p-[40px] gap-8 h-auto flex-1">
+                <h2 class="text-[28px] md:text-3xl text-white font-semibold font-andada">{{ __('messages.lorem_short') }}</h2>
+
+                <p class="text-white text-lg md:text-xl leading-relaxed font-joan line-clamp-3 md:line-clamp-4">
                     {{ __('messages.lorem_long') }}
                 </p>
+
                 <div class="flex flex-col md:flex-row gap-3 md:gap-4">
                     <button class="bg-[#C4A882] text-[#3D3935] px-6 py-2.5 md:px-8 md:py-3 hover:opacity-90 transition-opacity text-sm md:text-base">
                         {{ __('messages.lorem_button') }}
@@ -40,11 +42,13 @@
         </div>
 
         <div class="flex flex-col lg:flex-row gap-0 mb-8 md:mb-12 bg-background-darker" data-aos="fade-in">
-            <div class="flex flex-col justify-center py-[20px] px-[20px] md:py-[25px] md:px-[40px] md:h-[400px] flex-1 order-2 lg:order-1">
-                <h2 class="text-[28px] md:text-3xl text-white font-semibold mb-[30px] md:mb-[60px] font-andada">{{ __('messages.lorem_short') }}</h2>
-                <p class="text-white text-xl leading-relaxed mb-[30px] md:mb-[60px] font-joan">
+            <div class="flex flex-col justify-between p-[40px] gap-8 h-auto flex-1 order-2 lg:order-1">
+                <h2 class="text-[28px] md:text-3xl text-white font-semibold font-andada">{{ __('messages.lorem_short') }}</h2>
+
+                <p class="text-white text-lg md:text-xl leading-relaxed font-joan line-clamp-3 md:line-clamp-4">
                     {{ __('messages.lorem_long') }}
                 </p>
+
                 <div class="flex flex-col md:flex-row gap-3 md:gap-4">
                     <button class="bg-[#C4A882] text-[#3D3935] px-6 py-2.5 md:px-8 md:py-3 hover:opacity-90 transition-opacity text-sm md:text-base">
                         {{ __('messages.lorem_button') }}
@@ -56,7 +60,7 @@
             </div>
 
             <div class="overflow-hidden lg:w-[818px] flex-shrink-0 order-1 lg:order-2">
-                <img src="{{ asset('medias/images/services/service-2.png') }}"
+                <img src="{{ asset('medias/images/projects/project-5.jpg') }}"
                      alt="Service 2"
                      class="w-full h-[250px] md:h-[400px] object-cover">
             </div>

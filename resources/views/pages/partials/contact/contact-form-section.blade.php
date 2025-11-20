@@ -83,7 +83,7 @@
             </div>
 
             <div class="relative overflow-hidden w-full lg:w-1/2 h-[500px] md:h-[650px]" data-aos="fade-left">
-                <img src="{{ asset('medias/images/contact/contact-info.png') }}"
+                <img src="{{ asset('medias/images/projects/project-12.jpg') }}"
                      alt="Interior"
                      class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/30"></div>

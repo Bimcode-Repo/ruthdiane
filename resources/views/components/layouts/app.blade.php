@@ -11,11 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;500;600;700;800&family=Joan&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('medias/images/logo/favicon.png') }}">
 
+    <!-- Preload des images critiques pour un chargement rapide -->
+    <link rel="preload" as="image" href="{{ asset('medias/images/projects/project-1.jpg') }}">
+    <link rel="preload" as="image" href="{{ asset('medias/images/projects/project-2.jpg') }}">
+    <link rel="preload" as="image" href="{{ asset('medias/images/projects/project-3.jpg') }}">
+    <link rel="preload" as="image" href="{{ asset('medias/images/projects/hero-projects.jpg') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 <body>
-    {{ $slot }}
+    <main id="swup" class="transition-fade">
+        {{ $slot }}
+    </main>
 
     <!-- Footer -->
     <footer class="bg-background py-12 md:py-16">

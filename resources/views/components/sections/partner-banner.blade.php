@@ -2,34 +2,34 @@
     <div id="logo-slider" class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
             <div class="swiper-slide flex items-center justify-center">
-                <img src="{{ asset('medias/images/home/300x135.svg') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
+                <img src="{{ asset('medias/images/partenaires/marque.png') }}" alt="Logo partenaire 1" class="opacity-70 mx-auto">
             </div>
         </div>
     </div>

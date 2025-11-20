@@ -1,33 +1,27 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import fs from 'fs';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import fs from "fs";
 
 export default defineConfig({
-    base: '/',
+    base: "/",
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ["resources/css/app.css", "resources/js/app.js"],
             refresh: [
-                'resources/views/**',
-                'app/Livewire/**',
-                'app/View/Components/**',
+                "resources/views/**",
+                "app/Livewire/**",
+                "app/View/Components/**",
             ],
         }),
     ],
     server: {
-        https: {
-            key: fs.readFileSync('./certs/jonathan-ruthdiane.websrc.fr+3-key.pem'),
-            cert: fs.readFileSync('./certs/jonathan-ruthdiane.websrc.fr+3.pem'),
-        },
-        hmr: {
-            host: 'jonathan-ruthdiane.websrc.fr',
-            protocol: 'wss',
-            port: 4688,
-        },
+        host: "localhost",
+        port: 5173,
         watch: {
             usePolling: true,
         },
-        host: true,
-        port: 4688,
+        hmr: {
+            host: "localhost",
+        },
     },
 });

@@ -14,7 +14,7 @@
         </div>
 
         <div class="w-full h-[400px] md:h-[550px] lg:h-[650px] overflow-hidden relative" data-aos="zoom-in">
-            <img src="{{ asset('medias/images/about/about-main.png') }}"
+            <img src="{{ asset('medias/images/projects/project-13.jpg') }}"
                  alt="À propos"
                  class="w-full h-full object-cover">
 

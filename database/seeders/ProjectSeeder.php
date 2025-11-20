@@ -16,212 +16,268 @@ class ProjectSeeder extends Seeder
     {
         $projects = [
             [
-                'slug' => 'minimal-elegance',
-                'title_fr' => 'Élégance Minimaliste',
-                'title_en' => 'Minimal Elegance',
-                'title_es' => 'Elegancia Minimalista',
-                'title_it' => 'Eleganza Minimalista',
-                'image' => 'medias/images/styles/style-1.png',
-                'order' => 0,
-                'is_published' => true,
-                'sections' => [
+                "slug" => "minimal-elegance",
+                "title_fr" => "Élégance Minimaliste",
+                "title_en" => "Minimal Elegance",
+                "title_es" => "Elegancia Minimalista",
+                "title_it" => "Eleganza Minimalista",
+                "image" => "medias/images/projects/project-1.jpg",
+                "order" => 0,
+                "is_published" => true,
+                "sections" => [
                     [
-                        'title_fr' => 'L\'Art de la Simplicité',
-                        'title_en' => 'The Art of Simplicity',
-                        'title_es' => 'El Arte de la Simplicidad',
-                        'title_it' => 'L\'Arte della Semplicità',
-                        'description_fr' => 'Un espace épuré où chaque élément a sa raison d\'être. Le minimalisme rencontre l\'élégance dans une harmonie parfaite de lignes pures et de matériaux nobles.',
-                        'description_en' => 'A refined space where every element has its purpose. Minimalism meets elegance in a perfect harmony of clean lines and noble materials.',
-                        'description_es' => 'Un espacio refinado donde cada elemento tiene su propósito. El minimalismo se encuentra con la elegancia en una armonía perfecta de líneas puras y materiales nobles.',
-                        'description_it' => 'Uno spazio raffinato dove ogni elemento ha il suo scopo. Il minimalismo incontra l\'eleganza in una perfetta armonia di linee pure e materiali nobili.',
+                        "title_fr" => 'L\'Art de la Simplicité',
+                        "title_en" => "The Art of Simplicity",
+                        "title_es" => "El Arte de la Simplicidad",
+                        "title_it" => 'L\'Arte della Semplicità',
+                        "description_fr" =>
+                            'Un espace épuré où chaque élément a sa raison d\'être. Le minimalisme rencontre l\'élégance dans une harmonie parfaite de lignes pures et de matériaux nobles.',
+                        "description_en" =>
+                            "A refined space where every element has its purpose. Minimalism meets elegance in a perfect harmony of clean lines and noble materials.",
+                        "description_es" =>
+                            "Un espacio refinado donde cada elemento tiene su propósito. El minimalismo se encuentra con la elegancia en una armonía perfecta de líneas puras y materiales nobles.",
+                        "description_it" =>
+                            'Uno spazio raffinato dove ogni elemento ha il suo scopo. Il minimalismo incontra l\'eleganza in una perfetta armonia di linee pure e materiali nobili.',
                     ],
                     [
-                        'title_fr' => 'Luminosité & Espace',
-                        'title_en' => 'Light & Space',
-                        'title_es' => 'Luz y Espacio',
-                        'title_it' => 'Luce e Spazio',
-                        'description_fr' => 'Des volumes généreux baignés de lumière naturelle, créant une atmosphère sereine et intemporelle. Chaque détail est pensé pour sublimer l\'espace.',
-                        'description_en' => 'Generous volumes bathed in natural light, creating a serene and timeless atmosphere. Every detail is designed to enhance the space.',
-                        'description_es' => 'Volúmenes generosos bañados en luz natural, creando una atmósfera serena y atemporal. Cada detalle está diseñado para realzar el espacio.',
-                        'description_it' => 'Volumi generosi immersi nella luce naturale, creando un\'atmosfera serena e senza tempo. Ogni dettaglio è progettato per esaltare lo spazio.',
-                    ],
-                ],
-            ],
-            [
-                'slug' => 'contemporary-luxury',
-                'title_fr' => 'Luxe Contemporain',
-                'title_en' => 'Contemporary Luxury',
-                'title_es' => 'Lujo Contemporáneo',
-                'title_it' => 'Lusso Contemporaneo',
-                'image' => 'medias/images/styles/style-2.png',
-                'order' => 1,
-                'is_published' => true,
-                'sections' => [
-                    [
-                        'title_fr' => 'Sophistication Moderne',
-                        'title_en' => 'Modern Sophistication',
-                        'title_es' => 'Sofisticación Moderna',
-                        'title_it' => 'Sofisticazione Moderna',
-                        'description_fr' => 'Le luxe se réinvente avec des matériaux exceptionnels et un design audacieux. Une fusion parfaite entre tradition et innovation pour créer des espaces uniques.',
-                        'description_en' => 'Luxury is reinvented with exceptional materials and bold design. A perfect fusion between tradition and innovation to create unique spaces.',
-                        'description_es' => 'El lujo se reinventa con materiales excepcionales y diseño audaz. Una fusión perfecta entre tradición e innovación para crear espacios únicos.',
-                        'description_it' => 'Il lusso si reinventa con materiali eccezionali e design audace. Una fusione perfetta tra tradizione e innovazione per creare spazi unici.',
-                    ],
-                    [
-                        'title_fr' => 'Détails Raffinés',
-                        'title_en' => 'Refined Details',
-                        'title_es' => 'Detalles Refinados',
-                        'title_it' => 'Dettagli Raffinati',
-                        'description_fr' => 'Chaque finition est soigneusement sélectionnée pour créer une expérience sensorielle unique. Le luxe se vit dans les moindres détails.',
-                        'description_en' => 'Every finish is carefully selected to create a unique sensory experience. Luxury is lived in the smallest details.',
-                        'description_es' => 'Cada acabado se selecciona cuidadosamente para crear una experiencia sensorial única. El lujo se vive en los más mínimos detalles.',
-                        'description_it' => 'Ogni finitura è accuratamente selezionata per creare un\'esperienza sensoriale unica. Il lusso si vive nei minimi dettagli.',
+                        "title_fr" => "Luminosité & Espace",
+                        "title_en" => "Light & Space",
+                        "title_es" => "Luz y Espacio",
+                        "title_it" => "Luce e Spazio",
+                        "description_fr" =>
+                            'Des volumes généreux baignés de lumière naturelle, créant une atmosphère sereine et intemporelle. Chaque détail est pensé pour sublimer l\'espace.',
+                        "description_en" =>
+                            "Generous volumes bathed in natural light, creating a serene and timeless atmosphere. Every detail is designed to enhance the space.",
+                        "description_es" =>
+                            "Volúmenes generosos bañados en luz natural, creando una atmósfera serena y atemporal. Cada detalle está diseñado para realzar el espacio.",
+                        "description_it" =>
+                            'Volumi generosi immersi nella luce naturale, creando un\'atmosfera serena e senza tempo. Ogni dettaglio è progettato per esaltare lo spazio.',
                     ],
                 ],
             ],
             [
-                'slug' => 'urban-chic',
-                'title_fr' => 'Urbain Chic',
-                'title_en' => 'Urban Chic',
-                'title_es' => 'Chic Urbano',
-                'title_it' => 'Urban Chic',
-                'image' => 'medias/images/styles/style-3.png',
-                'order' => 2,
-                'is_published' => true,
-                'sections' => [
+                "slug" => "contemporary-luxury",
+                "title_fr" => "Luxe Contemporain",
+                "title_en" => "Contemporary Luxury",
+                "title_es" => "Lujo Contemporáneo",
+                "title_it" => "Lusso Contemporaneo",
+                "image" => "medias/images/projects/project-2.jpg",
+                "order" => 1,
+                "is_published" => true,
+                "sections" => [
                     [
-                        'title_fr' => 'Esprit Industriel',
-                        'title_en' => 'Industrial Spirit',
-                        'title_es' => 'Espíritu Industrial',
-                        'title_it' => 'Spirito Industriale',
-                        'description_fr' => 'L\'authenticité des matériaux bruts rencontre le raffinement urbain. Un équilibre parfait entre caractère industriel et confort contemporain.',
-                        'description_en' => 'The authenticity of raw materials meets urban refinement. A perfect balance between industrial character and contemporary comfort.',
-                        'description_es' => 'La autenticidad de los materiales crudos se encuentra con el refinamiento urbano. Un equilibrio perfecto entre carácter industrial y confort contemporáneo.',
-                        'description_it' => 'L\'autenticità dei materiali grezzi incontra la raffinatezza urbana. Un equilibrio perfetto tra carattere industriale e comfort contemporaneo.',
+                        "title_fr" => "Sophistication Moderne",
+                        "title_en" => "Modern Sophistication",
+                        "title_es" => "Sofisticación Moderna",
+                        "title_it" => "Sofisticazione Moderna",
+                        "description_fr" =>
+                            "Le luxe se réinvente avec des matériaux exceptionnels et un design audacieux. Une fusion parfaite entre tradition et innovation pour créer des espaces uniques.",
+                        "description_en" =>
+                            "Luxury is reinvented with exceptional materials and bold design. A perfect fusion between tradition and innovation to create unique spaces.",
+                        "description_es" =>
+                            "El lujo se reinventa con materiales excepcionales y diseño audaz. Una fusión perfecta entre tradición e innovación para crear espacios únicos.",
+                        "description_it" =>
+                            "Il lusso si reinventa con materiali eccezionali e design audace. Una fusione perfetta tra tradizione e innovazione per creare spazi unici.",
                     ],
                     [
-                        'title_fr' => 'Touches Modernes',
-                        'title_en' => 'Modern Touches',
-                        'title_es' => 'Toques Modernos',
-                        'title_it' => 'Tocchi Moderni',
-                        'description_fr' => 'Des accents contemporains viennent adoucir la rigueur industrielle, créant un espace vivant et chaleureux au cœur de la ville.',
-                        'description_en' => 'Contemporary accents soften the industrial rigor, creating a lively and warm space in the heart of the city.',
-                        'description_es' => 'Los acentos contemporáneos suavizan el rigor industrial, creando un espacio vivo y cálido en el corazón de la ciudad.',
-                        'description_it' => 'Gli accenti contemporanei ammorbidiscono il rigore industriale, creando uno spazio vivace e caldo nel cuore della città.',
-                    ],
-                ],
-            ],
-            [
-                'slug' => 'refined-classic',
-                'title_fr' => 'Classique Raffiné',
-                'title_en' => 'Refined Classic',
-                'title_es' => 'Clásico Refinado',
-                'title_it' => 'Classico Raffinato',
-                'image' => 'medias/images/styles/style-4.png',
-                'order' => 3,
-                'is_published' => true,
-                'sections' => [
-                    [
-                        'title_fr' => 'Élégance Intemporelle',
-                        'title_en' => 'Timeless Elegance',
-                        'title_es' => 'Elegancia Atemporal',
-                        'title_it' => 'Eleganza Senza Tempo',
-                        'description_fr' => 'Le classicisme réinterprété avec une touche contemporaine. Des espaces qui traversent les époques sans jamais se démoder.',
-                        'description_en' => 'Classicism reinterpreted with a contemporary touch. Spaces that transcend eras without ever going out of style.',
-                        'description_es' => 'El clasicismo reinterpretado con un toque contemporáneo. Espacios que trascienden las épocas sin pasar nunca de moda.',
-                        'description_it' => 'Il classicismo reinterpretato con un tocco contemporaneo. Spazi che trascendono le epoche senza mai passare di moda.',
-                    ],
-                    [
-                        'title_fr' => 'Savoir-Faire Artisanal',
-                        'title_en' => 'Artisanal Craftsmanship',
-                        'title_es' => 'Artesanía',
-                        'title_it' => 'Artigianato',
-                        'description_fr' => 'Un hommage aux techniques traditionnelles sublimées par une vision moderne. Chaque pièce raconte une histoire d\'excellence.',
-                        'description_en' => 'A tribute to traditional techniques enhanced by modern vision. Each piece tells a story of excellence.',
-                        'description_es' => 'Un tributo a las técnicas tradicionales realzadas por una visión moderna. Cada pieza cuenta una historia de excelencia.',
-                        'description_it' => 'Un tributo alle tecniche tradizionali esaltate da una visione moderna. Ogni pezzo racconta una storia di eccellenza.',
+                        "title_fr" => "Détails Raffinés",
+                        "title_en" => "Refined Details",
+                        "title_es" => "Detalles Refinados",
+                        "title_it" => "Dettagli Raffinati",
+                        "description_fr" =>
+                            "Chaque finition est soigneusement sélectionnée pour créer une expérience sensorielle unique. Le luxe se vit dans les moindres détails.",
+                        "description_en" =>
+                            "Every finish is carefully selected to create a unique sensory experience. Luxury is lived in the smallest details.",
+                        "description_es" =>
+                            "Cada acabado se selecciona cuidadosamente para crear una experiencia sensorial única. El lujo se vive en los más mínimos detalles.",
+                        "description_it" =>
+                            'Ogni finitura è accuratamente selezionata per creare un\'esperienza sensoriale unica. Il lusso si vive nei minimi dettagli.',
                     ],
                 ],
             ],
             [
-                'slug' => 'modern-sophistication',
-                'title_fr' => 'Sophistication Moderne',
-                'title_en' => 'Modern Sophistication',
-                'title_es' => 'Sofisticación Moderna',
-                'title_it' => 'Sofisticazione Moderna',
-                'image' => 'medias/images/styles/style-5.png',
-                'order' => 4,
-                'is_published' => true,
-                'sections' => [
+                "slug" => "urban-chic",
+                "title_fr" => "Urbain Chic",
+                "title_en" => "Urban Chic",
+                "title_es" => "Chic Urbano",
+                "title_it" => "Urban Chic",
+                "image" => "medias/images/projects/project-3.jpg",
+                "order" => 2,
+                "is_published" => true,
+                "sections" => [
                     [
-                        'title_fr' => 'Design Avant-Gardiste',
-                        'title_en' => 'Avant-Garde Design',
-                        'title_es' => 'Diseño Vanguardista',
-                        'title_it' => 'Design Avanguardista',
-                        'description_fr' => 'L\'innovation au service du confort. Des solutions audacieuses qui redéfinissent les codes de l\'habitat moderne.',
-                        'description_en' => 'Innovation serving comfort. Bold solutions that redefine the codes of modern living.',
-                        'description_es' => 'Innovación al servicio del confort. Soluciones audaces que redefinen los códigos de la vida moderna.',
-                        'description_it' => 'Innovazione al servizio del comfort. Soluzioni audaci che ridefiniscono i codici dell\'abitare moderno.',
+                        "title_fr" => "Esprit Industriel",
+                        "title_en" => "Industrial Spirit",
+                        "title_es" => "Espíritu Industrial",
+                        "title_it" => "Spirito Industriale",
+                        "description_fr" =>
+                            'L\'authenticité des matériaux bruts rencontre le raffinement urbain. Un équilibre parfait entre caractère industriel et confort contemporain.',
+                        "description_en" =>
+                            "The authenticity of raw materials meets urban refinement. A perfect balance between industrial character and contemporary comfort.",
+                        "description_es" =>
+                            "La autenticidad de los materiales crudos se encuentra con el refinamiento urbano. Un equilibrio perfecto entre carácter industrial y confort contemporáneo.",
+                        "description_it" =>
+                            'L\'autenticità dei materiali grezzi incontra la raffinatezza urbana. Un equilibrio perfetto tra carattere industriale e comfort contemporaneo.',
                     ],
                     [
-                        'title_fr' => 'Harmonie Parfaite',
-                        'title_en' => 'Perfect Harmony',
-                        'title_es' => 'Armonía Perfecta',
-                        'title_it' => 'Armonia Perfetta',
-                        'description_fr' => 'L\'équilibre entre fonctionnalité et esthétique atteint son apogée. Chaque espace est conçu pour vivre et inspirer.',
-                        'description_en' => 'The balance between functionality and aesthetics reaches its peak. Each space is designed to live and inspire.',
-                        'description_es' => 'El equilibrio entre funcionalidad y estética alcanza su apogeo. Cada espacio está diseñado para vivir e inspirar.',
-                        'description_it' => 'L\'equilibrio tra funzionalità ed estetica raggiunge il suo apice. Ogni spazio è progettato per vivere e ispirare.',
+                        "title_fr" => "Touches Modernes",
+                        "title_en" => "Modern Touches",
+                        "title_es" => "Toques Modernos",
+                        "title_it" => "Tocchi Moderni",
+                        "description_fr" =>
+                            "Des accents contemporains viennent adoucir la rigueur industrielle, créant un espace vivant et chaleureux au cœur de la ville.",
+                        "description_en" =>
+                            "Contemporary accents soften the industrial rigor, creating a lively and warm space in the heart of the city.",
+                        "description_es" =>
+                            "Los acentos contemporáneos suavizan el rigor industrial, creando un espacio vivo y cálido en el corazón de la ciudad.",
+                        "description_it" =>
+                            "Gli accenti contemporanei ammorbidiscono il rigore industriale, creando uno spazio vivace e caldo nel cuore della città.",
+                    ],
+                ],
+            ],
+            [
+                "slug" => "refined-classic",
+                "title_fr" => "Classique Raffiné",
+                "title_en" => "Refined Classic",
+                "title_es" => "Clásico Refinado",
+                "title_it" => "Classico Raffinato",
+                "image" => "medias/images/projects/project-4.jpg",
+                "order" => 3,
+                "is_published" => true,
+                "sections" => [
+                    [
+                        "title_fr" => "Élégance Intemporelle",
+                        "title_en" => "Timeless Elegance",
+                        "title_es" => "Elegancia Atemporal",
+                        "title_it" => "Eleganza Senza Tempo",
+                        "description_fr" =>
+                            "Le classicisme réinterprété avec une touche contemporaine. Des espaces qui traversent les époques sans jamais se démoder.",
+                        "description_en" =>
+                            "Classicism reinterpreted with a contemporary touch. Spaces that transcend eras without ever going out of style.",
+                        "description_es" =>
+                            "El clasicismo reinterpretado con un toque contemporáneo. Espacios que trascienden las épocas sin pasar nunca de moda.",
+                        "description_it" =>
+                            "Il classicismo reinterpretato con un tocco contemporaneo. Spazi che trascendono le epoche senza mai passare di moda.",
+                    ],
+                    [
+                        "title_fr" => "Savoir-Faire Artisanal",
+                        "title_en" => "Artisanal Craftsmanship",
+                        "title_es" => "Artesanía",
+                        "title_it" => "Artigianato",
+                        "description_fr" =>
+                            'Un hommage aux techniques traditionnelles sublimées par une vision moderne. Chaque pièce raconte une histoire d\'excellence.',
+                        "description_en" =>
+                            "A tribute to traditional techniques enhanced by modern vision. Each piece tells a story of excellence.",
+                        "description_es" =>
+                            "Un tributo a las técnicas tradicionales realzadas por una visión moderna. Cada pieza cuenta una historia de excelencia.",
+                        "description_it" =>
+                            "Un tributo alle tecniche tradizionali esaltate da una visione moderna. Ogni pezzo racconta una storia di eccellenza.",
+                    ],
+                ],
+            ],
+            [
+                "slug" => "modern-sophistication",
+                "title_fr" => "Sophistication Moderne",
+                "title_en" => "Modern Sophistication",
+                "title_es" => "Sofisticación Moderna",
+                "title_it" => "Sofisticazione Moderna",
+                "image" => "medias/images/projects/project-5.jpg",
+                "order" => 4,
+                "is_published" => true,
+                "sections" => [
+                    [
+                        "title_fr" => "Design Avant-Gardiste",
+                        "title_en" => "Avant-Garde Design",
+                        "title_es" => "Diseño Vanguardista",
+                        "title_it" => "Design Avanguardista",
+                        "description_fr" =>
+                            'L\'innovation au service du confort. Des solutions audacieuses qui redéfinissent les codes de l\'habitat moderne.',
+                        "description_en" =>
+                            "Innovation serving comfort. Bold solutions that redefine the codes of modern living.",
+                        "description_es" =>
+                            "Innovación al servicio del confort. Soluciones audaces que redefinen los códigos de la vida moderna.",
+                        "description_it" =>
+                            'Innovazione al servizio del comfort. Soluzioni audaci che ridefiniscono i codici dell\'abitare moderno.',
+                    ],
+                    [
+                        "title_fr" => "Harmonie Parfaite",
+                        "title_en" => "Perfect Harmony",
+                        "title_es" => "Armonía Perfecta",
+                        "title_it" => "Armonia Perfetta",
+                        "description_fr" =>
+                            'L\'équilibre entre fonctionnalité et esthétique atteint son apogée. Chaque espace est conçu pour vivre et inspirer.',
+                        "description_en" =>
+                            "The balance between functionality and aesthetics reaches its peak. Each space is designed to live and inspire.",
+                        "description_es" =>
+                            "El equilibrio entre funcionalidad y estética alcanza su apogeo. Cada espacio está diseñado para vivir e inspirar.",
+                        "description_it" =>
+                            'L\'equilibrio tra funzionalità ed estetica raggiunge il suo apice. Ogni spazio è progettato per vivere e ispirare.',
                     ],
                 ],
             ],
         ];
 
         $availableImages = [
-            'medias/images/styles/style-1.png',
-            'medias/images/styles/style-2.png',
-            'medias/images/styles/style-3.png',
-            'medias/images/styles/style-4.png',
-            'medias/images/styles/style-5.png',
+            "medias/images/projects/project-1.jpg",
+            "medias/images/projects/project-2.jpg",
+            "medias/images/projects/project-3.jpg",
+            "medias/images/projects/project-4.jpg",
+            "medias/images/projects/project-5.jpg",
+            "medias/images/projects/project-6.jpg",
+            "medias/images/projects/project-7.jpg",
+            "medias/images/projects/project-8.jpg",
+            "medias/images/projects/project-9.jpg",
+            "medias/images/projects/project-10.jpg",
+            "medias/images/projects/project-11.jpg",
+            "medias/images/projects/project-12.jpg",
+            "medias/images/projects/project-13.jpg",
+            "medias/images/projects/project-14.jpg",
         ];
 
         $totalSections = 0;
         $totalImages = 0;
 
         foreach ($projects as $projectData) {
-            $sectionsData = $projectData['sections'];
-            unset($projectData['sections']);
+            $sectionsData = $projectData["sections"];
+            unset($projectData["sections"]);
 
             $project = Project::create($projectData);
 
             foreach ($sectionsData as $sectionIndex => $sectionData) {
                 $section = ProjectSection::create([
-                    'project_id' => $project->id,
-                    'order' => $sectionIndex,
-                    'title_fr' => $sectionData['title_fr'],
-                    'title_en' => $sectionData['title_en'],
-                    'title_es' => $sectionData['title_es'],
-                    'title_it' => $sectionData['title_it'],
-                    'description_fr' => $sectionData['description_fr'],
-                    'description_en' => $sectionData['description_en'],
-                    'description_es' => $sectionData['description_es'],
-                    'description_it' => $sectionData['description_it'],
+                    "project_id" => $project->id,
+                    "order" => $sectionIndex,
+                    "title_fr" => $sectionData["title_fr"],
+                    "title_en" => $sectionData["title_en"],
+                    "title_es" => $sectionData["title_es"],
+                    "title_it" => $sectionData["title_it"],
+                    "description_fr" => $sectionData["description_fr"],
+                    "description_en" => $sectionData["description_en"],
+                    "description_es" => $sectionData["description_es"],
+                    "description_it" => $sectionData["description_it"],
                 ]);
                 $totalSections++;
 
                 for ($i = 0; $i < 4; $i++) {
                     ProjectImage::create([
-                        'section_id' => $section->id,
-                        'image' => $availableImages[$i % count($availableImages)],
-                        'order' => $i,
+                        "section_id" => $section->id,
+                        "image" =>
+                            $availableImages[$i % count($availableImages)],
+                        "order" => $i,
                     ]);
                     $totalImages++;
                 }
             }
         }
 
-        $this->command->info('✅ ' . count($projects) . ' projets créés avec succès !');
-        $this->command->info('✅ ' . $totalSections . ' sections créées avec succès !');
-        $this->command->info('✅ ' . $totalImages . ' images de galerie créées avec succès !');
+        $this->command->info(
+            "✅ " . count($projects) . " projets créés avec succès !",
+        );
+        $this->command->info(
+            "✅ " . $totalSections . " sections créées avec succès !",
+        );
+        $this->command->info(
+            "✅ " . $totalImages . " images de galerie créées avec succès !",
+        );
     }
 }

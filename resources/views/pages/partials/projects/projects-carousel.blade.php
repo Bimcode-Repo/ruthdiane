@@ -41,7 +41,7 @@
     }" x-init="updateArrows()">
         <div x-ref="slider" @scroll="updateArrows()" class="flex gap-4 md:gap-6 overflow-x-hidden scroll-smooth relative">
             <a href="/projet/lorem" class="relative group overflow-hidden w-[280px] md:w-[530px] h-[195px] md:h-[369px] flex-shrink-0 block">
-                <img src="{{ asset('medias/images/blog/blog-1.png') }}"
+                <img src="{{ asset('medias/images/projects/project-6.jpg') }}"
                      alt="Blog 1"
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -55,7 +55,7 @@
             </a>
 
             <a href="/projet/lorem" class="relative group overflow-hidden w-[280px] md:w-[530px] h-[195px] md:h-[369px] flex-shrink-0 block">
-                <img src="{{ asset('medias/images/blog/blog-2.png') }}"
+                <img src="{{ asset('medias/images/projects/project-7.jpg') }}"
                      alt="Blog 2"
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -69,7 +69,7 @@
             </a>
 
             <a href="/projet/lorem" class="relative group overflow-hidden w-[280px] md:w-[530px] h-[195px] md:h-[369px] flex-shrink-0 block">
-                <img src="{{ asset('medias/images/blog/blog-3.png') }}"
+                <img src="{{ asset('medias/images/projects/project-8.jpg') }}"
                      alt="Blog 3"
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>

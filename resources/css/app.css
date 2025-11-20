@@ -2,41 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #3d3935;
+    min-height: 100vh;
+}
+
+html {
+    background-color: #3d3935;
+}
+
+/* Animations Swup personnalisées - Fade + Slide élégant */
+.transition-fade {
+    transition:
+        opacity 0.25s ease-in-out,
+        transform 0.25s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+html.is-rendering .transition-fade {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
 @layer components {
     .font-joan {
-        font-family: 'Joan', serif;
+        font-family: "Joan", serif;
     }
     .font-andada {
-        font-family: 'Andada Pro', serif;
+        font-family: "Andada Pro", serif;
     }
     .font-andada-semibold {
-        font-family: 'Andada Pro', serif;
+        font-family: "Andada Pro", serif;
         font-weight: 600;
     }
 
     @keyframes fadein {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
     @keyframes fadeinup {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     @keyframes fadeindown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     @keyframes fadeinright {
-        from { opacity: 0; transform: translateX(10px); }
-        to { opacity: 1; transform: translateX(0); }
+        from {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     @keyframes fadeinleft {
-        from { opacity: 0; transform: translateX(-10px); }
-        to { opacity: 1; transform: translateX(0); }
+        from {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     @keyframes zoomin {
-        from { opacity: 0; transform: scale(0.8); }
-        to { opacity: 1; transform: scale(1); }
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 
     .animation-fadein {

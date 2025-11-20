@@ -21,9 +21,12 @@
     },
     "dependencies": {
         "@alpinejs/focus": "^3.15.2",
+        "@swup/fade-theme": "^2.0.2",
+        "@swup/scroll-plugin": "^4.0.0",
         "alpinejs": "^3.15.2",
         "aos": "^2.3.4",
         "flowbite": "^4.0.0",
-        "swiper": "^12.0.3"
+        "swiper": "^12.0.3",
+        "swup": "^4.8.2"
     }
 }
