@@ -52,7 +52,6 @@
                     <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider">Nom</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider">Email</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider w-32">Téléphone</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider">Message</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-zinc-500 uppercase tracking-wider w-32">Date</th>
                     <th class="px-6 py-3 text-right text-xs font-medium text-zinc-500 uppercase tracking-wider w-56">Actions</th>
                 </tr>
@@ -84,11 +83,6 @@
                                 <span class="text-zinc-400">-</span>
                             @endif
                         </td>
-                        <td class="px-6 py-4">
-                            <div class="text-sm text-zinc-600 max-w-xs truncate" title="{{ $msg->message }}">
-                                {{ Str::limit($msg->message, 60) }}
-                            </div>
-                        </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-500">
                             <div>{{ $msg->created_at->format('d/m/Y') }}</div>
                             <div class="text-xs text-zinc-400">{{ $msg->created_at->format('H:i') }}</div>
@@ -112,14 +106,14 @@
                                     icon="{{ $msg->is_read ? 'envelope-open' : 'envelope' }}"
                                 >
                                 </flux:button>
-                                <flux:button
-                                    wire:click="deleteMessage({{ $msg->id }})"
-                                    wire:confirm="Êtes-vous sûr de vouloir supprimer ce message ?"
-                                    variant="danger"
-                                    size="sm"
-                                    icon-only
-                                    icon="trash"
-                                />
+                                <flux:modal.trigger name="delete-message-{{ $msg->id }}">
+                                    <flux:button
+                                        variant="danger"
+                                        size="sm"
+                                        icon-only
+                                        icon="trash"
+                                    />
+                                </flux:modal.trigger>
                             </div>
                         </td>
                     </tr>
@@ -168,9 +162,36 @@
                             </div>
                         </div>
                     </flux:modal>
+
+                    {{-- Delete Confirmation Modal --}}
+                    <flux:modal name="delete-message-{{ $msg->id }}" class="md:w-96" wire:key="modal-delete-message-{{ $msg->id }}">
+                        <div class="space-y-6">
+                            <div>
+                                <flux:heading size="lg">Supprimer le message</flux:heading>
+                                <flux:subheading class="mt-2">
+                                    Êtes-vous sûr de vouloir supprimer ce message ?
+                                </flux:subheading>
+                                <div class="mt-4 p-3 bg-zinc-50 rounded-lg">
+                                    <div class="text-sm font-medium text-zinc-900">De : {{ $msg->name }}</div>
+                                    <div class="text-xs text-zinc-500 mt-1">{{ $msg->email }}</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 justify-end">
+                                <flux:modal.close>
+                                    <flux:button variant="ghost">Annuler</flux:button>
+                                </flux:modal.close>
+                                <flux:modal.close>
+                                    <flux:button wire:click="deleteMessage({{ $msg->id }})" variant="danger">
+                                        Supprimer
+                                    </flux:button>
+                                </flux:modal.close>
+                            </div>
+                        </div>
+                    </flux:modal>
                 @empty
                     <tr>
-                        <td colspan="7" class="px-6 py-12">
+                        <td colspan="6" class="px-6 py-12">
                             <div class="flex flex-col items-center justify-center">
                                 <flux:icon.inbox class="size-12 text-zinc-400 mb-4" />
                                 <flux:heading size="lg" class="mb-2">Aucun message</flux:heading>

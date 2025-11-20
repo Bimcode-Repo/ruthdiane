@@ -5,17 +5,17 @@
 <div>
     <div class="absolute inset-0">
         <img
-            src="{{ asset('medias/images/projects/project-1.jpg') }}"
+            src="{{ asset('medias/images-hd/salon-2.png') }}"
             alt="Ruth Diane - Interior Design 1"
             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 {{ $currentSlide === 0 ? 'opacity-100' : 'opacity-0' }}"
         >
         <img
-            src="{{ asset('medias/images/projects/project-2.jpg') }}"
+            src="{{ asset('medias/images-hd/chambre-1.png') }}"
             alt="Ruth Diane - Interior Design 2"
             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 {{ $currentSlide === 1 ? 'opacity-100' : 'opacity-0' }}"
         >
         <img
-            src="{{ asset('medias/images/projects/project-3.jpg') }}"
+            src="{{ asset('medias/images-hd/cuisine-2.png') }}"
             alt="Ruth Diane - Interior Design 3"
             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 {{ $currentSlide === 2 ? 'opacity-100' : 'opacity-0' }}"
         >

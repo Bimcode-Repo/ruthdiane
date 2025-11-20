@@ -5,5 +5,7 @@
         @include('pages.partials.projet.project-section', ['section' => $section])
     @endforeach
 
-    <x-sections.blog-carousel />
+    @if(blogEnabled())
+        <x-sections.blog-carousel />
+    @endif
 </div>

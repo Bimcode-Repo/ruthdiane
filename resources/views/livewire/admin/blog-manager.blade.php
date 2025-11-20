@@ -31,7 +31,7 @@
             </thead>
             <tbody class="bg-white divide-y divide-zinc-200">
                 @forelse($blogs as $blog)
-                    <tr class="hover:bg-zinc-50 transition-colors">
+                    <tr wire:key="blog-{{ $blog->id }}" class="hover:bg-zinc-50 transition-colors">
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($blog->image)
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title_fr }}"
@@ -60,23 +60,50 @@
                             <div class="flex items-center justify-end gap-2">
                                 <flux:button
                                     href="{{ route('admin.blogs.edit', $blog->id) }}"
+                                    wire:navigate
                                     variant="filled"
                                     size="sm"
                                     icon="pencil"
                                 >
                                     Modifier
                                 </flux:button>
-                                <flux:button
-                                    wire:click="deleteBlog({{ $blog->id }})"
-                                    wire:confirm="Êtes-vous sûr de vouloir supprimer cet article ?"
-                                    variant="danger"
-                                    size="sm"
-                                    icon-only
-                                    icon="trash"
-                                />
+                                <flux:modal.trigger name="delete-blog-{{ $blog->id }}">
+                                    <flux:button
+                                        variant="danger"
+                                        size="sm"
+                                        icon-only
+                                        icon="trash"
+                                    />
+                                </flux:modal.trigger>
                             </div>
                         </td>
                     </tr>
+
+                    {{-- Delete Confirmation Modal --}}
+                    <flux:modal name="delete-blog-{{ $blog->id }}" class="md:w-96" wire:key="modal-delete-blog-{{ $blog->id }}">
+                        <div class="space-y-6">
+                            <div>
+                                <flux:heading size="lg">Supprimer l'article</flux:heading>
+                                <flux:subheading class="mt-2">
+                                    Êtes-vous sûr de vouloir supprimer cet article ?
+                                </flux:subheading>
+                                <div class="mt-4 p-3 bg-zinc-50 rounded-lg">
+                                    <div class="text-sm font-medium text-zinc-900">{{ $blog->title_fr }}</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 justify-end">
+                                <flux:modal.close>
+                                    <flux:button variant="ghost">Annuler</flux:button>
+                                </flux:modal.close>
+                                <flux:modal.close>
+                                    <flux:button wire:click="deleteBlog({{ $blog->id }})" variant="danger">
+                                        Supprimer
+                                    </flux:button>
+                                </flux:modal.close>
+                            </div>
+                        </div>
+                    </flux:modal>
                 @empty
                     <tr>
                         <td colspan="5" class="px-6 py-12">

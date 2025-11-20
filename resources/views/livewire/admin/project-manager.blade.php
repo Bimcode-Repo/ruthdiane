@@ -32,7 +32,7 @@
             </thead>
             <tbody class="bg-white divide-y divide-zinc-200">
                 @forelse($projects as $project)
-                    <tr class="hover:bg-zinc-50 transition-colors">
+                    <tr wire:key="project-{{ $project->id }}" class="hover:bg-zinc-50 transition-colors">
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($project->image)
                                 <img src="{{ asset($project->image) }}" alt="{{ $project->title_fr }}"
@@ -71,17 +71,43 @@
                                 >
                                     Modifier
                                 </flux:button>
-                                <flux:button
-                                    wire:click="deleteProject({{ $project->id }})"
-                                    wire:confirm="Êtes-vous sûr de vouloir supprimer ce projet ? Toutes les sections et images associées seront également supprimées."
-                                    variant="danger"
-                                    size="sm"
-                                    icon="trash"
-                                    square
-                                />
+                                <flux:modal.trigger name="delete-project-{{ $project->id }}">
+                                    <flux:button
+                                        variant="danger"
+                                        size="sm"
+                                        icon="trash"
+                                        square
+                                    />
+                                </flux:modal.trigger>
                             </div>
                         </td>
                     </tr>
+
+                    {{-- Delete Confirmation Modal --}}
+                    <flux:modal name="delete-project-{{ $project->id }}" class="md:w-96" wire:key="modal-delete-project-{{ $project->id }}">
+                        <div class="space-y-6">
+                            <div>
+                                <flux:heading size="lg">Supprimer le projet</flux:heading>
+                                <flux:subheading class="mt-2">
+                                    Êtes-vous sûr de vouloir supprimer ce projet ? Toutes les sections et images associées seront également supprimées.
+                                </flux:subheading>
+                                <div class="mt-4 p-3 bg-zinc-50 rounded-lg">
+                                    <div class="text-sm font-medium text-zinc-900">{{ $project->name_fr }}</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 justify-end">
+                                <flux:modal.close>
+                                    <flux:button variant="ghost">Annuler</flux:button>
+                                </flux:modal.close>
+                                <flux:modal.close>
+                                    <flux:button wire:click="deleteProject({{ $project->id }})" variant="danger">
+                                        Supprimer
+                                    </flux:button>
+                                </flux:modal.close>
+                            </div>
+                        </div>
+                    </flux:modal>
                 @empty
                     <tr>
                         <td colspan="6" class="px-6 py-12">

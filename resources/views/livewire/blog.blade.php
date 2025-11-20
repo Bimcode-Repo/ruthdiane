@@ -46,5 +46,7 @@
             </div>
         </div>
     </div>
-    <x-sections.blog-carousel/>
+    @if(blogEnabled())
+        <x-sections.blog-carousel/>
+    @endif
 </div>

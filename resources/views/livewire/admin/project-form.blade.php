@@ -90,7 +90,9 @@
                                                     <button type="button" @click="sLang = 'it'" :class="sLang === 'it' ? 'bg-blue-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">IT</button>
                                                 </div>
                                             </div>
-                                            <flux:button type="button" wire:click="removeExistingSection({{ $idx }})" wire:confirm="Supprimer ?" variant="danger" size="sm" icon="trash" />
+                                            <flux:modal.trigger name="delete-section-{{ $section['id'] }}">
+                                                <flux:button type="button" variant="danger" size="sm" icon="trash" />
+                                            </flux:modal.trigger>
                                         </div>
 
                                         <div class="p-4">
@@ -156,6 +158,32 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    {{-- Delete Section Confirmation Modal --}}
+                                    <flux:modal name="delete-section-{{ $section['id'] }}" class="md:w-96" wire:key="modal-delete-section-{{ $section['id'] }}">
+                                        <div class="space-y-6">
+                                            <div>
+                                                <flux:heading size="lg">Supprimer la section</flux:heading>
+                                                <flux:subheading class="mt-2">
+                                                    Êtes-vous sûr de vouloir supprimer cette section ?
+                                                </flux:subheading>
+                                                <div class="mt-4 p-3 bg-zinc-50 rounded-lg">
+                                                    <div class="text-sm font-medium text-zinc-900">{{ $section['title_fr'] ?? 'Section sans titre' }}</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-2 justify-end">
+                                                <flux:modal.close>
+                                                    <flux:button variant="ghost">Annuler</flux:button>
+                                                </flux:modal.close>
+                                                <flux:modal.close>
+                                                    <flux:button wire:click="removeExistingSection({{ $idx }})" variant="danger">
+                                                        Supprimer
+                                                    </flux:button>
+                                                </flux:modal.close>
+                                            </div>
+                                        </div>
+                                    </flux:modal>
                                 @endforeach
 
                                 <!-- New sections -->
