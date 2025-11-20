@@ -18,17 +18,33 @@ use App\Livewire\Admin\ProjectForm;
 |
 */
 
-Route::middleware(['auth', 'verified', 'isAdmin'])->group(function () {
-    Route::view('/dashboard', 'admin.dashboard')->name('admin.dashboard');
-    Route::get('/blogs', BlogManager::class)->name('admin.blogs');
-    Route::get('/blogs/create', BlogForm::class)->name('admin.blogs.create');
-    Route::get('/blogs/{id}/edit', BlogForm::class)->name('admin.blogs.edit');
-    Route::get('/projects', ProjectManager::class)->name('admin.projects');
-    Route::get('/projects/create', ProjectForm::class)->name('admin.projects.create');
-    Route::get('/projects/{id}/edit', ProjectForm::class)->name('admin.projects.edit');
-    Route::get('/contact', ContactManager::class)->name('admin.contact');
+Route::middleware(["auth", "verified", "isAdmin"])->group(function () {
+    Route::view("/dashboard", "admin.dashboard")->name("admin.dashboard");
+    Route::get("/blogs", BlogManager::class)->name("admin.blogs");
+    Route::get("/blogs/create", BlogForm::class)->name("admin.blogs.create");
+    Route::get("/blogs/{id}/edit", BlogForm::class)->name("admin.blogs.edit");
+    Route::get("/projects", ProjectManager::class)->name("admin.projects");
+    Route::get("/projects/create", ProjectForm::class)->name(
+        "admin.projects.create",
+    );
+    Route::get("/projects/{id}/edit", ProjectForm::class)->name(
+        "admin.projects.edit",
+    );
+    Route::delete("/projects/{project}", function (
+        \App\Models\Project $project,
+    ) {
+        $project->sections()->each(function ($section) {
+            $section->images()->delete();
+        });
+        $project->sections()->delete();
+        $project->delete();
+        return redirect()
+            ->route("admin.projects")
+            ->with("success", "Projet supprimé avec succès");
+    })->name("admin.projects.destroy");
+    Route::get("/contact", ContactManager::class)->name("admin.contact");
 });
 
-Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::view('/profile', 'admin.profile')->name('admin.profile');
+Route::middleware(["auth", "isAdmin"])->group(function () {
+    Route::view("/profile", "admin.profile")->name("admin.profile");
 });

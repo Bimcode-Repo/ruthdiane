@@ -1,266 +1,295 @@
-<div>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $projectId ? 'Modifier le projet' : 'Créer un projet' }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6">
-                    <form wire:submit="save" class="space-y-6">
-                        <div x-data="{ activeTab: 'fr' }">
-                            <div class="border-b border-gray-200">
-                                <nav class="-mb-px flex space-x-8">
-                                    <button type="button" @click="activeTab = 'fr'" :class="activeTab === 'fr' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                        Français
-                                    </button>
-                                    <button type="button" @click="activeTab = 'en'" :class="activeTab === 'en' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                        English
-                                    </button>
-                                    <button type="button" @click="activeTab = 'es'" :class="activeTab === 'es' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                        Español
-                                    </button>
-                                    <button type="button" @click="activeTab = 'it'" :class="activeTab === 'it' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                        Italiano
-                                    </button>
-                                </nav>
-                            </div>
-
-                            <div class="mt-6">
-                                <div x-show="activeTab === 'fr'" class="space-y-4">
-                                    <div>
-                                        <x-input-label for="title_fr" value="Titre (FR) *" />
-                                        <x-text-input wire:model="title_fr" id="title_fr" class="block mt-1 w-full" type="text" required />
-                                        <x-input-error :messages="$errors->get('title_fr')" class="mt-2" />
-                                    </div>
-                                </div>
-
-                                <div x-show="activeTab === 'en'" class="space-y-4">
-                                    <div>
-                                        <x-input-label for="title_en" value="Title (EN) *" />
-                                        <x-text-input wire:model="title_en" id="title_en" class="block mt-1 w-full" type="text" required />
-                                        <x-input-error :messages="$errors->get('title_en')" class="mt-2" />
-                                    </div>
-                                </div>
-
-                                <div x-show="activeTab === 'es'" class="space-y-4">
-                                    <div>
-                                        <x-input-label for="title_es" value="Título (ES) *" />
-                                        <x-text-input wire:model="title_es" id="title_es" class="block mt-1 w-full" type="text" required />
-                                        <x-input-error :messages="$errors->get('title_es')" class="mt-2" />
-                                    </div>
-                                </div>
-
-                                <div x-show="activeTab === 'it'" class="space-y-4">
-                                    <div>
-                                        <x-input-label for="title_it" value="Titolo (IT) *" />
-                                        <x-text-input wire:model="title_it" id="title_it" class="block mt-1 w-full" type="text" required />
-                                        <x-input-error :messages="$errors->get('title_it')" class="mt-2" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <x-input-label for="slug" value="Slug (optionnel, généré automatiquement)" />
-                            <x-text-input wire:model="slug" id="slug" class="block mt-1 w-full" type="text" />
-                        </div>
-
-                        <div>
-                            <x-input-label for="newImage" value="Image {{ $projectId ? '' : '*' }}" />
-                            <input type="file" wire:model="newImage" id="newImage" class="block mt-1 w-full" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp,image/avif" {{ $projectId ? '' : 'required' }}>
-                            <x-input-error :messages="$errors->get('newImage')" class="mt-2" />
-                            @if ($newImage)
-                                <img src="{{ $newImage->temporaryUrl() }}" class="mt-2 h-32 w-48 object-cover rounded">
-                            @elseif ($image && $projectId)
-                                <img src="{{ asset($image) }}" class="mt-2 h-32 w-48 object-cover rounded">
-                            @endif
-                        </div>
-
-                        <div>
-                            <x-input-label for="order" value="Ordre d'affichage *" />
-                            <x-text-input wire:model="order" id="order" class="block mt-1 w-full" type="number" min="0" required />
-                            <x-input-error :messages="$errors->get('order')" class="mt-2" />
-                            <p class="mt-1 text-sm text-gray-500">Les projets seront affichés dans l'ordre croissant (0, 1, 2, ...)</p>
-                        </div>
-
-                        <div class="flex items-center">
-                            <input type="checkbox" wire:model="is_published" id="is_published" class="rounded border-gray-300">
-                            <x-input-label for="is_published" value="Publié" class="ml-2" />
-                        </div>
-
-                        <div class="border-t pt-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="font-semibold text-lg">Sections (4 photos par section)</h3>
-                                <button type="button" wire:click="addSection" wire:loading.attr="disabled" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 disabled:opacity-50">
-                                    <span wire:loading.remove wire:target="addSection">+ Ajouter une section</span>
-                                    <span wire:loading wire:target="addSection">Ajout en cours...</span>
-                                </button>
-                            </div>
-
-                            @if(empty($existingSections) && empty($sections))
-                                <p class="text-gray-500 text-sm mb-4">Aucune section. Cliquez sur "Ajouter une section" pour commencer.</p>
-                            @endif
-
-                            @foreach($existingSections as $index => $section)
-                                <div class="border rounded-lg p-6 mb-6 bg-gray-50" x-data="{ sectionTab: 'fr' }">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-medium text-md">Section existante {{ $index + 1 }}</h4>
-                                        <button type="button" wire:click="removeExistingSection({{ $index }})" class="text-red-600 hover:text-red-800">
-                                            Supprimer
-                                        </button>
-                                    </div>
-
-                                    <div class="border-b border-gray-200 mb-4">
-                                        <nav class="-mb-px flex space-x-8">
-                                            <button type="button" @click="sectionTab = 'fr'" :class="sectionTab === 'fr' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">FR</button>
-                                            <button type="button" @click="sectionTab = 'en'" :class="sectionTab === 'en' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">EN</button>
-                                            <button type="button" @click="sectionTab = 'es'" :class="sectionTab === 'es' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">ES</button>
-                                            <button type="button" @click="sectionTab = 'it'" :class="sectionTab === 'it' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">IT</button>
-                                        </nav>
-                                    </div>
-
-                                    <div class="space-y-4">
-                                        <div x-show="sectionTab === 'fr'">
-                                            <p><strong>Titre:</strong> {{ $section['title_fr'] }}</p>
-                                            <p><strong>Description:</strong> {{ $section['description_fr'] }}</p>
-                                        </div>
-                                        <div x-show="sectionTab === 'en'">
-                                            <p><strong>Title:</strong> {{ $section['title_en'] }}</p>
-                                            <p><strong>Description:</strong> {{ $section['description_en'] }}</p>
-                                        </div>
-                                        <div x-show="sectionTab === 'es'">
-                                            <p><strong>Título:</strong> {{ $section['title_es'] }}</p>
-                                            <p><strong>Descripción:</strong> {{ $section['description_es'] }}</p>
-                                        </div>
-                                        <div x-show="sectionTab === 'it'">
-                                            <p><strong>Titolo:</strong> {{ $section['title_it'] }}</p>
-                                            <p><strong>Descrizione:</strong> {{ $section['description_it'] }}</p>
-                                        </div>
-                                    </div>
-
-                                    @if(!empty($section['existing_images']))
-                                        <div class="mt-4">
-                                            <h5 class="font-medium mb-2">Images existantes</h5>
-                                            <div class="grid grid-cols-4 gap-4">
-                                                @foreach($section['existing_images'] as $image)
-                                                    <div class="relative group">
-                                                        <img src="{{ asset($image['image']) }}" class="h-24 w-full object-cover rounded">
-                                                        <button type="button" wire:click="removeExistingImage({{ $index }}, {{ $image['id'] }})" class="absolute top-1 right-1 bg-red-600 text-white rounded-full p-1 opacity-0 group-hover:opacity-100">
-                                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    @endif
-
-                                    <div class="mt-4">
-                                        <h5 class="font-medium mb-2">Ajouter des images</h5>
-                                        <div class="grid grid-cols-2 gap-4">
-                                            @for($i = 0; $i < 4; $i++)
-                                                <div>
-                                                    <label class="block text-sm text-gray-700">Image {{ $i + 1 }}</label>
-                                                    <input type="file" wire:model="existingSections.{{ $index }}.new_images.{{ $i }}" class="block mt-1 w-full text-sm">
-                                                </div>
-                                            @endfor
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                            @foreach($sections as $index => $section)
-                                <div class="border rounded-lg p-6 mb-6 bg-gray-50" x-data="{ sectionTab: 'fr' }">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-medium text-md">Nouvelle section {{ $index + 1 }}</h4>
-                                        <button type="button" wire:click="removeSection({{ $index }})" class="text-red-600 hover:text-red-800">
-                                            Supprimer
-                                        </button>
-                                    </div>
-
-                                    <div class="border-b border-gray-200 mb-4">
-                                        <nav class="-mb-px flex space-x-8">
-                                            <button type="button" @click="sectionTab = 'fr'" :class="sectionTab === 'fr' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">FR</button>
-                                            <button type="button" @click="sectionTab = 'en'" :class="sectionTab === 'en' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">EN</button>
-                                            <button type="button" @click="sectionTab = 'es'" :class="sectionTab === 'es' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">ES</button>
-                                            <button type="button" @click="sectionTab = 'it'" :class="sectionTab === 'it' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500'" class="py-2 px-1 border-b-2 font-medium text-sm">IT</button>
-                                        </nav>
-                                    </div>
-
-                                    <div x-show="sectionTab === 'fr'" class="space-y-4">
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Titre (FR)</label>
-                                            <input type="text" wire:model="sections.{{ $index }}.title_fr" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                                        </div>
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Description (FR)</label>
-                                            <textarea wire:model="sections.{{ $index }}.description_fr" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div x-show="sectionTab === 'en'" class="space-y-4">
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Title (EN)</label>
-                                            <input type="text" wire:model="sections.{{ $index }}.title_en" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                                        </div>
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Description (EN)</label>
-                                            <textarea wire:model="sections.{{ $index }}.description_en" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div x-show="sectionTab === 'es'" class="space-y-4">
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Título (ES)</label>
-                                            <input type="text" wire:model="sections.{{ $index }}.title_es" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                                        </div>
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Descripción (ES)</label>
-                                            <textarea wire:model="sections.{{ $index }}.description_es" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div x-show="sectionTab === 'it'" class="space-y-4">
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Titolo (IT)</label>
-                                            <input type="text" wire:model="sections.{{ $index }}.title_it" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                                        </div>
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Descrizione (IT)</label>
-                                            <textarea wire:model="sections.{{ $index }}.description_it" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4">
-                                        <h5 class="font-medium mb-2">Images (4)</h5>
-                                        <div class="grid grid-cols-2 gap-4">
-                                            @for($i = 0; $i < 4; $i++)
-                                                <div>
-                                                    <label class="block text-sm text-gray-700">Image {{ $i + 1 }}</label>
-                                                    <input type="file" wire:model="sections.{{ $index }}.images.{{ $i }}" class="block mt-1 w-full text-sm" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp,image/avif">
-                                                </div>
-                                            @endfor
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <x-primary-button>
-                                {{ $projectId ? 'Mettre à jour' : 'Créer' }}
-                            </x-primary-button>
-                            <a href="{{ route('admin.projects') }}" wire:navigate class="text-gray-600 hover:text-gray-900">
-                                Annuler
-                            </a>
-                        </div>
-                    </form>
-                </div>
+<div class="space-y-6">
+    <form wire:submit="save" class="w-full space-y-6">
+        <!-- Header -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            <div class="md:col-span-2">
+                <flux:heading size="xl">{{ $projectId ? 'Modifier le projet' : 'Créer un projet' }}</flux:heading>
+                <flux:subheading>{{ $projectId ? 'Mettez à jour les informations' : 'Créez un nouveau projet' }}</flux:subheading>
+            </div>
+            <div class="flex justify-end">
+                <flux:button href="{{ route('admin.projects') }}" wire:navigate variant="filled" icon="arrow-left">
+                    Retour
+                </flux:button>
             </div>
         </div>
-    </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            <!-- Main content - 2 cols -->
+            <div class="md:col-span-2 space-y-6 w-full">
+
+                <!-- Titres multilingues -->
+                <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden" x-data="{ lang: 'fr' }">
+                    <div class="px-6 py-4 border-b border-zinc-200 flex items-center justify-between ">
+                        <flux:heading size="lg">Titres</flux:heading>
+                        <div class="flex gap-1">
+                            <button type="button" @click="lang = 'fr'"
+                                    :class="lang === 'fr' ? 'bg-blue-600 text-white' : 'bg-zinc-100 text-zinc-600'"
+                                    class="w-10 h-8 rounded text-sm font-medium">🇫🇷</button>
+                            <button type="button" @click="lang = 'en'"
+                                    :class="lang === 'en' ? 'bg-blue-600 text-white' : 'bg-zinc-100 text-zinc-600'"
+                                    class="w-10 h-8 rounded text-sm font-medium">🇬🇧</button>
+                            <button type="button" @click="lang = 'es'"
+                                    :class="lang === 'es' ? 'bg-blue-600 text-white' : 'bg-zinc-100 text-zinc-600'"
+                                    class="w-10 h-8 rounded text-sm font-medium">🇪🇸</button>
+                            <button type="button" @click="lang = 'it'"
+                                    :class="lang === 'it' ? 'bg-blue-600 text-white' : 'bg-zinc-100 text-zinc-600'"
+                                    class="w-10 h-8 rounded text-sm font-medium">🇮🇹</button>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div x-show="lang === 'fr'">
+                            <flux:input wire:model.live.debounce.500ms="title_fr" label="Titre (Français)" required />
+                            @error('title_fr') <flux:error class="mt-1">{{ $message }}</flux:error> @enderror
+                        </div>
+                        <div x-show="lang === 'en'">
+                            <flux:input wire:model.live.debounce.500ms="title_en" label="Title (English)" required />
+                            @error('title_en') <flux:error class="mt-1">{{ $message }}</flux:error> @enderror
+                        </div>
+                        <div x-show="lang === 'es'">
+                            <flux:input wire:model.live.debounce.500ms="title_es" label="Título (Español)" required />
+                            @error('title_es') <flux:error class="mt-1">{{ $message }}</flux:error> @enderror
+                        </div>
+                        <div x-show="lang === 'it'">
+                            <flux:input wire:model.live.debounce.500ms="title_it" label="Titolo (Italiano)" required />
+                            @error('title_it') <flux:error class="mt-1">{{ $message }}</flux:error> @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sections -->
+                <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-zinc-200 flex items-center justify-between ">
+                        <div>
+                            <flux:heading size="lg">Sections</flux:heading>
+                            <flux:subheading>4 images maximum par section</flux:subheading>
+                        </div>
+                        <flux:button type="button" wire:click="addSection" variant="primary" icon="plus" size="sm">
+                            Ajouter
+                        </flux:button>
+                    </div>
+
+                    <div class="p-6">
+                        @if(empty($existingSections) && empty($sections))
+                            <div class="text-center py-12 border-2 border-dashed border-zinc-300 rounded-lg">
+                                <flux:icon.photo class="size-12 text-zinc-400 mx-auto mb-3" />
+                                <flux:subheading>Aucune section</flux:subheading>
+                            </div>
+                        @else
+                            <div class="space-y-4">
+                                <!-- Existing sections -->
+                                @foreach($existingSections as $idx => $section)
+                                    <div class="border border-gray-300 rounded-lg overflow-hidden bg-gray-50" x-data="{ sLang: 'fr' }">
+                                        <div class="px-4 py-3 bg-gray-100 border-b border-gray-300 flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <flux:badge color="gray" size="sm">{{ $idx + 1 }}</flux:badge>
+                                                <div class="flex gap-1">
+                                                    <button type="button" @click="sLang = 'fr'" :class="sLang === 'fr' ? 'bg-blue-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">FR</button>
+                                                    <button type="button" @click="sLang = 'en'" :class="sLang === 'en' ? 'bg-blue-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">EN</button>
+                                                    <button type="button" @click="sLang = 'es'" :class="sLang === 'es' ? 'bg-blue-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">ES</button>
+                                                    <button type="button" @click="sLang = 'it'" :class="sLang === 'it' ? 'bg-blue-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">IT</button>
+                                                </div>
+                                            </div>
+                                            <flux:button type="button" wire:click="removeExistingSection({{ $idx }})" wire:confirm="Supprimer ?" variant="danger" size="sm" icon="trash" />
+                                        </div>
+
+                                        <div class="p-4">
+                                            <div class="space-y-3 mb-3">
+                                                <div x-show="sLang === 'fr'" class="space-y-2">
+                                                    <flux:input wire:model.live.debounce.500ms="existingSections.{{ $idx }}.title_fr" label="Titre (FR)" size="sm" />
+                                                    <flux:textarea wire:model.live.debounce.500ms="existingSections.{{ $idx }}.description_fr" label="Description (FR)" rows="2" />
+                                                </div>
+                                                <div x-show="sLang === 'en'" class="space-y-2">
+                                                    <flux:input wire:model.live.debounce.500ms="existingSections.{{ $idx }}.title_en" label="Title (EN)" size="sm" />
+                                                    <flux:textarea wire:model.live.debounce.500ms="existingSections.{{ $idx }}.description_en" label="Description (EN)" rows="2" />
+                                                </div>
+                                                <div x-show="sLang === 'es'" class="space-y-2">
+                                                    <flux:input wire:model.live.debounce.500ms="existingSections.{{ $idx }}.title_es" label="Título (ES)" size="sm" />
+                                                    <flux:textarea wire:model.live.debounce.500ms="existingSections.{{ $idx }}.description_es" label="Descripción (ES)" rows="2" />
+                                                </div>
+                                                <div x-show="sLang === 'it'" class="space-y-2">
+                                                    <flux:input wire:model.live.debounce.500ms="existingSections.{{ $idx }}.title_it" label="Titolo (IT)" size="sm" />
+                                                    <flux:textarea wire:model.live.debounce.500ms="existingSections.{{ $idx }}.description_it" label="Descrizione (IT)" rows="2" />
+                                                </div>
+                                            </div>
+
+                                            @if(!empty($section['existing_images']))
+                                                <div class="mb-3">
+                                                    <div class="grid grid-cols-4 gap-2">
+                                                        @foreach($section['existing_images'] as $img)
+                                                            <div class="relative group">
+                                                                <img src="{{ asset($img['image']) }}" class="w-full h-20 object-cover rounded">
+                                                                <button type="button" wire:click="removeExistingImage({{ $idx }}, {{ $img['id'] }})" class="absolute -top-1 -right-1 bg-red-600 text-white rounded-full p-1 opacity-0 group-hover:opacity-100">
+                                                                    <flux:icon.x-mark class="size-3" />
+                                                                </button>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            @endif
+
+                                            <div wire:key="upload-{{ $idx }}-{{ $uploadKey }}">
+                                                <flux:label>Images de la section</flux:label>
+                                                <flux:file-upload wire:model="existingSections.{{ $idx }}.new_images" accept="image/*" multiple>
+                                                    <flux:file-upload.dropzone
+                                                        heading="Drop files here or click to browse"
+                                                        text="JPG, PNG, GIF up to 10MB"
+                                                    />
+                                                </flux:file-upload>
+                                                <div class="mt-4 flex flex-col gap-2">
+                                                    @if (!empty($section['new_images']))
+                                                        @foreach($section['new_images'] as $idx2 => $img)
+                                                            @if($img)
+                                                                <flux:file-item
+                                                                    heading="{{ $img->getClientOriginalName() }}"
+                                                                    image="{{ $img->temporaryUrl() }}"
+                                                                    size="{{ $img->getSize() }}"
+                                                                >
+                                                                    <x-slot name="actions">
+                                                                        <flux:file-item.remove wire:click="$set('existingSections.{{ $idx }}.new_images.{{ $idx2 }}', null)" />
+                                                                    </x-slot>
+                                                                </flux:file-item>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                                <!-- New sections -->
+                                @foreach($sections as $idx => $section)
+                                    <div class="border border-green-300 rounded-lg overflow-hidden bg-green-50" x-data="{ nLang: 'fr' }">
+                                        <div class="px-4 py-3 bg-green-100 border-b border-green-300 flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <flux:badge color="green" size="sm">Nouveau {{ $idx + 1 }}</flux:badge>
+                                                <div class="flex gap-1">
+                                                    <button type="button" @click="nLang = 'fr'" :class="nLang === 'fr' ? 'bg-green-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">FR</button>
+                                                    <button type="button" @click="nLang = 'en'" :class="nLang === 'en' ? 'bg-green-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">EN</button>
+                                                    <button type="button" @click="nLang = 'es'" :class="nLang === 'es' ? 'bg-green-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">ES</button>
+                                                    <button type="button" @click="nLang = 'it'" :class="nLang === 'it' ? 'bg-green-600 text-white' : 'bg-white'" class="w-8 h-6 rounded text-xs">IT</button>
+                                                </div>
+                                            </div>
+                                            <flux:button type="button" wire:click="removeSection({{ $idx }})" variant="danger" size="sm" icon="trash" />
+                                        </div>
+
+                                        <div class="p-4">
+                                            <div class="space-y-3 mb-3">
+                                                <div x-show="nLang === 'fr'" class="space-y-2">
+                                                    <flux:input wire:model="sections.{{ $idx }}.title_fr" label="Titre (FR)" size="sm" />
+                                                    <flux:textarea wire:model="sections.{{ $idx }}.description_fr" label="Description (FR)" rows="2" />
+                                                </div>
+                                                <div x-show="nLang === 'en'" class="space-y-2">
+                                                    <flux:input wire:model="sections.{{ $idx }}.title_en" label="Title (EN)" size="sm" />
+                                                    <flux:textarea wire:model="sections.{{ $idx }}.description_en" label="Description (EN)" rows="2" />
+                                                </div>
+                                                <div x-show="nLang === 'es'" class="space-y-2">
+                                                    <flux:input wire:model="sections.{{ $idx }}.title_es" label="Título (ES)" size="sm" />
+                                                    <flux:textarea wire:model="sections.{{ $idx }}.description_es" label="Descripción (ES)" rows="2" />
+                                                </div>
+                                                <div x-show="nLang === 'it'" class="space-y-2">
+                                                    <flux:input wire:model="sections.{{ $idx }}.title_it" label="Titolo (IT)" size="sm" />
+                                                    <flux:textarea wire:model="sections.{{ $idx }}.description_it" label="Descrizione (IT)" rows="2" />
+                                                </div>
+                                            </div>
+
+                                            <div class="space-y-2">
+                                                @for($i = 0; $i < 4; $i++)
+                                                    <flux:file-upload wire:model="sections.{{ $idx }}.images.{{ $i }}" accept="image/*" label="Image {{ $i + 1 }}">
+                                                        <flux:file-upload.dropzone
+                                                            heading="Glissez ou cliquez pour parcourir"
+                                                            text="JPG, PNG, WebP - Max 2MB"
+                                                            with-progress
+                                                            inline
+                                                        />
+                                                    </flux:file-upload>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar - 1 col -->
+            <div class="space-y-6 w-full">
+
+                <!-- Paramètres -->
+                <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-zinc-200 ">
+                        <flux:heading size="lg">Paramètres</flux:heading>
+                    </div>
+
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <flux:input wire:model.live.debounce.500ms="slug" label="Slug" description="Auto-généré si vide" />
+                        </div>
+
+                        <div>
+                            <flux:input wire:model.live.debounce.500ms="order" type="number" label="Ordre" required />
+                            @error('order') <flux:error class="mt-1">{{ $message }}</flux:error> @enderror
+                        </div>
+
+                        <flux:separator />
+
+                        <div>
+                            <flux:checkbox wire:model.live="is_published" label="Publier le projet" />
+                            <flux:description>Visible sur le site public</flux:description>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image principale -->
+                <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-zinc-200 ">
+                        <flux:heading size="lg">Image principale</flux:heading>
+                    </div>
+
+                    <div class="p-6">
+                        @if ($image && $projectId)
+                            <div class="mb-4 flex flex-col gap-2">
+                                <flux:file-item
+                                    heading="{{ basename($image) }}"
+                                    image="{{ asset($image) }}"
+                                    size="{{ file_exists(public_path($image)) ? filesize(public_path($image)) : 0 }}"
+                                >
+                                    <x-slot name="actions">
+                                        <flux:file-item.remove wire:click="removeMainImage" />
+                                    </x-slot>
+                                </flux:file-item>
+                            </div>
+                        @endif
+
+                        <flux:file-upload wire:model="newImage">
+                            <flux:file-upload.dropzone
+                                heading="Drop files here or click to browse"
+                                text="JPG, PNG, GIF up to 10MB"
+                            />
+                        </flux:file-upload>
+                        <div class="mt-4 flex flex-col gap-2">
+                            @if ($newImage)
+                                <flux:file-item
+                                    heading="{{ $newImage->getClientOriginalName() }}"
+                                    image="{{ $newImage->temporaryUrl() }}"
+                                    size="{{ $newImage->getSize() }}"
+                                >
+                                    <x-slot name="actions">
+                                        <flux:file-item.remove wire:click="$set('newImage', null)" />
+                                    </x-slot>
+                                </flux:file-item>
+                            @endif
+                        </div>
+
+                        @error('newImage') <flux:error class="mt-2">{{ $message }}</flux:error> @enderror
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
 </div>

@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Minimal Elegance",
                 "title_es" => "Elegancia Minimalista",
                 "title_it" => "Eleganza Minimalista",
-                "image" => "medias/images/projects/project-1.jpg",
+                "image" => "medias/images/projects/project-11.jpg",
                 "order" => 0,
                 "is_published" => true,
                 "sections" => [
@@ -38,6 +38,7 @@ class ProjectSeeder extends Seeder
                             "Un espacio refinado donde cada elemento tiene su propósito. El minimalismo se encuentra con la elegancia en una armonía perfecta de líneas puras y materiales nobles.",
                         "description_it" =>
                             'Uno spazio raffinato dove ogni elemento ha il suo scopo. Il minimalismo incontra l\'eleganza in una perfetta armonia di linee pure e materiali nobili.',
+                        "images" => [1, 2, 3, 4],
                     ],
                     [
                         "title_fr" => "Luminosité & Espace",
@@ -52,6 +53,7 @@ class ProjectSeeder extends Seeder
                             "Volúmenes generosos bañados en luz natural, creando una atmósfera serena y atemporal. Cada detalle está diseñado para realzar el espacio.",
                         "description_it" =>
                             'Volumi generosi immersi nella luce naturale, creando un\'atmosfera serena e senza tempo. Ogni dettaglio è progettato per esaltare lo spazio.',
+                        "images" => [5, 6, 7, 8],
                     ],
                 ],
             ],
@@ -61,7 +63,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Contemporary Luxury",
                 "title_es" => "Lujo Contemporáneo",
                 "title_it" => "Lusso Contemporaneo",
-                "image" => "medias/images/projects/project-2.jpg",
+                "image" => "medias/images/projects/project-12.jpg",
                 "order" => 1,
                 "is_published" => true,
                 "sections" => [
@@ -78,6 +80,7 @@ class ProjectSeeder extends Seeder
                             "El lujo se reinventa con materiales excepcionales y diseño audaz. Una fusión perfecta entre tradición e innovación para crear espacios únicos.",
                         "description_it" =>
                             "Il lusso si reinventa con materiali eccezionali e design audace. Una fusione perfetta tra tradizione e innovazione per creare spazi unici.",
+                        "images" => [9, 10, 11, 12],
                     ],
                     [
                         "title_fr" => "Détails Raffinés",
@@ -92,6 +95,7 @@ class ProjectSeeder extends Seeder
                             "Cada acabado se selecciona cuidadosamente para crear una experiencia sensorial única. El lujo se vive en los más mínimos detalles.",
                         "description_it" =>
                             'Ogni finitura è accuratamente selezionata per creare un\'esperienza sensoriale unica. Il lusso si vive nei minimi dettagli.',
+                        "images" => [13, 14, 1, 2],
                     ],
                 ],
             ],
@@ -101,7 +105,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Urban Chic",
                 "title_es" => "Chic Urbano",
                 "title_it" => "Urban Chic",
-                "image" => "medias/images/projects/project-3.jpg",
+                "image" => "medias/images/projects/project-13.jpg",
                 "order" => 2,
                 "is_published" => true,
                 "sections" => [
@@ -118,6 +122,7 @@ class ProjectSeeder extends Seeder
                             "La autenticidad de los materiales crudos se encuentra con el refinamiento urbano. Un equilibrio perfecto entre carácter industrial y confort contemporáneo.",
                         "description_it" =>
                             'L\'autenticità dei materiali grezzi incontra la raffinatezza urbana. Un equilibrio perfetto tra carattere industriale e comfort contemporaneo.',
+                        "images" => [3, 4, 5, 6],
                     ],
                     [
                         "title_fr" => "Touches Modernes",
@@ -132,6 +137,7 @@ class ProjectSeeder extends Seeder
                             "Los acentos contemporáneos suavizan el rigor industrial, creando un espacio vivo y cálido en el corazón de la ciudad.",
                         "description_it" =>
                             "Gli accenti contemporanei ammorbidiscono il rigore industriale, creando uno spazio vivace e caldo nel cuore della città.",
+                        "images" => [7, 8, 9, 10],
                     ],
                 ],
             ],
@@ -141,7 +147,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Refined Classic",
                 "title_es" => "Clásico Refinado",
                 "title_it" => "Classico Raffinato",
-                "image" => "medias/images/projects/project-4.jpg",
+                "image" => "medias/images/projects/project-14.jpg",
                 "order" => 3,
                 "is_published" => true,
                 "sections" => [
@@ -158,6 +164,7 @@ class ProjectSeeder extends Seeder
                             "El clasicismo reinterpretado con un toque contemporáneo. Espacios que trascienden las épocas sin pasar nunca de moda.",
                         "description_it" =>
                             "Il classicismo reinterpretato con un tocco contemporaneo. Spazi che trascendono le epoche senza mai passare di moda.",
+                        "images" => [11, 12, 13, 14],
                     ],
                     [
                         "title_fr" => "Savoir-Faire Artisanal",
@@ -172,6 +179,7 @@ class ProjectSeeder extends Seeder
                             "Un tributo a las técnicas tradicionales realzadas por una visión moderna. Cada pieza cuenta una historia de excelencia.",
                         "description_it" =>
                             "Un tributo alle tecniche tradizionali esaltate da una visione moderna. Ogni pezzo racconta una storia di eccellenza.",
+                        "images" => [1, 3, 5, 7],
                     ],
                 ],
             ],
@@ -181,7 +189,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Modern Sophistication",
                 "title_es" => "Sofisticación Moderna",
                 "title_it" => "Sofisticazione Moderna",
-                "image" => "medias/images/projects/project-5.jpg",
+                "image" => "medias/images/projects/project-1.jpg",
                 "order" => 4,
                 "is_published" => true,
                 "sections" => [
@@ -198,6 +206,7 @@ class ProjectSeeder extends Seeder
                             "Innovación al servicio del confort. Soluciones audaces que redefinen los códigos de la vida moderna.",
                         "description_it" =>
                             'Innovazione al servizio del comfort. Soluzioni audaci che ridefiniscono i codici dell\'abitare moderno.',
+                        "images" => [2, 4, 6, 8],
                     ],
                     [
                         "title_fr" => "Harmonie Parfaite",
@@ -212,6 +221,133 @@ class ProjectSeeder extends Seeder
                             "El equilibrio entre funcionalidad y estética alcanza su apogeo. Cada espacio está diseñado para vivir e inspirar.",
                         "description_it" =>
                             'L\'equilibrio tra funzionalità ed estetica raggiunge il suo apice. Ogni spazio è progettato per vivere e ispirare.',
+                        "images" => [10, 11, 12, 13],
+                    ],
+                ],
+            ],
+            [
+                "slug" => "coastal-serenity",
+                "title_fr" => "Sérénité Côtière",
+                "title_en" => "Coastal Serenity",
+                "title_es" => "Serenidad Costera",
+                "title_it" => "Serenità Costiera",
+                "image" => "medias/images/projects/project-2.jpg",
+                "order" => 5,
+                "is_published" => true,
+                "sections" => [
+                    [
+                        "title_fr" => "Inspirations Marines",
+                        "title_en" => "Marine Inspirations",
+                        "title_es" => "Inspiraciones Marinas",
+                        "title_it" => "Ispirazioni Marine",
+                        "description_fr" =>
+                            'Des tons apaisants rappelant l\'océan et le sable fin. Un refuge paisible où règne la tranquillité et la douceur de vivre.',
+                        "description_en" =>
+                            "Soothing tones reminiscent of the ocean and fine sand. A peaceful refuge where tranquility and gentle living reign.",
+                        "description_es" =>
+                            "Tonos relajantes que recuerdan el océano y la arena fina. Un refugio pacífico donde reinan la tranquilidad y la vida suave.",
+                        "description_it" =>
+                            'Toni rilassanti che ricordano l\'oceano e la sabbia fine. Un rifugio pacifico dove regna la tranquillità e la dolcezza di vivere.',
+                        "images" => [14, 1, 2, 3],
+                    ],
+                    [
+                        "title_fr" => "Matériaux Naturels",
+                        "title_en" => "Natural Materials",
+                        "title_es" => "Materiales Naturales",
+                        "title_it" => "Materiali Naturali",
+                        "description_fr" =>
+                            'Bois flotté, lin naturel et rotin tissé créent une atmosphère décontractée et élégante. L\'essence même du luxe côtier.',
+                        "description_en" =>
+                            "Driftwood, natural linen and woven rattan create a relaxed and elegant atmosphere. The very essence of coastal luxury.",
+                        "description_es" =>
+                            "Madera flotante, lino natural y ratán tejido crean una atmósfera relajada y elegante. La esencia misma del lujo costero.",
+                        "description_it" =>
+                            'Legno galleggiante, lino naturale e rattan intrecciato creano un\'atmosfera rilassata ed elegante. L\'essenza stessa del lusso costiero.',
+                        "images" => [4, 5, 6, 7],
+                    ],
+                ],
+            ],
+            [
+                "slug" => "artisan-loft",
+                "title_fr" => "Loft Artisanal",
+                "title_en" => "Artisan Loft",
+                "title_es" => "Loft Artesanal",
+                "title_it" => "Loft Artigianale",
+                "image" => "medias/images/projects/project-3.jpg",
+                "order" => 6,
+                "is_published" => true,
+                "sections" => [
+                    [
+                        "title_fr" => "Volumes Ouverts",
+                        "title_en" => "Open Volumes",
+                        "title_es" => "Volúmenes Abiertos",
+                        "title_it" => "Volumi Aperti",
+                        "description_fr" =>
+                            'Des espaces généreux sans cloisons où circule la lumière. L\'architecture brute révélée et célébrée dans toute sa beauté.',
+                        "description_en" =>
+                            "Generous spaces without partitions where light flows. Raw architecture revealed and celebrated in all its beauty.",
+                        "description_es" =>
+                            "Espacios generosos sin particiones donde fluye la luz. Arquitectura cruda revelada y celebrada en toda su belleza.",
+                        "description_it" =>
+                            "Spazi generosi senza partizioni dove scorre la luce. Architettura grezza rivelata e celebrata in tutta la sua bellezza.",
+                        "images" => [8, 9, 10, 11],
+                    ],
+                    [
+                        "title_fr" => "Caractère Unique",
+                        "title_en" => "Unique Character",
+                        "title_es" => "Carácter Único",
+                        "title_it" => "Carattere Unico",
+                        "description_fr" =>
+                            "Poutres apparentes, briques patinées et métal industriel créent une identité forte. Un espace qui raconte son histoire.",
+                        "description_en" =>
+                            "Exposed beams, patinated bricks and industrial metal create a strong identity. A space that tells its story.",
+                        "description_es" =>
+                            "Vigas expuestas, ladrillos patinados y metal industrial crean una identidad fuerte. Un espacio que cuenta su historia.",
+                        "description_it" =>
+                            'Travi a vista, mattoni patinati e metallo industriale creano un\'identità forte. Uno spazio che racconta la sua storia.',
+                        "images" => [12, 13, 14, 1],
+                    ],
+                ],
+            ],
+            [
+                "slug" => "zen-sanctuary",
+                "title_fr" => "Sanctuaire Zen",
+                "title_en" => "Zen Sanctuary",
+                "title_es" => "Santuario Zen",
+                "title_it" => "Santuario Zen",
+                "image" => "medias/images/projects/project-4.jpg",
+                "order" => 7,
+                "is_published" => true,
+                "sections" => [
+                    [
+                        "title_fr" => "Équilibre & Sérénité",
+                        "title_en" => "Balance & Serenity",
+                        "title_es" => "Equilibrio y Serenidad",
+                        "title_it" => "Equilibrio e Serenità",
+                        "description_fr" =>
+                            'Un havre de paix inspiré de la philosophie japonaise. Des lignes épurées et une palette naturelle pour apaiser l\'esprit.',
+                        "description_en" =>
+                            "A haven of peace inspired by Japanese philosophy. Clean lines and a natural palette to soothe the mind.",
+                        "description_es" =>
+                            "Un refugio de paz inspirado en la filosofía japonesa. Líneas limpias y una paleta natural para calmar la mente.",
+                        "description_it" =>
+                            'Un\'oasi di pace ispirata alla filosofia giapponese. Linee pulite e una tavolozza naturale per calmare la mente.',
+                        "images" => [2, 3, 4, 5],
+                    ],
+                    [
+                        "title_fr" => "Minimalisme Fonctionnel",
+                        "title_en" => "Functional Minimalism",
+                        "title_es" => "Minimalismo Funcional",
+                        "title_it" => "Minimalismo Funzionale",
+                        "description_fr" =>
+                            "Chaque élément a sa place et sa fonction. Le vide devient plein de sens dans cet espace méditatif et ressourçant.",
+                        "description_en" =>
+                            "Every element has its place and function. Emptiness becomes meaningful in this meditative and restorative space.",
+                        "description_es" =>
+                            "Cada elemento tiene su lugar y función. El vacío se vuelve significativo en este espacio meditativo y restaurador.",
+                        "description_it" =>
+                            "Ogni elemento ha il suo posto e funzione. Il vuoto diventa significativo in questo spazio meditativo e rigenerante.",
+                        "images" => [6, 7, 8, 9],
                     ],
                 ],
             ],
@@ -244,6 +380,9 @@ class ProjectSeeder extends Seeder
             $project = Project::create($projectData);
 
             foreach ($sectionsData as $sectionIndex => $sectionData) {
+                $imageIndices = $sectionData["images"];
+                unset($sectionData["images"]);
+
                 $section = ProjectSection::create([
                     "project_id" => $project->id,
                     "order" => $sectionIndex,
@@ -258,12 +397,13 @@ class ProjectSeeder extends Seeder
                 ]);
                 $totalSections++;
 
-                for ($i = 0; $i < 4; $i++) {
+                foreach ($imageIndices as $order => $imageIndex) {
+                    // imageIndex va de 1 à 14, mais le tableau commence à 0
+                    $imageKey = $imageIndex - 1;
                     ProjectImage::create([
                         "section_id" => $section->id,
-                        "image" =>
-                            $availableImages[$i % count($availableImages)],
-                        "order" => $i,
+                        "image" => $availableImages[$imageKey],
+                        "order" => $order,
                     ]);
                     $totalImages++;
                 }
