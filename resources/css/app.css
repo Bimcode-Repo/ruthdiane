@@ -1,19 +1,34 @@
+@import "tailwindcss";
 @import "../../vendor/livewire/flux/dist/flux.css";
+@custom-variant dark (&:where(.dark, .dark *));
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+    --font-sans: Joan, ui-sans-serif, system-ui, sans-serif;
+    --color-background: #3d3935;
+    --color-background-darker: #34302d;
+    --color-primary: #c4a882;
+    --color-light: #ffffff;
+    --max-width-8xl: 1440px;
+}
+
+@source "../../vendor/livewire/flux/stubs";
+@source "../../vendor/livewire/flux-pro/stubs";
 
 body {
     background-color: #3d3935;
     min-height: 100vh;
 }
 
+a,
+button {
+    cursor: pointer !important;
+}
+
 html {
     background-color: #3d3935;
 }
 
-/* Animations Swup personnalisées - Fade + Slide élégant */
+/* Animations de transition */
 .transition-fade {
     transition:
         opacity 0.25s ease-in-out,
@@ -22,6 +37,12 @@ html {
     transform: translateY(0);
 }
 
+/* Admin navigation (Livewire) */
+html.is-navigating .transition-fade {
+    opacity: 0;
+}
+
+/* Public site navigation (Swup) */
 html.is-animating .transition-fade {
     opacity: 0;
     transform: translateY(-15px);

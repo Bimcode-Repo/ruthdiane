@@ -15,7 +15,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/projects/project-1.jpg') }}"
+                <img src="{{ asset('medias/images-hd/salon-1.png') }}"
                      alt="Interior 1"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -26,7 +26,7 @@
             </div>
 
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/projects/project-2.jpg') }}"
+                <img src="{{ asset('medias/images-hd/cuisine-1.png') }}"
                      alt="Interior 2"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -39,7 +39,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/projects/project-3.jpg') }}"
+                <img src="{{ asset('medias/images-hd/chambre-1.png') }}"
                      alt="Interior 3"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -50,7 +50,7 @@
             </div>
 
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/projects/project-4.jpg') }}"
+                <img src="{{ asset('medias/images-hd/background-1.png') }}"
                      alt="Interior 4"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -61,7 +61,7 @@
             </div>
 
             <div class="relative overflow-hidden group">
-                <img src="{{ asset('medias/images/projects/project-5.jpg') }}"
+                <img src="{{ asset('medias/images-hd/jardin-1.png') }}"
                      alt="Interior 5"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"

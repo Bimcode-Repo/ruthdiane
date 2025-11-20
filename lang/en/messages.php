@@ -72,9 +72,43 @@ return [
     // Instagram
     "instagram" => "Instagram",
 
+    // Inspiration
+    "inspiration_title" => "Inspiration",
+    "inspiration_description" =>
+        "Get inspired by our carefully curated selection of styles and atmospheres to enhance your interior.",
+
     // Contact Form Messages
     "contact_success" =>
         "Your message has been sent successfully! We will respond to you as soon as possible.",
     "contact_error" =>
         "An error occurred while sending your message. Please try again.",
+
+    // Cookie Consent
+    "cookie_title" => "Cookie Management",
+    "cookie_description" =>
+        "We use cookies to improve your experience and analyze our site traffic. You can customize your preferences at any time.",
+    "cookie_accept" => "Accept All",
+    "cookie_refuse" => "Refuse All",
+    "cookie_customize" => "Customize",
+    "cookie_preferences" => "Cookie Preferences",
+    "cookie_save" => "Save My Choices",
+    "cookie_necessary" => "Necessary Cookies",
+    "cookie_necessary_desc" =>
+        "These cookies are essential for the site to function and cannot be disabled.",
+    "cookie_analytics" => "Analytics Cookies",
+    "cookie_analytics_desc" =>
+        "These cookies help us understand how you use our site to improve it.",
+    "cookie_marketing" => "Marketing Cookies",
+    "cookie_marketing_desc" =>
+        "These cookies are used to provide you with personalized content and advertising.",
+    "cookie_page_title" => "Manage Your Cookie Preferences",
+    "cookie_page_description" =>
+        "Choose the categories of cookies you wish to allow. Your choices will be saved for 13 months.",
+    "cookie_saved_success" => "Your preferences have been saved successfully.",
+    "cookie_revoke" => "Revoke My Consent",
+    "cookie_revoke_confirm" =>
+        "Are you sure you want to revoke your consent? All non-essential cookies will be deleted.",
+    "cookie_revoked_success" =>
+        "Your consent has been revoked. Non-essential cookies have been deleted.",
+    "no_blog_posts" => "No blog posts at the moment.",
 ];

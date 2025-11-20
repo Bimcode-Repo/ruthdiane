@@ -13,5 +13,7 @@
 
     <x-sections.about />
 
-    <x-sections.blog-carousel />
+    @if(blogEnabled())
+        <x-sections.blog-carousel />
+    @endif
 </x-layouts.app>

@@ -18,7 +18,7 @@
 
         <div class="flex flex-col lg:flex-row gap-0 mb-8 md:mb-12 bg-background-darker" data-aos="fade-up">
             <div class="overflow-hidden lg:w-[818px] flex-shrink-0">
-                <img src="{{ asset('medias/images/projects/project-4.jpg') }}"
+                <img src="{{ asset('medias/images-hd/bureau-3.png') }}"
                      alt="Service 1"
                      class="w-full h-[250px] md:h-[400px] object-cover">
             </div>

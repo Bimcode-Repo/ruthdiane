@@ -1,6 +1,6 @@
 <x-hero.page
-    active="our-style"
+    active="projects"
     title="{{ __('messages.our_style') }}"
-    image="medias/images/projects/project-6.jpg"
+    image="medias/images-hd/cuisine-1.png"
     alt="Ruth Diane - Notre style"
 />

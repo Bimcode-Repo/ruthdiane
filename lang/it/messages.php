@@ -71,9 +71,44 @@ return [
     // Instagram
     "instagram" => "Instagram",
 
+    // Inspiration
+    "inspiration_title" => "Ispirazione",
+    "inspiration_description" =>
+        "Lasciatevi ispirare dalla nostra selezione curata di stili e atmosfere per valorizzare il vostro interno.",
+
     // Contact Form Messages
     "contact_success" =>
         "Il tuo messaggio è stato inviato con successo! Ti risponderemo il prima possibile.",
     "contact_error" =>
         'Si è verificato un errore durante l\'invio del messaggio. Riprova.',
+
+    // Cookie Consent
+    "cookie_title" => "Gestione dei Cookie",
+    "cookie_description" =>
+        "Utilizziamo i cookie per migliorare la tua esperienza e analizzare il traffico del nostro sito. Puoi personalizzare le tue preferenze in qualsiasi momento.",
+    "cookie_accept" => "Accetta Tutto",
+    "cookie_refuse" => "Rifiuta Tutto",
+    "cookie_customize" => "Personalizza",
+    "cookie_preferences" => "Preferenze Cookie",
+    "cookie_save" => "Salva le Mie Scelte",
+    "cookie_necessary" => "Cookie Necessari",
+    "cookie_necessary_desc" =>
+        "Questi cookie sono essenziali per il funzionamento del sito e non possono essere disattivati.",
+    "cookie_analytics" => "Cookie Analitici",
+    "cookie_analytics_desc" =>
+        "Questi cookie ci aiutano a capire come utilizzi il nostro sito per migliorarlo.",
+    "cookie_marketing" => "Cookie di Marketing",
+    "cookie_marketing_desc" =>
+        "Questi cookie vengono utilizzati per offrirti contenuti e pubblicità personalizzati.",
+    "cookie_page_title" => "Gestisci le Tue Preferenze Cookie",
+    "cookie_page_description" =>
+        "Scegli le categorie di cookie che desideri autorizzare. Le tue scelte verranno conservate per 13 mesi.",
+    "cookie_saved_success" =>
+        "Le tue preferenze sono state salvate con successo.",
+    "cookie_revoke" => "Revoca il Mio Consenso",
+    "cookie_revoke_confirm" =>
+        "Sei sicuro di voler revocare il tuo consenso? Tutti i cookie non essenziali verranno eliminati.",
+    "cookie_revoked_success" =>
+        "Il tuo consenso è stato revocato. I cookie non essenziali sono stati eliminati.",
+    "no_blog_posts" => "Nessun articolo del blog al momento.",
 ];

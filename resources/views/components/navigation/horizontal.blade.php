@@ -16,18 +16,20 @@
             @endif
             {{ __('messages.home') }}
         </a>
-        <a
-            @unless($hasVisited)
-                data-aos="fade-up" data-aos-delay="600"
-            @endunless
-            href="{{ route('our-style') }}"
-            class="hover:text-primary transition-colors duration-300 {{ $active === 'our-style' ? 'relative' : '' }} {{ $active === 'projects' ? 'relative' : '' }}"
-        >
-            @if($active === 'our-style' or $active === 'projects')
-                <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-[2.5px] w-px h-[25px] bg-light"></div>
-            @endif
-            {{ __('messages.our_style') }}
-        </a>
+        @if(!inspirationMode())
+            <a
+                @unless($hasVisited)
+                    data-aos="fade-up" data-aos-delay="600"
+                @endunless
+                href="{{ route('projects') }}"
+                class="hover:text-primary transition-colors duration-300 {{ $active === 'projects' ? 'relative' : '' }}"
+            >
+                @if($active === 'projects')
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-[2.5px] w-px h-[25px] bg-light"></div>
+                @endif
+                {{ __('messages.our_style') }}
+            </a>
+        @endif
         <a
             @unless($hasVisited)
                 data-aos="fade-up" data-aos-delay="900"
@@ -52,5 +54,19 @@
             @endif
             {{ __('messages.contact') }}
         </a>
+        @if(blogEnabled())
+            <a
+                @unless($hasVisited)
+                    data-aos="fade-up" data-aos-delay="1500"
+                @endunless
+                href="{{ route('blog.archive', ['locale' => currentLocale()]) }}"
+                class="hover:text-primary transition-colors duration-300 {{ $active === 'blog' ? 'relative' : '' }}"
+            >
+                @if($active === 'blog')
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-[2.5px] w-px h-[25px] bg-light"></div>
+                @endif
+                {{ __('messages.blog') }}
+            </a>
+        @endif
     </nav>
 </div>

@@ -15,7 +15,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             <div class="relative overflow-hidden group" data-aos="fade-right">
-                <img src="{{ asset('medias/images/projects/project-11.jpg') }}"
+                <img src="{{ asset('medias/images-hd/buanderie-2.png') }}"
                      alt="Interior 1"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"
@@ -26,7 +26,7 @@
             </div>
 
             <div class="relative overflow-hidden group" data-aos="fade-left">
-                <img src="{{ asset('medias/images/projects/project-12.jpg') }}"
+                <img src="{{ asset('medias/images-hd/jardin-3.png') }}"
                      alt="Interior 2"
                      class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
                 <img src="{{ asset('medias/images/blur/blurd.png') }}"

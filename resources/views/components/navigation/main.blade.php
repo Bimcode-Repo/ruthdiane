@@ -17,11 +17,13 @@
                 {{ __('messages.home') }}
             </a>
         </li>
-        <li @if(!session('visited')) data-aos="fade-left" data-aos-delay="1300" @endif>
-            <a href="{{ route('our-style') }}" class="text-light text-[24px] font-bold font-andada hover:text-primary transition-colors duration-300">
-                {{ __('messages.our_style') }}
-            </a>
-        </li>
+        @if(!inspirationMode())
+            <li @if(!session('visited')) data-aos="fade-left" data-aos-delay="1300" @endif>
+                <a href="{{ route('projects') }}" class="text-light text-[24px] font-bold font-andada hover:text-primary transition-colors duration-300">
+                    {{ __('messages.our_style') }}
+                </a>
+            </li>
+        @endif
         <li @if(!session('visited')) data-aos="fade-left" data-aos-delay="1600" @endif>
             <a href="{{ route('about') }}" class="text-light text-[24px] font-bold font-andada hover:text-primary transition-colors duration-300">
                 {{ __('messages.about') }}
@@ -32,5 +34,12 @@
                 {{ __('messages.contact') }}
             </a>
         </li>
+        @if(blogEnabled())
+            <li @if(!session('visited')) data-aos="fade-left" data-aos-delay="2200" @endif>
+                <a href="{{ route('blog.archive', ['locale' => currentLocale()]) }}" class="text-light text-[24px] font-bold font-andada hover:text-primary transition-colors duration-300">
+                    {{ __('messages.blog') }}
+                </a>
+            </li>
+        @endif
     </ul>
 </nav>

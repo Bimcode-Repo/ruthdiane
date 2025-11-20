@@ -2,7 +2,7 @@
     <div class="max-w-8xl mx-auto px-[20px] md:px-[40px]">
         <div class="flex flex-col lg:flex-row lg:h-[470px]">
             <div class="w-full lg:w-[470px] h-[300px] lg:h-[470px] flex-shrink-0" data-aos="fade-right">
-                <img src="{{ asset('medias/images/projects/project-14.jpg') }}"
+                <img src="{{ asset('medias/images/about/female-owner.png') }}"
                      alt="Female Owner"
                      class="w-full h-full object-cover">
             </div>

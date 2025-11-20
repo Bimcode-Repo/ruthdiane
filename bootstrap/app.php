@@ -7,25 +7,27 @@ use Illuminate\Support\Facades\Route;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
-        web: __DIR__.'/../routes/web.php',
-        commands: __DIR__.'/../routes/console.php',
-        health: '/up',
+        web: __DIR__ . "/../routes/web.php",
+        commands: __DIR__ . "/../routes/console.php",
+        health: "/up",
         then: function () {
-            Route::middleware('web')
-                ->prefix('admin')
-                ->group(base_path('routes/admin.php'));
+            Route::middleware("web")
+                ->prefix("admin")
+                ->group(base_path("routes/admin.php"));
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(append: [
-            \App\Http\Middleware\SetLocale::class,
-            \App\Http\Middleware\TrackFirstVisit::class,
-        ]);
+        $middleware->web(append: [\App\Http\Middleware\TrackFirstVisit::class]);
 
         $middleware->alias([
-            'isAdmin' => \App\Http\Middleware\IsAdmin::class,
+            "isAdmin" => \App\Http\Middleware\IsAdmin::class,
+            "setLocale" => \App\Http\Middleware\SetLocale::class,
+            "checkInspirationMode" =>
+                \App\Http\Middleware\CheckInspirationMode::class,
+            "checkBlogEnabled" => \App\Http\Middleware\CheckBlogEnabled::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-    })->create();
+    })
+    ->create();

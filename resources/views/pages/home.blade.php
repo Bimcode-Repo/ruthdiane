@@ -3,7 +3,11 @@
 
     @include('pages.partials.home.intro-text')
 
-    <x-sections.project-gallery />
+    @if(!inspirationMode())
+        <x-sections.project-gallery />
+    @else
+        <x-sections.inspiration-gallery />
+    @endif
 
     <x-sections.partner-banner />
 
@@ -13,5 +17,7 @@
 
     <x-sections.about />
 
-    <x-sections.blog-carousel />
+    @if(blogEnabled())
+        <x-sections.blog-carousel />
+    @endif
 </x-layouts.app>

@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Minimal Elegance",
                 "title_es" => "Elegancia Minimalista",
                 "title_it" => "Eleganza Minimalista",
-                "image" => "medias/images/projects/project-11.jpg",
+                "image" => "medias/images-hd/background-4.png",
                 "order" => 0,
                 "is_published" => true,
                 "sections" => [
@@ -63,7 +63,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Contemporary Luxury",
                 "title_es" => "Lujo Contemporáneo",
                 "title_it" => "Lusso Contemporaneo",
-                "image" => "medias/images/projects/project-12.jpg",
+                "image" => "medias/images-hd/jardin-1.png",
                 "order" => 1,
                 "is_published" => true,
                 "sections" => [
@@ -105,7 +105,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Urban Chic",
                 "title_es" => "Chic Urbano",
                 "title_it" => "Urban Chic",
-                "image" => "medias/images/projects/project-13.jpg",
+                "image" => "medias/images-hd/jardin-2.png",
                 "order" => 2,
                 "is_published" => true,
                 "sections" => [
@@ -147,7 +147,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Refined Classic",
                 "title_es" => "Clásico Refinado",
                 "title_it" => "Classico Raffinato",
-                "image" => "medias/images/projects/project-14.jpg",
+                "image" => "medias/images-hd/jardin-3.png",
                 "order" => 3,
                 "is_published" => true,
                 "sections" => [
@@ -189,7 +189,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Modern Sophistication",
                 "title_es" => "Sofisticación Moderna",
                 "title_it" => "Sofisticazione Moderna",
-                "image" => "medias/images/projects/project-1.jpg",
+                "image" => "medias/images-hd/bureau-1.png",
                 "order" => 4,
                 "is_published" => true,
                 "sections" => [
@@ -231,7 +231,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Coastal Serenity",
                 "title_es" => "Serenidad Costera",
                 "title_it" => "Serenità Costiera",
-                "image" => "medias/images/projects/project-2.jpg",
+                "image" => "medias/images-hd/bureau-2.png",
                 "order" => 5,
                 "is_published" => true,
                 "sections" => [
@@ -273,7 +273,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Artisan Loft",
                 "title_es" => "Loft Artesanal",
                 "title_it" => "Loft Artigianale",
-                "image" => "medias/images/projects/project-3.jpg",
+                "image" => "medias/images-hd/bureau-3.png",
                 "order" => 6,
                 "is_published" => true,
                 "sections" => [
@@ -315,7 +315,7 @@ class ProjectSeeder extends Seeder
                 "title_en" => "Zen Sanctuary",
                 "title_es" => "Santuario Zen",
                 "title_it" => "Santuario Zen",
-                "image" => "medias/images/projects/project-4.jpg",
+                "image" => "medias/images-hd/buanderie-1.png",
                 "order" => 7,
                 "is_published" => true,
                 "sections" => [
@@ -354,20 +354,20 @@ class ProjectSeeder extends Seeder
         ];
 
         $availableImages = [
-            "medias/images/projects/project-1.jpg",
-            "medias/images/projects/project-2.jpg",
-            "medias/images/projects/project-3.jpg",
-            "medias/images/projects/project-4.jpg",
-            "medias/images/projects/project-5.jpg",
-            "medias/images/projects/project-6.jpg",
-            "medias/images/projects/project-7.jpg",
-            "medias/images/projects/project-8.jpg",
-            "medias/images/projects/project-9.jpg",
-            "medias/images/projects/project-10.jpg",
-            "medias/images/projects/project-11.jpg",
-            "medias/images/projects/project-12.jpg",
-            "medias/images/projects/project-13.jpg",
-            "medias/images/projects/project-14.jpg",
+            "medias/images-hd/salon-1.png",
+            "medias/images-hd/salon-2.png",
+            "medias/images-hd/salon-3.png",
+            "medias/images-hd/salon-4.png",
+            "medias/images-hd/cuisine-1.png",
+            "medias/images-hd/cuisine-2.png",
+            "medias/images-hd/cuisine-3.png",
+            "medias/images-hd/cuisine-4.png",
+            "medias/images-hd/chambre-1.png",
+            "medias/images-hd/chambre-2.png",
+            "medias/images-hd/chambre-3.png",
+            "medias/images-hd/background-1.png",
+            "medias/images-hd/background-2.png",
+            "medias/images-hd/background-3.png",
         ];
 
         $totalSections = 0;

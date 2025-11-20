@@ -6,6 +6,10 @@ use App\Livewire\Admin\BlogForm;
 use App\Livewire\Admin\ContactManager;
 use App\Livewire\Admin\ProjectManager;
 use App\Livewire\Admin\ProjectForm;
+use App\Livewire\Admin\Settings;
+use App\Livewire\Admin\UserManager;
+use App\Livewire\Admin\ScriptManager;
+use App\Livewire\Admin\PersonnalisationManager;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +47,12 @@ Route::middleware(["auth", "verified", "isAdmin"])->group(function () {
             ->with("success", "Projet supprimé avec succès");
     })->name("admin.projects.destroy");
     Route::get("/contact", ContactManager::class)->name("admin.contact");
+    Route::get("/users", UserManager::class)->name("admin.users");
+    Route::get("/scripts", ScriptManager::class)->name("admin.scripts");
+    Route::get("/personnalisation", PersonnalisationManager::class)->name(
+        "admin.personnalisation",
+    );
+    Route::get("/settings", Settings::class)->name("admin.settings");
 });
 
 Route::middleware(["auth", "isAdmin"])->group(function () {

@@ -26,28 +26,31 @@ document.addEventListener("livewire:init", () => {
     });
 });
 
-// Initialiser Swup pour les transitions de page avec animation personnalisée
-const swup = new Swup({
-    plugins: [
-        new SwupScrollPlugin({
-            doScrollingRightAway: false,
-            animateScroll: false,
-        }),
-    ],
-    animationSelector: '[class*="transition-"]',
-    containers: ["#swup"],
-    cache: true,
-    preload: {
-        hover: true,
-    },
-    animateHistoryBrowsing: true,
-});
+// Initialiser Swup uniquement si le container existe (site public)
+let swup = null;
+if (document.querySelector("#swup")) {
+    swup = new Swup({
+        plugins: [
+            new SwupScrollPlugin({
+                doScrollingRightAway: false,
+                animateScroll: false,
+            }),
+        ],
+        animationSelector: '[class*="transition-"]',
+        containers: ["#swup"],
+        cache: true,
+        preload: {
+            hover: true,
+        },
+        animateHistoryBrowsing: true,
+    });
 
-// Réinitialiser AOS après chaque changement de page
-swup.hooks.on("content:replace", () => {
-    AOS.refresh();
-    initMobileMenu();
-});
+    // Réinitialiser AOS après chaque changement de page
+    swup.hooks.on("content:replace", () => {
+        AOS.refresh();
+        initMobileMenu();
+    });
+}
 
 // Fonction pour initialiser le menu mobile
 function initMobileMenu() {
@@ -70,6 +73,8 @@ function initMobileMenu() {
             menu.classList.add("opacity-100", "pointer-events-auto");
             newCloseBtn.classList.remove("opacity-0", "pointer-events-none");
             newCloseBtn.classList.add("opacity-100", "pointer-events-auto");
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
         });
 
         newCloseBtn.addEventListener("click", function (e) {
@@ -78,6 +83,8 @@ function initMobileMenu() {
             menu.classList.remove("opacity-100", "pointer-events-auto");
             newCloseBtn.classList.add("opacity-0", "pointer-events-none");
             newCloseBtn.classList.remove("opacity-100", "pointer-events-auto");
+            document.documentElement.style.overflow = "";
+            document.body.style.overflow = "";
         });
 
         menuLinks.forEach((link) => {
@@ -89,28 +96,32 @@ function initMobileMenu() {
                     "opacity-100",
                     "pointer-events-auto",
                 );
+                document.documentElement.style.overflow = "";
+                document.body.style.overflow = "";
             });
         });
     }
 }
 
 // Réinitialiser Swiper après changement de page
-swup.hooks.on("content:replace", () => {
-    const logoSlider = document.querySelector("#logo-slider");
-    if (logoSlider && !logoSlider.swiper) {
-        new Swiper("#logo-slider", {
-            slidesPerView: 4,
-            spaceBetween: 48,
-            loop: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-                reverseDirection: false,
-            },
-            grabCursor: true,
-        });
-    }
-});
+if (swup) {
+    swup.hooks.on("content:replace", () => {
+        const logoSlider = document.querySelector("#logo-slider");
+        if (logoSlider && !logoSlider.swiper) {
+            new Swiper("#logo-slider", {
+                slidesPerView: 4,
+                spaceBetween: 48,
+                loop: true,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                    reverseDirection: false,
+                },
+                grabCursor: true,
+            });
+        }
+    });
+}
 
 // Initialisation du slider Swiper quand DOM ready
 document.addEventListener("DOMContentLoaded", function () {

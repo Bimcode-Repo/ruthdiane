@@ -56,12 +56,44 @@
                     badge="{{ \App\Models\ContactMessage::unread()->count() ?: null }}">
                     Messages
                 </flux:navlist.item>
+
+                <flux:navlist.item
+                    icon="user-group"
+                    href="{{ route('admin.users') }}"
+                    wire:navigate
+                    wire:current="text-zinc-800 bg-white dark:bg-white/[7%] border-zinc-200">
+                    Membres
+                </flux:navlist.item>
+
+                <flux:navlist.item
+                    icon="code-bracket"
+                    href="{{ route('admin.scripts') }}"
+                    wire:navigate
+                    wire:current="text-zinc-800 bg-white dark:bg-white/[7%] border-zinc-200">
+                    Scripts & Analyse
+                </flux:navlist.item>
+
+                <flux:navlist.item
+                    icon="language"
+                    href="{{ route('admin.personnalisation') }}"
+                    wire:navigate
+                    wire:current="text-zinc-800 bg-white dark:bg-white/[7%] border-zinc-200">
+                    Personnalisation
+                </flux:navlist.item>
+
+                <flux:navlist.item
+                    icon="cog-6-tooth"
+                    href="{{ route('admin.settings') }}"
+                    wire:navigate
+                    wire:current="text-zinc-800 bg-white dark:bg-white/[7%] border-zinc-200">
+                    Paramètres
+                </flux:navlist.item>
             </flux:navlist>
 
             <flux:spacer />
 
             <flux:navlist variant="outline">
-                <flux:navlist.item icon="arrow-right-start-on-rectangle" href="{{ route('home') }}">Retour au site</flux:navlist.item>
+                <flux:navlist.item icon="arrow-right-start-on-rectangle" href="{{ route('home', ['locale' => strtolower(session('locale', 'fr'))]) }}">Retour au site</flux:navlist.item>
                 <flux:navlist.item icon="arrow-right-end-on-rectangle" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</flux:navlist.item>
             </flux:navlist>
         </flux:sidebar>
@@ -78,55 +110,17 @@
             <flux:profile avatar="https://ui-avatars.com/api/?name={{ urlencode(auth()->user()->name) }}" name="{{ auth()->user()->name }}" />
         </flux:header>
 
-        <flux:main class="h-screen overflow-y-auto" id="main-content">
+        <flux:main class="h-screen overflow-y-auto bg-white" id="main-content">
             <div class="p-6 transition-fade" id="page-content">
-                {{ $slot }}
+                <div class="max-w-7xl mx-auto">
+                    {{ $slot }}
+                </div>
             </div>
         </flux:main>
 
         @persist('toast')
             <flux:toast />
         @endpersist
-
-        <style>
-            .transition-fade {
-                transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            html.is-navigating .transition-fade {
-                opacity: 0;
-                transform: translateY(-15px);
-            }
-        </style>
-
-        <script>
-            // Debug pour voir si les événements se déclenchent
-            document.addEventListener('livewire:navigate', (event) => {
-                console.log('livewire:navigate', event);
-                document.documentElement.classList.add('is-navigating');
-            });
-
-            document.addEventListener('livewire:navigating', (event) => {
-                console.log('livewire:navigating', event);
-                document.documentElement.classList.add('is-navigating');
-            });
-
-            document.addEventListener('livewire:navigated', (event) => {
-                console.log('livewire:navigated', event);
-                document.documentElement.classList.remove('is-navigating');
-                document.getElementById('main-content').scrollTop = 0;
-            });
-
-            // Au cas où Livewire 3 utilise des événements différents
-            window.addEventListener('livewire:init', () => {
-                Livewire.hook('navigate', ({ url }) => {
-                    console.log('Livewire hook navigate:', url);
-                    document.documentElement.classList.add('is-navigating');
-                });
-            });
-        </script>
 
         @fluxScripts
     </body>

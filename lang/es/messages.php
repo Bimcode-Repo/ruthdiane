@@ -71,9 +71,43 @@ return [
     // Instagram
     "instagram" => "Instagram",
 
+    // Inspiration
+    "inspiration_title" => "Inspiración",
+    "inspiration_description" =>
+        "Déjese inspirar por nuestra selección cuidadosamente elegida de estilos y ambientes para realzar su interior.",
+
     // Contact Form Messages
     "contact_success" =>
         "¡Su mensaje ha sido enviado con éxito! Le responderemos lo antes posible.",
     "contact_error" =>
         "Se produjo un error al enviar su mensaje. Por favor, inténtelo de nuevo.",
+
+    // Cookie Consent
+    "cookie_title" => "Gestión de Cookies",
+    "cookie_description" =>
+        "Utilizamos cookies para mejorar su experiencia y analizar el tráfico de nuestro sitio. Puede personalizar sus preferencias en cualquier momento.",
+    "cookie_accept" => "Aceptar Todo",
+    "cookie_refuse" => "Rechazar Todo",
+    "cookie_customize" => "Personalizar",
+    "cookie_preferences" => "Preferencias de Cookies",
+    "cookie_save" => "Guardar Mis Opciones",
+    "cookie_necessary" => "Cookies Necesarias",
+    "cookie_necessary_desc" =>
+        "Estas cookies son esenciales para el funcionamiento del sitio y no se pueden desactivar.",
+    "cookie_analytics" => "Cookies Analíticas",
+    "cookie_analytics_desc" =>
+        "Estas cookies nos ayudan a entender cómo utiliza nuestro sitio para mejorarlo.",
+    "cookie_marketing" => "Cookies de Marketing",
+    "cookie_marketing_desc" =>
+        "Estas cookies se utilizan para ofrecerle contenidos y publicidad personalizados.",
+    "cookie_page_title" => "Gestione Sus Preferencias de Cookies",
+    "cookie_page_description" =>
+        "Elija las categorías de cookies que desea autorizar. Sus elecciones se conservarán durante 13 meses.",
+    "cookie_saved_success" => "Sus preferencias se han guardado correctamente.",
+    "cookie_revoke" => "Revocar Mi Consentimiento",
+    "cookie_revoke_confirm" =>
+        "¿Está seguro de que desea revocar su consentimiento? Se eliminarán todas las cookies no esenciales.",
+    "cookie_revoked_success" =>
+        "Su consentimiento ha sido revocado. Las cookies no esenciales han sido eliminadas.",
+    "no_blog_posts" => "No hay artículos de blog por el momento.",
 ];

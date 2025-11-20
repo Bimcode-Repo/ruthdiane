@@ -14,20 +14,21 @@
         </div>
 
         <div class="flex flex-col lg:flex-row gap-[20px] mb-[20px]">
-            <div class="bg-[#2D2A27] p-6 md:p-12 w-full lg:w-1/2 h-auto lg:h-[650px]">
-                @if($successMessage)
-                    <div class="mb-6 p-4 bg-green-600/20 border border-green-500 rounded">
-                        <p class="text-green-400 text-sm md:text-base">{{ $successMessage }}</p>
-                    </div>
-                @endif
+            <div class="bg-[#2D2A27] p-6 md:p-12 w-full lg:w-1/2 h-auto lg:h-[650px] flex items-center">
+                <div class="w-full">
+                    @if($successMessage)
+                        <div class="mb-6 p-4 bg-green-600/20 border border-green-500 rounded">
+                            <p class="text-green-400 text-sm md:text-base">{{ $successMessage }}</p>
+                        </div>
+                    @endif
 
-                @if($errorMessage)
-                    <div class="mb-6 p-4 bg-red-600/20 border border-red-500 rounded">
-                        <p class="text-red-400 text-sm md:text-base">{{ $errorMessage }}</p>
-                    </div>
-                @endif
+                    @if($errorMessage)
+                        <div class="mb-6 p-4 bg-red-600/20 border border-red-500 rounded">
+                            <p class="text-red-400 text-sm md:text-base">{{ $errorMessage }}</p>
+                        </div>
+                    @endif
 
-                <form wire:submit.prevent="submitForm" class="space-y-6 md:space-y-8" data-aos="fade-up">
+                    <form wire:submit.prevent="submitForm" class="space-y-6 md:space-y-8" data-aos="fade-up">
                     <div>
                         <input
                             type="text"
@@ -79,26 +80,38 @@
                             {{ __('messages.form_submit') }}
                         </button>
                     </div>
-                </form>
+                    </form>
+                </div>
             </div>
 
             <div class="relative overflow-hidden w-full lg:w-1/2 h-[500px] md:h-[650px]" data-aos="fade-left">
-                <img src="{{ asset('medias/images/projects/project-12.jpg') }}"
+                <img src="{{ asset('medias/images-hd/background-4.png') }}"
                      alt="Interior"
                      class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/30"></div>
 
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                    @php
+                        $linkedinUrl = \App\Models\Setting::get('linkedin_url', '');
+                        $instagramUrl = \App\Models\Setting::get('instagram_url', '');
+                        $facebookUrl = \App\Models\Setting::get('facebook_url', '');
+                    @endphp
                     <div class="flex gap-4 md:gap-6 mb-8 md:mb-[60px]">
-                        <a data-aos="fade-in" data-aos-delay="300" href="#" target="_blank" class="text-light hover:text-primary transition-colors duration-300">
-                            <img src="{{ asset('assets/icons/linkedin.svg') }}" alt="LinkedIn" class="w-[20px] h-[20px] md:w-[28px] md:h-[28px]">
-                        </a>
-                        <a data-aos="fade-in" data-aos-delay="500" href="#" target="_blank" class="text-light hover:text-primary transition-colors duration-300">
-                            <img src="{{ asset('assets/icons/instagram.svg') }}" alt="Instagram" class="w-[20px] h-[20px] md:w-[28px] md:h-[28px]">
-                        </a>
-                        <a data-aos="fade-in" data-aos-delay="700" href="#" target="_blank" class="text-light hover:text-primary transition-colors duration-300">
-                            <img src="{{ asset('assets/icons/facebook.svg') }}" alt="Facebook" class="w-[20px] h-[20px] md:w-[28px] md:h-[28px]">
-                        </a>
+                        @if($linkedinUrl)
+                            <a data-aos="fade-in" data-aos-delay="300" href="{{ $linkedinUrl }}" target="_blank" rel="noopener noreferrer" class="text-light hover:text-primary transition-colors duration-300">
+                                <img src="{{ asset('assets/icons/linkedin.svg') }}" alt="LinkedIn" class="w-[20px] h-[20px] md:w-[28px] md:h-[28px]">
+                            </a>
+                        @endif
+                        @if($instagramUrl)
+                            <a data-aos="fade-in" data-aos-delay="500" href="{{ $instagramUrl }}" target="_blank" rel="noopener noreferrer" class="text-light hover:text-primary transition-colors duration-300">
+                                <img src="{{ asset('assets/icons/instagram.svg') }}" alt="Instagram" class="w-[20px] h-[20px] md:w-[28px] md:h-[28px]">
+                            </a>
+                        @endif
+                        @if($facebookUrl)
+                            <a data-aos="fade-in" data-aos-delay="700" href="{{ $facebookUrl }}" target="_blank" rel="noopener noreferrer" class="text-light hover:text-primary transition-colors duration-300">
+                                <img src="{{ asset('assets/icons/facebook.svg') }}" alt="Facebook" class="w-[20px] h-[20px] md:w-[28px] md:h-[28px]">
+                            </a>
+                        @endif
                     </div>
 
                     <p class="text-white text-[24px] mb-8 md:mb-[60px] font-joan" data-aos="zoom-in">01 23 45 67 87 10</p>

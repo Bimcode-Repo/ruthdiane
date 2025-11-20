@@ -14,7 +14,7 @@
                 </div>
                 <div class="text-3xl font-bold text-zinc-900 mb-2">{{ \App\Models\Project::count() }}</div>
                 <flux:text>Total des projets publiés</flux:text>
-                <flux:button href="{{ route('admin.projects') }}" wire:navigate variant="filled" class="mt-4 w-full">Gérer les projets</flux:button>
+                <flux:button href="{{ route('admin.projects') }}" wire:navigate variant="primary" class="mt-4 w-full">Gérer les projets</flux:button>
             </div>
 
             <!-- Blogs Card -->
@@ -25,7 +25,7 @@
                 </div>
                 <div class="text-3xl font-bold text-zinc-900 mb-2">{{ \App\Models\Blog::where('is_published', true)->count() }}</div>
                 <flux:text>Articles publiés</flux:text>
-                <flux:button href="{{ route('admin.blogs') }}" wire:navigate variant="filled" class="mt-4 w-full">Gérer les articles</flux:button>
+                <flux:button href="{{ route('admin.blogs') }}" wire:navigate variant="primary" class="mt-4 w-full">Gérer les articles</flux:button>
             </div>
 
             <!-- Messages Card -->
@@ -36,7 +36,7 @@
                 </div>
                 <div class="text-3xl font-bold text-zinc-900 mb-2">{{ \App\Models\ContactMessage::where('is_read', false)->count() }}</div>
                 <flux:text>Messages non lus</flux:text>
-                <flux:button href="{{ route('admin.contact') }}" wire:navigate variant="filled" class="mt-4 w-full">Voir les messages</flux:button>
+                <flux:button href="{{ route('admin.contact') }}" wire:navigate variant="primary" class="mt-4 w-full">Voir les messages</flux:button>
             </div>
         </div>
 

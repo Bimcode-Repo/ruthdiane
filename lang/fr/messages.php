@@ -71,9 +71,44 @@ return [
     // Instagram
     "instagram" => "Instagram",
 
+    // Inspiration
+    "inspiration_title" => "Inspiration",
+    "inspiration_description" =>
+        "Laissez-vous inspirer par notre sélection de styles et d'ambiances soigneusement choisies pour sublimer votre intérieur.",
+
     // Contact Form Messages
     "contact_success" =>
         "Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.",
     "contact_error" =>
         'Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer.',
+
+    // Cookie Consent
+    "cookie_title" => "Gestion des cookies",
+    "cookie_description" =>
+        "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic de notre site. Vous pouvez personnaliser vos préférences à tout moment.",
+    "cookie_accept" => "Accepter tout",
+    "cookie_refuse" => "Refuser tout",
+    "cookie_customize" => "Personnaliser",
+    "cookie_preferences" => "Préférences cookies",
+    "cookie_save" => "Enregistrer mes choix",
+    "cookie_necessary" => "Cookies nécessaires",
+    "cookie_necessary_desc" =>
+        "Ces cookies sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.",
+    "cookie_analytics" => "Cookies analytiques",
+    "cookie_analytics_desc" =>
+        "Ces cookies nous aident à comprendre comment vous utilisez notre site pour l'améliorer.",
+    "cookie_marketing" => "Cookies marketing",
+    "cookie_marketing_desc" =>
+        "Ces cookies sont utilisés pour vous proposer des contenus et publicités personnalisés.",
+    "cookie_page_title" => "Gérez vos préférences de cookies",
+    "cookie_page_description" =>
+        "Choisissez les catégories de cookies que vous souhaitez autoriser. Vos choix seront conservés pendant 13 mois.",
+    "cookie_saved_success" =>
+        "Vos préférences ont été enregistrées avec succès.",
+    "cookie_revoke" => "Révoquer mon consentement",
+    "cookie_revoke_confirm" =>
+        "Êtes-vous sûr de vouloir révoquer votre consentement ? Tous les cookies non nécessaires seront supprimés.",
+    "cookie_revoked_success" =>
+        "Votre consentement a été révoqué. Les cookies non nécessaires ont été supprimés.",
+    "no_blog_posts" => "Aucun article de blog pour le moment.",
 ];
